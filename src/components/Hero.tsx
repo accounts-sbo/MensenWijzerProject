@@ -32,7 +32,7 @@ const Hero = () => {
             Ik help mensen en organisaties hun verhaal te vinden, te verwoorden en zichtbaar te maken. 
             Zodat zij krachtiger communiceren, zichtbaarder worden en groeien in wie ze zijn en wat ze betekenen.
           </p>
-          <a href="#contact" className="cta-button">
+          <a href="#contact" className="bg-[#f58e4f] text-white px-6 py-3 inline-block hover:bg-[#f58e4f]/80 transition-all duration-200 uppercase tracking-wider text-sm">
             Plan een kennismaking
           </a>
         </div>
