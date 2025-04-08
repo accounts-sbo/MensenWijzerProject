@@ -8,7 +8,7 @@ const Hero = () => {
         <img 
           src="/lovable-uploads/7f204317-c015-449b-a03a-ee02ebaed039.png" 
           alt="Sipke Jan Bousema" 
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover object-top opacity-80"
         />
         <div className="hero-gradient"></div>
       </div>
