@@ -7,7 +7,7 @@ const About = () => {
       <div className="container flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2">
           <img 
-            src="/lovable-uploads/01c1321b-a916-4211-8466-7603b6607da4.png" 
+            src="/lovable-uploads/bdfac387-5ddd-4dd1-8d53-f573fa83f5b9.png" 
             alt="Sipke Jan Bousema" 
             className="w-full h-auto"
           />
