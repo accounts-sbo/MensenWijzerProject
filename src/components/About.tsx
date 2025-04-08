@@ -13,6 +13,7 @@ const About = () => {
           />
         </div>
         <div className="md:w-[70%] px-4 md:px-8">
+          <span className="text-mensen-blue text-sm font-brass-mono mb-2 block">Over mij</span>
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8">
             Wat mij beweegt
           </h2>

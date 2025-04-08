@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutSummary = () => {
   return (
     <section className="py-16 md:py-24 beige-section">
       <div className="container">
         <div className="max-w-3xl mx-auto">
+          <span className="text-mensen-blue text-sm font-brass-mono mb-2 block">Over mij</span>
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-mensen-black">
             Vanuit de kern naar helderheid. Vanuit wie je bent naar wat je laat zien.
           </h2>
@@ -20,9 +22,9 @@ const AboutSummary = () => {
             Wat mij drijft is beweging: mensen en merken helpen richting te kiezen en zichtbaar 
             te worden op een manier die past.
           </p>
-          <button className="text-mensen-blue hover:text-mensen-blue/80 transition-colors font-brass-mono underline">
+          <Link to="/over-mij" className="text-mensen-blue hover:text-mensen-blue/80 transition-colors font-brass-mono underline">
             Lees mijn verhaal →
-          </button>
+          </Link>
         </div>
       </div>
     </section>
