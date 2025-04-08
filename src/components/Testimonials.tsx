@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import { 
   Carousel,
   CarouselContent,
@@ -88,14 +88,14 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 beige-section">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-br from-mensen-beige/30 to-mensen-beige/10">
       <div className="container">
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <span className="text-mensen-blue font-brass-mono text-sm md:text-base tracking-wider uppercase block mb-2">Referenties</span>
           <h2 className="text-2xl md:text-3xl font-brass-mono text-mensen-black mb-6">
             Wat klanten zeggen
           </h2>
-          <div className="w-12 h-1 bg-mensen-blue mb-8"></div>
+          <div className="w-12 h-1 bg-mensen-blue mb-8 mx-auto"></div>
         </div>
 
         <div className="relative">
@@ -109,49 +109,54 @@ const Testimonials = () => {
           >
             <CarouselContent>
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 p-1">
-                  <Card className="border-none shadow-md h-full">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-center mb-4">
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 p-2 group">
+                  <Card className="border-none h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden bg-white/70 backdrop-blur-sm">
+                    <CardContent className="p-8 flex flex-col h-full relative">
+                      <Quote className="text-mensen-blue/10 absolute -top-2 -left-2 h-20 w-20" />
+                      <blockquote className="italic font-lucida text-mensen-black flex-grow relative z-10 mb-6">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="mt-4 pt-4 border-t border-mensen-beige/30 flex items-center">
                         <div className="mr-4">
-                          <Avatar className="h-16 w-16 border-2 border-mensen-blue">
+                          <Avatar className="h-14 w-14 border border-mensen-blue/20 shadow-sm group-hover:border-mensen-blue/40 transition-all duration-300">
                             {testimonial.image ? (
                               <AvatarImage src={testimonial.image} alt={testimonial.name} />
                             ) : (
-                              <AvatarFallback className="bg-mensen-blue text-white text-xl">
+                              <AvatarFallback className="bg-mensen-blue/10 text-mensen-blue text-xl font-brass-mono">
                                 {testimonial.name.charAt(0)}
                               </AvatarFallback>
                             )}
                           </Avatar>
                         </div>
                         <div>
-                          <h3 className="font-brass-mono text-lg text-mensen-black">{testimonial.name}</h3>
-                          <p className="text-mensen-gray text-sm">{testimonial.role}</p>
+                          <h3 className="font-brass-mono text-lg text-mensen-blue">{testimonial.name}</h3>
+                          {testimonial.role && (
+                            <p className="text-mensen-gray text-sm">{testimonial.role}</p>
+                          )}
                         </div>
                       </div>
-                      <blockquote className="italic font-lucida text-mensen-black flex-grow">
-                        "{testimonial.quote}"
-                      </blockquote>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="mt-8 flex justify-center gap-4">
-              <CarouselPrevious className="static transform-none mx-2 bg-mensen-beige border-none hover:bg-mensen-beige/80" />
-              <div className="flex gap-2 items-center">
+            <div className="mt-10 flex justify-center items-center gap-6">
+              <CarouselPrevious className="relative inline-flex bg-white border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
+              <div className="flex gap-1.5 items-center">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-3 h-3 rounded-full ${
-                      current === index ? "bg-mensen-blue" : "bg-mensen-beige"
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      current === index 
+                        ? "bg-mensen-blue w-4" 
+                        : "bg-mensen-beige hover:bg-mensen-blue/50"
                     }`}
                     onClick={() => api?.scrollTo(index)}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
               </div>
-              <CarouselNext className="static transform-none mx-2 bg-mensen-beige border-none hover:bg-mensen-beige/80" />
+              <CarouselNext className="relative inline-flex bg-white border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
             </div>
           </Carousel>
         </div>
