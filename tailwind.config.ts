@@ -65,7 +65,7 @@ export default {
 				},
 				mensen: {
 					black: '#000000',
-					blue: '#102542', // Updated blue color
+					blue: '#223B56', // Updated blue color
 					gray: '#3F4443',
 					beige: '#baa99f',
 					white: '#ffffff'

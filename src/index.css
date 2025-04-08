@@ -1,5 +1,4 @@
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +22,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 213 66% 16%; /* Updated to match #102542 */
+    --primary: 216 41% 24%; /* Updated to match #223B56 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 26 19% 67%;
@@ -38,9 +37,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 213 66% 16%; /* Updated to match #102542 */
-    --input: 213 66% 16%; /* Updated to match #102542 */
-    --ring: 213 66% 16%; /* Updated to match #102542 */
+    --border: 216 41% 24%; /* Updated to match #223B56 */
+    --input: 216 41% 24%; /* Updated to match #223B56 */
+    --ring: 216 41% 24%; /* Updated to match #223B56 */
 
     --radius: 0.5rem;
   }
@@ -102,4 +101,3 @@
 .arrow-link {
   @apply flex items-center gap-2 text-mensen-blue hover:text-mensen-blue/80 transition-colors;
 }
-
