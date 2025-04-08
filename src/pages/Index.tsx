@@ -21,13 +21,22 @@ const Index = () => {
     <div className="min-h-screen bg-mensen-white">
       <Header />
       <Hero />
-      <AboutSummary />
-      <Services />
-      <About />
-      <Benefits />
-      <WorkWithMe />
-      <Testimonials />
-      <Contact />
+      <div id="about">
+        <AboutSummary />
+        <About />
+      </div>
+      <div id="services">
+        <Services />
+      </div>
+      <div id="work-with-me">
+        <WorkWithMe />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );

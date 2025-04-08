@@ -24,6 +24,16 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-mensen-white shadow-md py-3' : 'bg-transparent py-5'
@@ -55,9 +65,12 @@ const Header = () => {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-6">
             <NavigationMenuItem>
-              <Link to="/over-mij" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
+              <a 
+                onClick={() => scrollToSection('about')} 
+                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+              >
                 Over mij
-              </Link>
+              </a>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className={`bg-transparent ${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue hover:bg-transparent font-lucida data-[state=open]:bg-transparent data-[state=open]:text-mensen-blue`}>
@@ -67,43 +80,61 @@ const Header = () => {
                 <ul className="grid gap-3 p-4 w-[400px] grid-cols-1">
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link to="/identiteit-merkontwikkeling" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                      <a 
+                        onClick={() => scrollToSection('services')} 
+                        className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md cursor-pointer"
+                      >
                         <div className="font-brass-mono text-mensen-blue text-lg mb-1">Identiteit & Merkontwikkeling</div>
                         <p className="text-sm text-mensen-gray">Sterke communicatie begint met een helder verhaal</p>
-                      </Link>
+                      </a>
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link to="/communicatie-mediastrategie" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                      <a 
+                        onClick={() => scrollToSection('services')} 
+                        className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md cursor-pointer"
+                      >
                         <div className="font-brass-mono text-mensen-blue text-lg mb-1">Communicatie- & Mediastrategie</div>
                         <p className="text-sm text-mensen-gray">Van strategie tot zichtbaarheid</p>
-                      </Link>
+                      </a>
                     </NavigationMenuLink>
                   </li>
                   <li>
                     <NavigationMenuLink asChild>
-                      <Link to="/presentatie-profilering" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                      <a 
+                        onClick={() => scrollToSection('services')} 
+                        className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md cursor-pointer"
+                      >
                         <div className="font-brass-mono text-mensen-blue text-lg mb-1">Presentatie & Profilering</div>
                         <p className="text-sm text-mensen-gray">Laat zien wie je bent – met rust, overtuiging en authenticiteit</p>
-                      </Link>
+                      </a>
                     </NavigationMenuLink>
                   </li>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/werkwijze" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
+              <a 
+                onClick={() => scrollToSection('work-with-me')} 
+                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+              >
                 Werkwijze
-              </Link>
+              </a>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/contact" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
+              <a 
+                onClick={() => scrollToSection('contact')} 
+                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+              >
                 Contact
-              </Link>
+              </a>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <a href="tel:+31635345061" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
+              <a 
+                href="tel:+31635345061" 
+                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}
+              >
                 +31 6 53 54 50 61
               </a>
             </NavigationMenuItem>
@@ -123,53 +154,47 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-mensen-white w-full py-4 shadow-md">
           <div className="container flex flex-col space-y-4">
-            <Link 
-              to="/over-mij" 
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"
-              onClick={() => setIsMenuOpen(false)}
+            <a 
+              onClick={() => scrollToSection('about')}
+              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               Over mij
-            </Link>
+            </a>
             <div className="space-y-2">
               <div className="text-mensen-black font-brass-mono">Diensten</div>
               <div className="pl-4 space-y-2">
-                <Link 
-                  to="/identiteit-merkontwikkeling" 
-                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
-                  onClick={() => setIsMenuOpen(false)}
+                <a 
+                  onClick={() => scrollToSection('services')}
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block cursor-pointer"
                 >
                   Identiteit & Merkontwikkeling
-                </Link>
-                <Link 
-                  to="/communicatie-mediastrategie" 
-                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
-                  onClick={() => setIsMenuOpen(false)}
+                </a>
+                <a 
+                  onClick={() => scrollToSection('services')}
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block cursor-pointer"
                 >
                   Communicatie- & Mediastrategie
-                </Link>
-                <Link 
-                  to="/presentatie-profilering" 
-                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
-                  onClick={() => setIsMenuOpen(false)}
+                </a>
+                <a 
+                  onClick={() => scrollToSection('services')}
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block cursor-pointer"
                 >
                   Presentatie & Profilering
-                </Link>
+                </a>
               </div>
             </div>
-            <Link 
-              to="/werkwijze" 
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"
-              onClick={() => setIsMenuOpen(false)}
+            <a 
+              onClick={() => scrollToSection('work-with-me')}
+              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               Werkwijze
-            </Link>
-            <Link 
-              to="/contact" 
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"
-              onClick={() => setIsMenuOpen(false)}
+            </a>
+            <a 
+              onClick={() => scrollToSection('contact')}
+              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               Contact
-            </Link>
+            </a>
             <a 
               href="tel:+31635345061" 
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"

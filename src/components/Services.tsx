@@ -24,6 +24,13 @@ const ServiceCard = ({ title, intro, bullets, elevator }: {
 };
 
 const Services = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-16 md:py-24">
       <div className="container">
@@ -96,7 +103,10 @@ const Services = () => {
           </div>
           
           <div className="mt-8 text-center">
-            <a href="#contact" className="cta-button bg-white text-mensen-blue hover:bg-white/90 mt-6 inline-block">
+            <a 
+              onClick={() => scrollToSection('contact')}
+              className="cta-button bg-white text-mensen-blue hover:bg-white/90 mt-6 inline-block cursor-pointer"
+            >
               Neem contact op
             </a>
           </div>
