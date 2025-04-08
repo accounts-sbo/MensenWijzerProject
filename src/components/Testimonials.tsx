@@ -87,14 +87,14 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-gradient-to-br from-mensen-beige/30 to-mensen-beige/10">
-      <div className="container px-8 md:px-16 lg:px-24">
-        <div className="mb-16 text-center">
-          <span className="text-mensen-blue font-brass-mono text-base tracking-wider uppercase block mb-2">Referenties</span>
-          <h2 className="text-3xl font-brass-mono text-mensen-black mb-6">
+    <section id="testimonials" className="py-16 md:py-20 bg-mensen-blue text-white">
+      <div className="container px-8 md:px-12">
+        <div className="mb-10 text-center">
+          <span className="text-white/80 font-brass-mono text-base tracking-wider uppercase block mb-2">Referenties</span>
+          <h2 className="text-3xl font-brass-mono text-white mb-4">
             Wat klanten zeggen
           </h2>
-          <div className="w-12 h-1 bg-mensen-blue mb-8 mx-auto"></div>
+          <div className="w-12 h-1 bg-white/70 mb-6 mx-auto"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -109,26 +109,26 @@ const Testimonials = () => {
             <CarouselContent>
               {testimonials.map((testimonial) => (
                 <CarouselItem key={testimonial.id} className="w-full">
-                  <div className="relative px-4 py-10 md:py-16 md:px-10 text-center">
-                    <Quote className="text-mensen-blue/15 absolute top-0 left-1/2 -translate-x-1/2 h-20 w-20" />
+                  <div className="relative px-4 py-6 md:py-10 md:px-8 text-center">
+                    <Quote className="text-white/15 absolute top-0 left-1/2 -translate-x-1/2 h-16 w-16" />
                     
-                    <blockquote className="italic font-lucida text-mensen-black text-xl leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
+                    <blockquote className="italic font-lucida text-white text-xl leading-relaxed mb-6 relative z-10 max-w-3xl mx-auto">
                       "{testimonial.quote}"
                     </blockquote>
                     
                     <div className="flex flex-col items-center justify-center">
-                      <Avatar className="h-16 w-16 border-2 border-mensen-blue/20 shadow-sm mb-3">
+                      <Avatar className="h-16 w-16 border-2 border-white/20 shadow-sm mb-3">
                         {testimonial.image ? (
                           <AvatarImage src={testimonial.image} alt={testimonial.name} />
                         ) : (
-                          <AvatarFallback className="bg-mensen-blue/10 text-mensen-blue text-xl font-brass-mono">
+                          <AvatarFallback className="bg-white/10 text-white text-xl font-brass-mono">
                             {testimonial.name.charAt(0)}
                           </AvatarFallback>
                         )}
                       </Avatar>
-                      <h3 className="font-brass-mono text-xl text-mensen-blue">{testimonial.name}</h3>
+                      <h3 className="font-brass-mono text-xl text-white">{testimonial.name}</h3>
                       {testimonial.role && (
-                        <p className="text-mensen-gray text-sm mt-1">{testimonial.role}</p>
+                        <p className="text-white/80 text-sm mt-1">{testimonial.role}</p>
                       )}
                     </div>
                   </div>
@@ -136,8 +136,8 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             
-            <div className="mt-12 flex justify-center items-center gap-8">
-              <CarouselPrevious className="relative inline-flex bg-transparent border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
+            <div className="mt-8 flex justify-center items-center gap-8">
+              <CarouselPrevious className="relative inline-flex bg-transparent border border-white/20 shadow-sm hover:bg-white/5 hover:border-white/40 transition-all duration-300" />
               
               <div className="flex gap-2 items-center">
                 {testimonials.map((_, index) => (
@@ -145,8 +145,8 @@ const Testimonials = () => {
                     key={index}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                       current === index 
-                        ? "bg-mensen-blue w-6" 
-                        : "bg-mensen-beige hover:bg-mensen-blue/50"
+                        ? `bg-[#b0693d] w-6` 
+                        : "bg-white/30 hover:bg-[#b0693d]/70"
                     }`}
                     onClick={() => api?.scrollTo(index)}
                     aria-label={`Go to slide ${index + 1}`}
@@ -154,7 +154,7 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <CarouselNext className="relative inline-flex bg-transparent border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
+              <CarouselNext className="relative inline-flex bg-transparent border border-white/20 shadow-sm hover:bg-white/5 hover:border-white/40 transition-all duration-300" />
             </div>
           </Carousel>
         </div>
