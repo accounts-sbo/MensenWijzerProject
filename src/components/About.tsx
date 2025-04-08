@@ -16,7 +16,7 @@ const About = () => {
           <h2 className="text-3xl font-brass-mono mb-8 text-mensen-black">
             Wat mij beweegt
           </h2>
-          <blockquote className="text-xl italic mb-8 font-brass-mono text-mensen-beige">
+          <blockquote className="text-xl italic mb-8 font-brass-mono text-[#f58e4f]">
             "Soms is alles wat je nodig hebt… een goede wegwijzer."
           </blockquote>
           <div className="space-y-6 font-lucida tracking-wide-50 text-mensen-black">
