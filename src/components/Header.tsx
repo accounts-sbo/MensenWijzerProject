@@ -32,12 +32,19 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-mensen-white shadow-md py-3' : 'bg-transparent py-5'
     }`}>
       <div className="container flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+        <div onClick={scrollToTop} className="flex items-center cursor-pointer">
           {isScrolled ? (
             <>
               <img 
@@ -57,7 +64,7 @@ const Header = () => {
               <span className="ml-3 font-brass-mono text-white text-lg md:text-xl">DE MENSEN WIJZER</span>
             </>
           )}
-        </Link>
+        </div>
 
         {/* Desktop Menu - Using NavigationMenu component */}
         <NavigationMenu className="hidden md:flex">
