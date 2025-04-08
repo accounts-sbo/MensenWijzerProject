@@ -65,11 +65,9 @@ const Services = () => {
             elevator="Ik help mensen om met meer kracht en vertrouwen hun verhaal te vertellen. Vanuit authenticiteit en verbinding werken we aan uitstraling, spreekvaardigheid en échte impact."
           />
         </div>
-
-        <div className="section-divider"></div>
       </div>
 
-      {/* Full-width blue section for bijeenkomsten */}
+      {/* Full-width blue section for bijeenkomsten - removed spacing/margin for seamless connection */}
       <div className="bg-mensen-blue py-12 md:py-16">
         <div className="container px-6 md:px-10">
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-white">
