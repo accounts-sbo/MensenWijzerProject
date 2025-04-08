@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { 
@@ -23,30 +22,30 @@ type TestimonialType = {
 const testimonials: TestimonialType[] = [
   {
     id: 1,
-    name: "Anne de Vries",
-    role: "Marketing Manager, TechNova",
-    quote: "Sipke Jan heeft onze merkidentiteit compleet getransformeerd. Zijn strategische inzichten en persoonlijke benadering hebben ons geholpen om onze stem te vinden in een drukke markt.",
+    name: "Mark Tuitert",
+    role: "Olympisch kampioen & Mental Coach",
+    quote: "Sipke Jan is een absolute topcoach op het gebied van communicatie en presenteren. Scherp, inhoudelijk sterk en gedreven. Hij haalt de beste versie van jezelf naar boven.",
     image: "/lovable-uploads/94488efa-2f4d-4bac-ab6d-f2f60c17547a.png"
   },
   {
     id: 2,
-    name: "Michiel Janssen",
-    role: "Directeur, Cultuur Collectief",
-    quote: "De samenwerking met De Mensen Wijzer was een openbaring. Sipke Jan ziet wat anderen missen en weet precies de juiste vragen te stellen om tot de kern te komen.",
+    name: "Annemarie van Gaal",
+    role: "Ondernemer & Investeerder",
+    quote: "Sipke Jan Bousema behoort tot de top van Nederland als het gaat om presenteren. Zijn kennis en ervaring over hoe jij het beste uit jezelf haalt is ongeëvenaard.",
     image: "/lovable-uploads/01c1321b-a916-4211-8466-7603b6607da4.png"
   },
   {
     id: 3,
-    name: "Laura Bergman",
-    role: "Oprichter, Sustainable Solutions",
-    quote: "Onze presentatie en communicatiestrategie zijn naar een hoger niveau getild. Sipke Jan's begeleiding was precies wat we nodig hadden om met vertrouwen naar buiten te treden.",
+    name: "Natasja Froger",
+    role: "TV presentator",
+    quote: "Ik heb in de loop der jaren met verschillende mediatrainers en coaches gewerkt, maar Sipke Jan onderscheidt zich door zijn oprechte betrokkenheid en altijd eerlijke feedback.",
     image: "/lovable-uploads/40f15ae1-975c-4b0d-a46d-cadf7319bd83.png"
   },
   {
     id: 4,
-    name: "Thomas de Groot",
-    role: "CEO, Innovation Hub",
-    quote: "De expertise en persoonlijke betrokkenheid van Sipke Jan hebben ons geholpen om een authentieke stem te vinden die resoneert met ons publiek.",
+    name: "Britt Dekker",
+    role: "TV presentator",
+    quote: "De grootste kracht van Sipke Jan is zijn vermogen om het beste in je naar boven te halen, terwijl je volledig jezelf kunt blijven. Hij weet precies hoe hij je moet coachen zodat jij kunt groeien.",
   }
 ];
 
