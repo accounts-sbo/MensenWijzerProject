@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About = () => {
@@ -44,7 +43,7 @@ const About = () => {
               helpen om op hun eigen manier zichtbaar, krachtig en betekenisvol te zijn.
             </p>
           </div>
-          <a href="#contact" className="cta-button bg-mensen-blue hover:bg-mensen-blue/80 text-white mt-8 inline-block">
+          <a href="#contact" className="bg-mensen-blue hover:bg-mensen-blue/80 text-white px-6 py-3 inline-block transition-all duration-200 uppercase tracking-wider text-sm mt-8">
             Lees meer
           </a>
         </div>
