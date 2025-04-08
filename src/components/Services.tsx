@@ -12,18 +12,18 @@ const ServiceCard = ({ title, intro, bullets, elevator }: {
   return (
     <div className="bg-white/10 border border-white/20 rounded-md p-6 h-full flex flex-col justify-between transition-all duration-300 hover:transform hover:scale-[1.01] hover:shadow-lg">
       <div>
-        <h3 className="font-brass-mono text-xl mb-4">{title}</h3>
-        <p className="mb-4 text-sm opacity-90">{intro}</p>
+        <h3 className="text-2xl font-brass-mono mb-4">{title}</h3>
+        <p className="text-base mb-4 opacity-90">{intro}</p>
         <ul className="space-y-3 mb-6">
           {bullets.map((bullet, index) => (
-            <li key={index} className="text-sm flex items-start">
+            <li key={index} className="text-base flex items-start">
               <ChevronRight className="h-4 w-4 mt-0.5 mr-2 flex-shrink-0" />
               <span>{bullet}</span>
             </li>
           ))}
         </ul>
       </div>
-      <p className="text-xs italic text-white/80 mt-4">{elevator}</p>
+      <p className="text-sm italic text-white/80 mt-4">{elevator}</p>
     </div>
   );
 };
@@ -31,8 +31,8 @@ const ServiceCard = ({ title, intro, bullets, elevator }: {
 const MeetingCard = ({ title, description }: { title: string; description: string }) => {
   return (
     <div className="bg-white/10 border border-white/20 rounded-md p-6 h-full flex flex-col transition-all duration-300 hover:transform hover:scale-[1.01] hover:shadow-lg">
-      <h3 className="text-xl font-brass-mono mb-4 text-white">{title}</h3>
-      <p className="font-lucida tracking-wide-50 text-white/90">{description}</p>
+      <h3 className="text-2xl font-brass-mono mb-4 text-white">{title}</h3>
+      <p className="text-base font-lucida tracking-wide-50 text-white/90">{description}</p>
     </div>
   );
 };
@@ -51,11 +51,11 @@ const Services = () => {
       <section className="bg-mensen-blue py-16 md:py-24 text-white">
         <div className="container">
           <div className="max-w-2xl mb-12">
-            <h2 className="text-2xl md:text-3xl font-brass-mono mb-4 text-white">
+            <h2 className="text-3xl font-brass-mono mb-4 text-white">
               Wat ik doe
             </h2>
             <div className="h-1 w-20 bg-white/30 mb-6"></div>
-            <p className="text-white/80">
+            <p className="text-base text-white/80">
               Diensten die helpen bij het vinden en uitdragen van jouw authentieke verhaal.
             </p>
           </div>
@@ -101,7 +101,7 @@ const Services = () => {
       <section className="bg-[#b0693d] py-16 md:py-24">
         <div className="container">
           <div className="max-w-2xl mb-12">
-            <h2 className="text-2xl md:text-3xl font-brass-mono mb-4 text-white">
+            <h2 className="text-3xl font-brass-mono mb-4 text-white">
               Voor bijeenkomsten, teams en trajecten waarin richting en verbinding nodig is
             </h2>
             <div className="h-1 w-20 bg-white/30 mb-6"></div>

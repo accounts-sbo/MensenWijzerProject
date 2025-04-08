@@ -24,10 +24,10 @@ const Hero = () => {
       
       <div className="relative z-20 container h-full flex flex-col justify-center">
         <div className="max-w-lg text-white">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-brass-mono mb-6">
+          <h1 className="text-4xl font-brass-mono mb-6">
             Van identiteit tot impact. Van inzicht tot uitvoering.
           </h1>
-          <p className="text-lg md:text-xl mb-8 font-lucida tracking-wide-50">
+          <p className="text-base mb-8 font-lucida tracking-wide-50">
             Ik ben Sipke Jan Bousema – begeleider van ontwikkeling, positionering en presentatie. 
             Ik help mensen en organisaties hun verhaal te vinden, te verwoorden en zichtbaar te maken. 
             Zodat zij krachtiger communiceren, zichtbaarder worden en groeien in wie ze zijn en wat ze betekenen.

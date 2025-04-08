@@ -90,8 +90,8 @@ const Testimonials = () => {
     <section id="testimonials" className="py-24 md:py-32 bg-gradient-to-br from-mensen-beige/30 to-mensen-beige/10">
       <div className="container px-8 md:px-16 lg:px-24">
         <div className="mb-16 text-center">
-          <span className="text-mensen-blue font-brass-mono text-sm md:text-base tracking-wider uppercase block mb-2">Referenties</span>
-          <h2 className="text-2xl md:text-3xl font-brass-mono text-mensen-black mb-6">
+          <span className="text-mensen-blue font-brass-mono text-base tracking-wider uppercase block mb-2">Referenties</span>
+          <h2 className="text-3xl font-brass-mono text-mensen-black mb-6">
             Wat klanten zeggen
           </h2>
           <div className="w-12 h-1 bg-mensen-blue mb-8 mx-auto"></div>
@@ -112,7 +112,7 @@ const Testimonials = () => {
                   <div className="relative px-4 py-10 md:py-16 md:px-10 text-center">
                     <Quote className="text-mensen-blue/15 absolute top-0 left-1/2 -translate-x-1/2 h-20 w-20" />
                     
-                    <blockquote className="italic font-lucida text-mensen-black text-xl md:text-2xl leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
+                    <blockquote className="italic font-lucida text-mensen-black text-xl leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
                       "{testimonial.quote}"
                     </blockquote>
                     

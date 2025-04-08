@@ -14,7 +14,7 @@ const Benefits = () => {
   return (
     <section className="py-16 md:py-24 beige-section">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-brass-mono mb-10 text-mensen-black text-center">
+        <h2 className="text-3xl font-brass-mono mb-10 text-mensen-black text-center">
           Samen brengen we dit voor je in beweging
         </h2>
         <div className="max-w-3xl mx-auto">
@@ -24,7 +24,7 @@ const Benefits = () => {
                 <div className="text-mensen-blue mt-1">
                   <Check size={20} />
                 </div>
-                <p className="font-lucida tracking-wide-50 text-lg">{benefit}</p>
+                <p className="text-base font-lucida tracking-wide-50">{benefit}</p>
               </li>
             ))}
           </ul>

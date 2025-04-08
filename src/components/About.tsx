@@ -13,32 +13,32 @@ const About = () => {
           />
         </div>
         <div className="md:w-[70%] px-4 md:px-8">
-          <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-mensen-black">
+          <h2 className="text-3xl font-brass-mono mb-8 text-mensen-black">
             Wat mij beweegt
           </h2>
           <blockquote className="text-xl italic mb-8 font-brass-mono text-mensen-beige">
             "Soms is alles wat je nodig hebt… een goede wegwijzer."
           </blockquote>
           <div className="space-y-6 font-lucida tracking-wide-50 text-mensen-black">
-            <p>
+            <p className="text-base">
               Ik ben Sipke Jan Bousema. Als oprichter van De Mensen Wijzer begeleid ik mensen én organisaties 
               in het ontdekken wie ze zijn, waar ze voor staan en hoe ze dat krachtig en betekenisvol kunnen uitdragen.
             </p>
-            <p>
+            <p className="text-base">
               Mijn kracht ligt in het helder krijgen van de essentie. In het stellen van precies de juiste vragen, 
               het aanreiken van rake inzichten en het begeleiden naar de volgende stap – op het gebied van identiteit, 
               communicatie en profilering. Vanuit rust, scherpte en betrokkenheid.
             </p>
-            <p>
+            <p className="text-base">
               Ik help mensen en organisaties om optimaal tot uiting te komen. In wie ze zijn. 
               In wat ze doen. En in hoe ze zich laten zien.
             </p>
-            <p>
+            <p className="text-base">
               Die missie is geworteld in mijn persoonlijke verhaal: van een jeugd vol fascinatie voor media 
               tot een loopbaan als presentator, mediamaker en campagnemaker. Ik heb altijd gewerkt aan verhalen 
               die mensen raken en in beweging brengen. En bovenal: aan communicatie die klopt en bijdraagt aan duurzame groei.
             </p>
-            <p>
+            <p className="text-base">
               De Mensen Wijzer is mijn volgende stap. Het resultaat van jarenlange ervaring in media, onderwijs, 
               strategie en persoonlijke ontwikkeling. En het verlengde van wat mij het meest drijft: mensen en organisaties 
               helpen om op hun eigen manier zichtbaar, krachtig en betekenisvol te zijn.
