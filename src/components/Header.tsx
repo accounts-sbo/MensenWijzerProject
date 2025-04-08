@@ -80,26 +80,10 @@ const Header = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <a 
-                onClick={() => scrollToSection('begeleiding')} 
-                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
-              >
-                Begeleiding
-              </a>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <a 
                 onClick={() => scrollToSection('demensen')} 
                 className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
               >
                 De Mensen Wijzer
-              </a>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <a 
-                onClick={() => scrollToSection('work-with-me')} 
-                className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
-              >
-                Werken met mij
               </a>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -139,22 +123,10 @@ const Header = () => {
               Diensten
             </a>
             <a 
-              onClick={() => scrollToSection('begeleiding')}
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
-            >
-              Begeleiding
-            </a>
-            <a 
               onClick={() => scrollToSection('demensen')}
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               De Mensen Wijzer
-            </a>
-            <a 
-              onClick={() => scrollToSection('work-with-me')}
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
-            >
-              Werken met mij
             </a>
             <a 
               onClick={() => scrollToSection('contact')}
