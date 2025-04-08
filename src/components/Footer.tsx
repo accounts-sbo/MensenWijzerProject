@@ -9,11 +9,14 @@ const Footer = () => {
     <footer className="bg-mensen-beige/30 py-10">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-          <img 
-            src="/lovable-uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
-            alt="De Mensen Wijzer" 
-            className="h-16 mb-6 md:mb-0" 
-          />
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
+              alt="De Mensen Wijzer" 
+              className="h-16 mb-6 md:mb-0" 
+            />
+            <span className="font-brass-mono text-mensen-blue text-lg md:text-xl">DE MENSEN WIJZER</span>
+          </div>
           <div className="flex space-x-4">
             <a href="#" className="text-mensen-blue hover:text-mensen-blue/70 transition-colors">
               <Facebook size={20} />
@@ -38,17 +41,17 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-brass-mono text-lg mb-4">Locatie Amsterdam</h3>
+            <h3 className="font-brass-mono text-lg mb-4">Locatie Fryslân / Leeuwarden</h3>
             <p className="font-lucida text-sm">
-              De Stadstuin Chasséstraat 15<br />
-              1057 JA Amsterdam<br />
+              Wyns 39<br />
+              9091 BE Wyns<br />
               <a href="tel:+31635345061" className="hover:text-mensen-blue">T: +31 6 53 54 50 61</a>
             </p>
           </div>
           
           <div className="md:text-right">
             <p className="font-lucida text-sm text-mensen-gray">
-              SJB Media © {currentYear} - Alle rechten voorbehouden
+              De Mensen Wijzer © {currentYear} - Alle rechten voorbehouden
             </p>
             <div className="mt-2 font-lucida text-xs space-x-4">
               <a href="#" className="hover:text-mensen-blue">Algemene voorwaarden</a>
