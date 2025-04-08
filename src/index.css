@@ -91,7 +91,7 @@
 }
 
 .service-card {
-  @apply p-6 bg-white/10 text-white h-full flex flex-col justify-between border border-white/20;
+  @apply p-6 bg-mensen-beige text-white h-full flex flex-col justify-between;
 }
 
 .service-card h3 {

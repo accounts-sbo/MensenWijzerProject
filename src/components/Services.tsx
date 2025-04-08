@@ -32,9 +32,9 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-mensen-blue py-16 md:py-24 text-white">
+    <section className="py-16 md:py-24">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-brass-mono mb-12 text-white">
+        <h2 className="text-2xl md:text-3xl font-brass-mono mb-12 text-mensen-black">
           Wat ik doe
         </h2>
 
@@ -74,8 +74,8 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Full-width beige section for bijeenkomsten - removed spacing/margin for seamless connection */}
-      <div className="bg-mensen-beige py-12 md:py-16">
+      {/* Full-width blue section for bijeenkomsten - removed spacing/margin for seamless connection */}
+      <div className="bg-mensen-blue py-12 md:py-16">
         <div className="container px-6 md:px-10">
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-white">
             Voor bijeenkomsten, teams en trajecten waarin richting en verbinding nodig is
@@ -83,19 +83,19 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div>
-              <h3 className="text-xl font-brass-mono mb-4 text-white">Conceptontwikkeling</h3>
+              <h3 className="text-xl font-brass-mono mb-4 text-mensen-beige">Conceptontwikkeling</h3>
               <p className="font-lucida tracking-wide-50 text-white">
                 Strategische formats en creatieve concepten voor merken, campagnes en programma's – afgestemd op doelgroep, toon en doel.
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-brass-mono mb-4 text-white">Dagvoorzitterschap & Presentatie</h3>
+              <h3 className="text-xl font-brass-mono mb-4 text-mensen-beige">Dagvoorzitterschap & Presentatie</h3>
               <p className="font-lucida tracking-wide-50 text-white">
                 Professionele begeleiding van bijeenkomsten, talks of events. Inhoudelijk sterk, betrokken en afgestemd op het moment én de mensen in de zaal.
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-brass-mono mb-4 text-white">Procesbegeleiding & Gespreksleiding</h3>
+              <h3 className="text-xl font-brass-mono mb-4 text-mensen-beige">Procesbegeleiding & Gespreksleiding</h3>
               <p className="font-lucida tracking-wide-50 text-white">
                 Voor teams en samenwerkingen die willen ontwikkelen of optimaliseren. Met aandacht, structuur en de juiste vragen breng ik helderheid en beweging.
               </p>
