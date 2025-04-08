@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				mensen: {
+					black: '#000000',
+					blue: '#004269',
+					gray: '#3F4443',
+					beige: '#baa99f',
+					white: '#ffffff'
 				}
+			},
+			fontFamily: {
+				'brass-mono': ['Brass Mono Comfortable', 'monospace'],
+				'lucida': ['Lucida Sans', 'sans-serif']
+			},
+			letterSpacing: {
+				'wide-50': '0.05em',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
