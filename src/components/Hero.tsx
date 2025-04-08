@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -36,6 +37,20 @@ const Hero = () => {
             Plan een kennismaking
           </a>
         </div>
+      </div>
+
+      {/* Scroll indicator animation */}
+      <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center items-center">
+        <a 
+          href="#about" 
+          className="text-white opacity-80 hover:opacity-100 transition-opacity flex flex-col items-center"
+          aria-label="Scroll naar beneden"
+        >
+          <span className="text-xs mb-2 font-brass-mono">Scroll naar beneden</span>
+          <div className="animate-bounce">
+            <ChevronDown className="h-6 w-6" />
+          </div>
+        </a>
       </div>
     </section>
   );
