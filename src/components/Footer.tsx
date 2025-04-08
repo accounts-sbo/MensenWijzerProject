@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,13 +18,12 @@ const Footer = () => {
             <span className="font-brass-mono text-white text-lg md:text-xl">DE MENSEN WIJZER</span>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-mensen-beige transition-colors">
-              <Facebook size={20} />
-            </a>
-            <a href="#" className="text-white hover:text-mensen-beige transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="text-white hover:text-mensen-beige transition-colors">
+            <a 
+              href="https://www.linkedin.com/in/sipkejanbousema/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white hover:text-mensen-beige transition-colors"
+            >
               <Linkedin size={20} />
             </a>
           </div>
@@ -51,11 +50,15 @@ const Footer = () => {
           
           <div className="md:text-right">
             <p className="font-lucida text-sm text-white/80">
-              De Mensen Wijzer © {currentYear} - Alle rechten voorbehouden
+              De Mensen Wijzer is een merk van SJB Media B.V.<br />
+              © {currentYear} - Alle rechten voorbehouden
             </p>
             <div className="mt-2 font-lucida text-xs space-x-4">
               <a href="#" className="hover:text-mensen-beige transition-colors">Algemene voorwaarden</a>
               <a href="#" className="hover:text-mensen-beige transition-colors">Privacy Policy</a>
+            </div>
+            <div className="mt-3 font-lucida text-xs text-white/60">
+              Website by Willem van Leunen
             </div>
           </div>
         </div>
