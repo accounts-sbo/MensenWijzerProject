@@ -4,7 +4,7 @@ import React from 'react';
 const WorkWithMe = () => {
   return (
     <section 
-      className="py-24 md:py-32 relative overflow-hidden"
+      className="pb-24 md:pb-32 relative overflow-hidden"
       style={{
         backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
         backgroundSize: 'cover',
