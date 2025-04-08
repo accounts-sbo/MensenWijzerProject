@@ -1,5 +1,4 @@
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,24 +22,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 213 66% 16%; /* Updated to match #102542 */
+    --primary: 216 41% 24%; /* Updated to match #223B56 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 26 19% 67%;
+    --secondary: 29 21% 70%; /* Updated to match #B44B3B0 */
     --secondary-foreground: 0 0% 0%;
 
-    --muted: 171 10% 26%;
-    --muted-foreground: 0 0% 100%;
+    --muted: 29 21% 70%; /* Updated to match secondary color */
+    --muted-foreground: 0 0% 0%;
 
-    --accent: 171 10% 26%;
+    --accent: 18 53% 52%; /* Updated to match #B997C54 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 213 66% 16%; /* Updated to match #102542 */
-    --input: 213 66% 16%; /* Updated to match #102542 */
-    --ring: 213 66% 16%; /* Updated to match #102542 */
+    --border: 216 41% 24%; /* Match primary */
+    --input: 216 41% 24%; /* Match primary */
+    --ring: 216 41% 24%; /* Match primary */
 
     --radius: 0.5rem;
   }
@@ -65,8 +64,8 @@
 }
 
 .cta-button {
-  @apply bg-mensen-beige text-white px-6 py-3 inline-block 
-  hover:bg-mensen-beige/80 transition-all duration-200 uppercase tracking-wider text-sm;
+  @apply bg-mensen-button text-white px-6 py-3 inline-block 
+  hover:bg-mensen-button/80 transition-all duration-200 uppercase tracking-wider text-sm;
 }
 
 .container {
@@ -84,11 +83,11 @@
 }
 
 .beige-section {
-  @apply bg-mensen-beige/30;
+  @apply bg-mensen-secondary/30;
 }
 
 .black-section {
-  @apply bg-mensen-beige text-mensen-white;
+  @apply bg-mensen-secondary text-mensen-white;
 }
 
 .service-card {
@@ -100,6 +99,5 @@
 }
 
 .arrow-link {
-  @apply flex items-center gap-2 text-mensen-blue hover:text-mensen-blue/80 transition-colors;
+  @apply flex items-center gap-2 text-mensen-primary hover:text-mensen-primary/80 transition-colors;
 }
-
