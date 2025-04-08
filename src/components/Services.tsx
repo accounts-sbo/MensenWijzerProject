@@ -67,9 +67,11 @@ const Services = () => {
         </div>
 
         <div className="section-divider"></div>
+      </div>
 
-        {/* Changed background to blue for this section */}
-        <div className="bg-mensen-blue py-12 md:py-16 px-6 md:px-10 rounded-lg">
+      {/* Full-width blue section for bijeenkomsten */}
+      <div className="bg-mensen-blue py-12 md:py-16">
+        <div className="container px-6 md:px-10">
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-white">
             Voor bijeenkomsten, teams en trajecten waarin richting en verbinding nodig is
           </h2>
