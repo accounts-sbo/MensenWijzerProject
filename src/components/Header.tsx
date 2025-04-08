@@ -33,10 +33,11 @@ const Header = () => {
           {isScrolled ? (
             <>
               <img 
-                src="/lovable-uploads/c74ae2d5-0e01-49cd-bd0a-92fa1ed57048.png" 
+                src="/lovable-uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
                 alt="De Mensen Wijzer" 
                 className="h-10" 
               />
+              <span className="ml-3 font-brass-mono text-mensen-blue text-lg md:text-xl">DE MENSEN WIJZER</span>
             </>
           ) : (
             <>
