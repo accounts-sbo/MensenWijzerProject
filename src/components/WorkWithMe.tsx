@@ -6,7 +6,7 @@ const WorkWithMe = () => {
     <section 
       className="py-16 md:py-24 relative overflow-hidden"
       style={{
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
+        backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
