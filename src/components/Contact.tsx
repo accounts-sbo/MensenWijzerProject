@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
@@ -14,6 +14,11 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    emailjs.init("UGh5dNKG95dWkqDDO");
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -26,19 +31,17 @@ const Contact = () => {
     try {
       // Prepare the email template parameters
       const templateParams = {
-        to_email: 'willemvanleunen@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       };
 
       // Send the email using EmailJS
-      // Note: You need to replace these IDs with your actual EmailJS service, template, and user IDs
       await emailjs.send(
-        'default_service', // Service ID
-        'template_contact', // Template ID
+        "service_os9h0z7", // Service ID
+        "template_8hy3329", // Template ID
         templateParams,
-        'your_user_id' // User ID
+        "UGh5dNKG95dWkqDDO" // Public Key
       );
 
       // Show success message
@@ -47,7 +50,8 @@ const Contact = () => {
         description: "Je bericht is succesvol verzonden.",
       });
       
-      // Display success state
+      // Reset form and display success state
+      setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error sending email:', error);
@@ -88,7 +92,7 @@ const Contact = () => {
               
               <div className="flex items-center gap-3">
                 <Linkedin className="text-mensen-blue" />
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
+                <a href="https://www.linkedin.com/in/sipkejanbousema/" target="_blank" rel="noopener noreferrer" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
                   LinkedIn-profiel
                 </a>
               </div>

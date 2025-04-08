@@ -9,8 +9,7 @@ interface EmailJSProviderProps {
 const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
   useEffect(() => {
     // Initialize EmailJS with your user ID
-    // You'll need to sign up at https://www.emailjs.com/ and replace with your own user ID
-    emailjs.init("your_user_id");
+    emailjs.init("UGh5dNKG95dWkqDDO");
   }, []);
 
   return <>{children}</>;
