@@ -16,7 +16,7 @@ const About = () => {
           <h2 className="text-3xl font-brass-mono mb-8 text-mensen-black">
             Wat mij beweegt
           </h2>
-          <blockquote className="text-xl italic mb-8 font-brass-mono text-mensen-accent">
+          <blockquote className="text-xl italic mb-8 font-brass-mono text-[#f58e4f]">
             "Soms is alles wat je nodig hebt… een goede wegwijzer."
           </blockquote>
           <div className="space-y-6 font-lucida tracking-wide-50 text-mensen-black">
@@ -44,7 +44,7 @@ const About = () => {
               helpen om op hun eigen manier zichtbaar, krachtig en betekenisvol te zijn.
             </p>
           </div>
-          <a href="#contact" className="cta-button bg-mensen-signal hover:bg-mensen-signal/80 text-white mt-8 inline-block">
+          <a href="#contact" className="cta-button bg-[#f58e4f] hover:bg-[#f58e4f]/80 text-white mt-8 inline-block">
             Lees meer
           </a>
         </div>

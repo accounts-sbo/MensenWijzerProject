@@ -64,12 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				mensen: {
-					black: '#333333', // Updated darker text color
-					primary: '#223B56', // Primary color
-					secondary: '#B44B3B0', // Secondary color
-					accent: '#B997C54', // Accent color
-					signal: '#F588E4F', // Signal color
-					button: '#2D4E72', // Button color
+					black: '#000000',
+					blue: '#102542', // Updated blue color
+					gray: '#3F4443',
+					beige: '#baa99f',
 					white: '#ffffff'
 				}
 			},
