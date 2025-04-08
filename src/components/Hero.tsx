@@ -13,6 +13,15 @@ const Hero = () => {
         <div className="hero-gradient"></div>
       </div>
       
+      {/* Logo Overlay - positioned above the background image but below the text */}
+      <div className="absolute bottom-0 right-0 w-1/2 h-auto z-10 flex justify-end items-end opacity-20">
+        <img 
+          src="/lovable-uploads/1fc0168d-3969-4dbc-927e-e2c58fc3e28e.png" 
+          alt="De Mensen Wijzer Logo" 
+          className="w-full"
+        />
+      </div>
+      
       <div className="relative z-20 container h-full flex flex-col justify-center">
         <div className="max-w-lg text-white">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-brass-mono mb-6">
