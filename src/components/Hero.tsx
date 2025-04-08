@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/7f204317-c015-449b-a03a-ee02ebaed039.png" 
+          src="/lovable-uploads/94488efa-2f4d-4bac-ab6d-f2f60c17547a.png" 
           alt="Sipke Jan Bousema" 
-          className="w-full h-full object-cover object-top opacity-80"
+          className="w-full h-full object-cover object-center opacity-80"
         />
         <div className="hero-gradient"></div>
       </div>
