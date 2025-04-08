@@ -5,11 +5,11 @@ const About = () => {
   return (
     <section className="py-16 md:py-24 black-section">
       <div className="container flex flex-col md:flex-row gap-10">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 -ml-4 md:-ml-8 -mt-16 md:-mt-24 -mb-16 md:-mb-24">
           <img 
             src="/lovable-uploads/bdfac387-5ddd-4dd1-8d53-f573fa83f5b9.png" 
             alt="Sipke Jan Bousema" 
-            className="w-full h-auto"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="md:w-1/2">
