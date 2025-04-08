@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
@@ -14,11 +14,6 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  // Initialize EmailJS when component mounts
-  useEffect(() => {
-    emailjs.init("UGh5dNKG95dWkqDDO");
-  }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -29,20 +24,26 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      console.log("Attempting to send email via EmailJS");
+      
       // Prepare the email template parameters
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
+        // Add any other parameters your EmailJS template expects
       };
 
+      console.log("Template params:", templateParams);
+
       // Send the email using EmailJS
-      await emailjs.send(
+      const response = await emailjs.send(
         "service_os9h0z7", // Service ID
         "template_8hy3329", // Template ID
-        templateParams,
-        "UGh5dNKG95dWkqDDO" // Public Key
+        templateParams
       );
+
+      console.log("Email sent successfully:", response);
 
       // Show success message
       toast({

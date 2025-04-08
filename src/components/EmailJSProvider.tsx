@@ -10,6 +10,7 @@ const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
   useEffect(() => {
     // Initialize EmailJS with your user ID
     emailjs.init("UGh5dNKG95dWkqDDO");
+    console.log("EmailJS initialized in provider");
   }, []);
 
   return <>{children}</>;
