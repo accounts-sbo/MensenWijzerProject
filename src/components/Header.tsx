@@ -80,7 +80,7 @@ const Header = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <a 
-                onClick={() => scrollToSection('about')} 
+                onClick={() => scrollToSection('begeleiding')} 
                 className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
               >
                 Begeleiding
@@ -88,7 +88,7 @@ const Header = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <a 
-                onClick={() => scrollToSection('about')} 
+                onClick={() => scrollToSection('demensen')} 
                 className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
               >
                 De Mensen Wijzer
@@ -139,13 +139,13 @@ const Header = () => {
               Diensten
             </a>
             <a 
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('begeleiding')}
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               Begeleiding
             </a>
             <a 
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('demensen')}
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               De Mensen Wijzer

@@ -28,13 +28,19 @@ const Index = () => {
       <div id="services">
         <Services />
       </div>
-      <div id="work-with-me">
+      <div id="begeleiding" className="scroll-mt-20">
+        <Benefits />
+      </div>
+      <div id="demensen" className="scroll-mt-20">
+        {/* De Mensen Wijzer section can be added here */}
+      </div>
+      <div id="work-with-me" className="scroll-mt-20">
         <WorkWithMe />
       </div>
       <div id="testimonials">
         <Testimonials />
       </div>
-      <div id="contact">
+      <div id="contact" className="scroll-mt-20">
         <Contact />
       </div>
       <Footer />
