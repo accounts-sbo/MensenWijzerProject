@@ -8,13 +8,13 @@ const About = () => {
   return (
     <section className="py-16 md:py-24 bg-white">
       {isMobile ? (
-        // Mobile layout - stacked with proper spacing
+        // Mobile layout - stacked with proper spacing and larger image
         <div className="flex flex-col gap-6 container">
-          <div className="h-64 w-full relative">
+          <div className="w-full relative">
             <img 
               src="/lovable-uploads/bdfac387-5ddd-4dd1-8d53-f573fa83f5b9.png" 
               alt="Sipke Jan Bousema" 
-              className="w-full h-full object-cover object-center"
+              className="w-full aspect-[4/3] object-cover object-top"
             />
           </div>
           <div className="px-4">
