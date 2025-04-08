@@ -42,12 +42,12 @@ const Header = () => {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-6">
             <NavigationMenuItem>
-              <Link to="/over-mij" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+              <Link to="/over-mij" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
                 Over mij
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-mensen-black hover:text-mensen-blue hover:bg-transparent font-lucida data-[state=open]:bg-transparent data-[state=open]:text-mensen-blue">
+              <NavigationMenuTrigger className={`bg-transparent ${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue hover:bg-transparent font-lucida data-[state=open]:bg-transparent data-[state=open]:text-mensen-blue`}>
                 Diensten
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -80,17 +80,17 @@ const Header = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/werkwijze" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+              <Link to="/werkwijze" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
                 Werkwijze
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/contact" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+              <Link to="/contact" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
                 Contact
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <a href="tel:+31635345061" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+              <a href="tel:+31635345061" className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida`}>
                 +31 6 53 54 50 61
               </a>
             </NavigationMenuItem>
@@ -99,7 +99,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-mensen-black"
+          className={`md:hidden ${isScrolled ? 'text-mensen-black' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

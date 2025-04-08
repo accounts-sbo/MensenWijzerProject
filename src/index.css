@@ -78,7 +78,7 @@
   height: 100%;
   right: 0;
   top: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.8));
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(186,169,159,0.8));
   z-index: 10;
 }
 
@@ -87,11 +87,11 @@
 }
 
 .black-section {
-  @apply bg-mensen-black text-mensen-white;
+  @apply bg-mensen-beige text-mensen-white;
 }
 
 .service-card {
-  @apply p-6 bg-mensen-black/90 text-white h-full flex flex-col justify-between;
+  @apply p-6 bg-mensen-beige text-white h-full flex flex-col justify-between;
 }
 
 .service-card h3 {

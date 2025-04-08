@@ -3,10 +3,10 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full bg-mensen-black overflow-hidden">
+    <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/40f15ae1-975c-4b0d-a46d-cadf7319bd83.png" 
+          src="/lovable-uploads/7f204317-c015-449b-a03a-ee02ebaed039.png" 
           alt="Sipke Jan Bousema" 
           className="w-full h-full object-cover opacity-80"
         />
