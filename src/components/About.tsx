@@ -44,7 +44,7 @@ const About = () => {
               helpen om op hun eigen manier zichtbaar, krachtig en betekenisvol te zijn.
             </p>
           </div>
-          <a href="#contact" className="cta-button mt-8 inline-block">
+          <a href="#contact" className="cta-button bg-mensen-gray hover:bg-mensen-gray/80 mt-8 inline-block">
             Lees meer
           </a>
         </div>
