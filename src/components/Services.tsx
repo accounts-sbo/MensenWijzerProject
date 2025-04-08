@@ -97,8 +97,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Meetings Section - Now separate and redesigned */}
-      <section className="bg-[#003352] py-16 md:py-24">
+      {/* Meetings Section - Now with #b0693d background */}
+      <section className="bg-[#b0693d] py-16 md:py-24">
         <div className="container">
           <div className="max-w-2xl mb-12">
             <h2 className="text-2xl md:text-3xl font-brass-mono mb-4 text-white">
@@ -125,7 +125,7 @@ const Services = () => {
           <div className="mt-12 text-center">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-white text-[#003352] hover:bg-white/90 px-8 py-6 text-base uppercase tracking-wider font-brass-mono"
+              className="bg-white text-[#b0693d] hover:bg-white/90 px-8 py-6 text-base uppercase tracking-wider font-brass-mono"
             >
               Neem contact op
             </Button>
