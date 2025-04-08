@@ -25,9 +25,10 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 md:py-24 bg-mensen-beige/10">
       <div className="container">
-        <h2 className="text-3xl font-brass-mono mb-10 text-mensen-blue">
+        <h2 className="text-3xl font-brass-mono mb-4 text-mensen-blue">
           Heb je een vraag of wil je kennismaken? Ik denk graag mee.
         </h2>
+        <div className="h-1 w-20 bg-mensen-blue/30 mb-6"></div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>

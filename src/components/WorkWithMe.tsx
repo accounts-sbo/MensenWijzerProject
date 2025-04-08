@@ -12,9 +12,10 @@ const WorkWithMe = () => {
       }}
     >
       <div className="container text-center mx-auto relative z-10 px-[25%] max-w-5xl">
-        <h2 className="text-3xl font-brass-mono mb-16 text-white">
+        <h2 className="text-3xl font-brass-mono mb-4 text-white">
           Wil jij jouw ontwikkeling weer laten stromen?
         </h2>
+        <div className="h-1 w-20 bg-white/30 mx-auto mb-8"></div>
         <p className="text-base mb-16 font-lucida tracking-wide-50 text-white">
           Je krijgt begeleiding die leidt tot richting, rust en resultaat. Of het nu gaat om strategie, 
           communicatie of presentatie – ik help je naar een verhaal dat klopt, zichtbaar maakt en impact heeft.

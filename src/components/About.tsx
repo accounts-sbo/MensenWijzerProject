@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const About = () => {
@@ -12,9 +13,10 @@ const About = () => {
           />
         </div>
         <div className="md:w-[70%] px-4 md:px-8">
-          <h2 className="text-3xl font-brass-mono mb-8 text-mensen-black">
+          <h2 className="text-3xl font-brass-mono mb-4 text-mensen-black">
             Wat mij beweegt
           </h2>
+          <div className="h-1 w-20 bg-mensen-beige/30 mb-6"></div>
           <blockquote className="text-xl italic mb-8 font-brass-mono text-[#f58e4f]">
             "Soms is alles wat je nodig hebt… een goede wegwijzer."
           </blockquote>

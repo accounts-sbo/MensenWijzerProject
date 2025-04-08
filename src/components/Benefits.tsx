@@ -14,9 +14,10 @@ const Benefits = () => {
   return (
     <section className="py-16 md:py-24 beige-section">
       <div className="container">
-        <h2 className="text-3xl font-brass-mono mb-10 text-mensen-black text-center">
+        <h2 className="text-3xl font-brass-mono mb-4 text-mensen-black text-center">
           Samen brengen we dit voor je in beweging
         </h2>
+        <div className="h-1 w-20 bg-mensen-beige/30 mx-auto mb-6"></div>
         <div className="max-w-3xl mx-auto">
           <ul className="space-y-4">
             {benefits.map((benefit, index) => (
