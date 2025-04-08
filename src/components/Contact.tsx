@@ -23,9 +23,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24 bg-mensen-beige/10">
       <div className="container">
-        <h2 className="text-3xl font-brass-mono mb-10 text-mensen-black">
+        <h2 className="text-3xl font-brass-mono mb-10 text-mensen-blue">
           Heb je een vraag of wil je kennismaken? Ik denk graag mee.
         </h2>
         
@@ -57,15 +57,15 @@ const Contact = () => {
           
           <div>
             {isSubmitted ? (
-              <div className="bg-mensen-beige/30 p-6">
-                <p className="text-mensen-black text-base font-lucida tracking-wide-50">
+              <div className="bg-mensen-blue/10 p-6 rounded-md">
+                <p className="text-mensen-blue text-base font-lucida tracking-wide-50">
                   Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block mb-2 font-lucida text-base">Naam</label>
+                  <label htmlFor="name" className="block mb-2 font-lucida text-base text-mensen-blue">Naam</label>
                   <input
                     id="name"
                     name="name"
@@ -73,12 +73,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full p-3 border border-mensen-gray/30 focus:outline-none focus:border-mensen-blue font-lucida"
+                    className="w-full p-3 border border-mensen-blue/30 focus:outline-none focus:border-mensen-blue font-lucida rounded-md"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block mb-2 font-lucida text-base">E-mail</label>
+                  <label htmlFor="email" className="block mb-2 font-lucida text-base text-mensen-blue">E-mail</label>
                   <input
                     id="email"
                     name="email"
@@ -86,12 +86,12 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full p-3 border border-mensen-gray/30 focus:outline-none focus:border-mensen-blue font-lucida"
+                    className="w-full p-3 border border-mensen-blue/30 focus:outline-none focus:border-mensen-blue font-lucida rounded-md"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block mb-2 font-lucida text-base">Bericht</label>
+                  <label htmlFor="message" className="block mb-2 font-lucida text-base text-mensen-blue">Bericht</label>
                   <textarea
                     id="message"
                     name="message"
@@ -99,11 +99,11 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full p-3 border border-mensen-gray/30 focus:outline-none focus:border-mensen-blue font-lucida"
+                    className="w-full p-3 border border-mensen-blue/30 focus:outline-none focus:border-mensen-blue font-lucida rounded-md"
                   />
                 </div>
                 
-                <button type="submit" className="cta-button">
+                <button type="submit" className="bg-mensen-blue text-white px-6 py-3 inline-block hover:bg-mensen-blue/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
                   Versturen
                 </button>
               </form>
