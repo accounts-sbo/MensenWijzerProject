@@ -41,7 +41,7 @@ const Header = () => {
           {isScrolled ? (
             <>
               <img 
-                src="/uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
+                src="/lovable-uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
                 alt="De Mensen Wijzer" 
                 className="h-10" 
               />
@@ -50,7 +50,7 @@ const Header = () => {
           ) : (
             <>
               <img 
-                src="/uploads/2168b17a-6e1c-4695-9581-2478c7a278aa.png" 
+                src="/lovable-uploads/2168b17a-6e1c-4695-9581-2478c7a278aa.png" 
                 alt="De Mensen Wijzer" 
                 className="h-10" 
               />

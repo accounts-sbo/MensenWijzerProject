@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="flex items-center gap-3">
             <img 
-              src="/uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
+              src="/lovable-uploads/984b0d56-dca3-47dd-a9ce-443d09d3d896.png" 
               alt="De Mensen Wijzer" 
               className="h-16 mb-6 md:mb-0 bg-white p-1 rounded-md" 
             />
