@@ -60,7 +60,7 @@
 }
 
 .section-divider {
-  @apply w-full h-[1px] bg-mensen-beige/30 my-12;
+  @apply w-full h-[1px] bg-mensen-secondary/30 my-12;
 }
 
 .cta-button {
