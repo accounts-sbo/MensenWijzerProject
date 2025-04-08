@@ -2,6 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,24 +38,64 @@ const Header = () => {
           />
         </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/over-mij" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
-            Over mij
-          </Link>
-          <Link to="/diensten" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
-            Diensten
-          </Link>
-          <Link to="/werkwijze" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
-            Werkwijze
-          </Link>
-          <Link to="/contact" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
-            Contact
-          </Link>
-          <a href="tel:+31635345061" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
-            +31 6 53 54 50 61
-          </a>
-        </nav>
+        {/* Desktop Menu - Using NavigationMenu component */}
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList className="gap-6">
+            <NavigationMenuItem>
+              <Link to="/over-mij" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+                Over mij
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-transparent text-mensen-black hover:text-mensen-blue hover:bg-transparent font-lucida data-[state=open]:bg-transparent data-[state=open]:text-mensen-blue">
+                Diensten
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 w-[400px] grid-cols-1">
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link to="/identiteit-merkontwikkeling" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                        <div className="font-brass-mono text-mensen-blue text-lg mb-1">Identiteit & Merkontwikkeling</div>
+                        <p className="text-sm text-mensen-gray">Sterke communicatie begint met een helder verhaal</p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link to="/communicatie-mediastrategie" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                        <div className="font-brass-mono text-mensen-blue text-lg mb-1">Communicatie- & Mediastrategie</div>
+                        <p className="text-sm text-mensen-gray">Van strategie tot zichtbaarheid</p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link to="/presentatie-profilering" className="block p-3 hover:bg-mensen-beige/20 transition-colors rounded-md">
+                        <div className="font-brass-mono text-mensen-blue text-lg mb-1">Presentatie & Profilering</div>
+                        <p className="text-sm text-mensen-gray">Laat zien wie je bent – met rust, overtuiging en authenticiteit</p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/werkwijze" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+                Werkwijze
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/contact" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+                Contact
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="tel:+31635345061" className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida">
+                +31 6 53 54 50 61
+              </a>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* Mobile Menu Button */}
         <button 
@@ -59,7 +108,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-mensen-white w-full py-4">
+        <div className="md:hidden bg-mensen-white w-full py-4 shadow-md">
           <div className="container flex flex-col space-y-4">
             <Link 
               to="/over-mij" 
@@ -68,13 +117,32 @@ const Header = () => {
             >
               Over mij
             </Link>
-            <Link 
-              to="/diensten" 
-              className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Diensten
-            </Link>
+            <div className="space-y-2">
+              <div className="text-mensen-black font-brass-mono">Diensten</div>
+              <div className="pl-4 space-y-2">
+                <Link 
+                  to="/identiteit-merkontwikkeling" 
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Identiteit & Merkontwikkeling
+                </Link>
+                <Link 
+                  to="/communicatie-mediastrategie" 
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Communicatie- & Mediastrategie
+                </Link>
+                <Link 
+                  to="/presentatie-profilering" 
+                  className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Presentatie & Profilering
+                </Link>
+              </div>
+            </div>
             <Link 
               to="/werkwijze" 
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida"
