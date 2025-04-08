@@ -21,10 +21,10 @@ const WorkWithMe = () => {
           communicatie of presentatie – ik help je naar een verhaal dat klopt, zichtbaar maakt en impact heeft.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#contact" className="cta-button">
+          <a href="#contact" className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
             Neem contact op
           </a>
-          <a href="#contact" className="cta-button">
+          <a href="#contact" className="bg-white text-[#F97316] px-6 py-3 inline-block hover:bg-white/90 transition-all duration-200 uppercase tracking-wider text-sm border border-[#F97316] rounded-md">
             Plan een kennismaking
           </a>
         </div>
