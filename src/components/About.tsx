@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="py-16 md:py-24 black-section">
+    <section className="py-16 md:py-24 bg-white">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:w-[30%] -mt-16 md:-mt-24 -mb-16 md:-mb-24">
           <img 
@@ -13,13 +13,13 @@ const About = () => {
           />
         </div>
         <div className="md:w-[70%] px-4 md:px-8">
-          <h2 className="text-2xl md:text-3xl font-brass-mono mb-8">
+          <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-mensen-black">
             Wat mij beweegt
           </h2>
-          <blockquote className="text-xl italic mb-8 font-brass-mono">
+          <blockquote className="text-xl italic mb-8 font-brass-mono text-mensen-beige">
             "Soms is alles wat je nodig hebt… een goede wegwijzer."
           </blockquote>
-          <div className="space-y-6 font-lucida tracking-wide-50">
+          <div className="space-y-6 font-lucida tracking-wide-50 text-mensen-black">
             <p>
               Ik ben Sipke Jan Bousema. Als oprichter van De Mensen Wijzer begeleid ik mensen én organisaties 
               in het ontdekken wie ze zijn, waar ze voor staan en hoe ze dat krachtig en betekenisvol kunnen uitdragen.
@@ -44,7 +44,7 @@ const About = () => {
               helpen om op hun eigen manier zichtbaar, krachtig en betekenisvol te zijn.
             </p>
           </div>
-          <a href="#contact" className="cta-button bg-mensen-gray hover:bg-mensen-gray/80 mt-8 inline-block">
+          <a href="#contact" className="cta-button bg-mensen-blue hover:bg-mensen-blue/80 text-white mt-8 inline-block">
             Lees meer
           </a>
         </div>
