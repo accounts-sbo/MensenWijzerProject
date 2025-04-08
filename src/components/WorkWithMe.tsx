@@ -8,8 +8,7 @@ const WorkWithMe = () => {
       style={{
         backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center'
       }}
     >
       <div className="container text-center max-w-3xl mx-auto relative z-10">
