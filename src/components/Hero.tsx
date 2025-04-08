@@ -14,11 +14,11 @@ const Hero = () => {
       </div>
       
       {/* Logo Overlay - positioned above the background image but below the text */}
-      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 z-10 flex justify-end items-end opacity-30">
+      <div className="absolute bottom-0 right-0 w-1/2 h-full z-10 flex justify-end items-end opacity-30">
         <img 
           src="/lovable-uploads/1fc0168d-3969-4dbc-927e-e2c58fc3e28e.png" 
           alt="De Mensen Wijzer Logo" 
-          className="w-full h-full object-contain object-bottom"
+          className="w-full h-auto object-contain object-bottom"
         />
       </div>
       
