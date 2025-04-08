@@ -69,8 +69,8 @@ const Services = () => {
         <div className="section-divider"></div>
       </div>
 
-      {/* Full-width blue section for bijeenkomsten with improved spacing */}
-      <div className="bg-mensen-blue py-16 md:py-20">
+      {/* Full-width blue section for bijeenkomsten */}
+      <div className="bg-mensen-blue py-12 md:py-16">
         <div className="container px-6 md:px-10">
           <h2 className="text-2xl md:text-3xl font-brass-mono mb-8 text-white">
             Voor bijeenkomsten, teams en trajecten waarin richting en verbinding nodig is
