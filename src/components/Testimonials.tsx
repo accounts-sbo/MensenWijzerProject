@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { 
   Carousel,
   CarouselContent,
@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/carousel";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useToast } from "@/components/ui/use-toast";
-import { Card, CardContent } from "@/components/ui/card";
 
 type TestimonialType = {
   id: number;
@@ -88,9 +87,9 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-br from-mensen-beige/30 to-mensen-beige/10">
-      <div className="container">
-        <div className="mb-12 text-center">
+    <section id="testimonials" className="py-24 md:py-32 bg-gradient-to-br from-mensen-beige/30 to-mensen-beige/10">
+      <div className="container px-8 md:px-16 lg:px-24">
+        <div className="mb-16 text-center">
           <span className="text-mensen-blue font-brass-mono text-sm md:text-base tracking-wider uppercase block mb-2">Referenties</span>
           <h2 className="text-2xl md:text-3xl font-brass-mono text-mensen-black mb-6">
             Wat klanten zeggen
@@ -98,10 +97,10 @@ const Testimonials = () => {
           <div className="w-12 h-1 bg-mensen-blue mb-8 mx-auto"></div>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full"
@@ -109,46 +108,44 @@ const Testimonials = () => {
           >
             <CarouselContent>
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 p-2 group">
-                  <Card className="border-none h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden bg-white/70 backdrop-blur-sm">
-                    <CardContent className="p-8 flex flex-col h-full relative">
-                      <Quote className="text-mensen-blue/10 absolute -top-2 -left-2 h-20 w-20" />
-                      <blockquote className="italic font-lucida text-mensen-black flex-grow relative z-10 mb-6">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <div className="mt-4 pt-4 border-t border-mensen-beige/30 flex items-center">
-                        <div className="mr-4">
-                          <Avatar className="h-14 w-14 border border-mensen-blue/20 shadow-sm group-hover:border-mensen-blue/40 transition-all duration-300">
-                            {testimonial.image ? (
-                              <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                            ) : (
-                              <AvatarFallback className="bg-mensen-blue/10 text-mensen-blue text-xl font-brass-mono">
-                                {testimonial.name.charAt(0)}
-                              </AvatarFallback>
-                            )}
-                          </Avatar>
-                        </div>
-                        <div>
-                          <h3 className="font-brass-mono text-lg text-mensen-blue">{testimonial.name}</h3>
-                          {testimonial.role && (
-                            <p className="text-mensen-gray text-sm">{testimonial.role}</p>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                <CarouselItem key={testimonial.id} className="w-full">
+                  <div className="relative px-4 py-10 md:py-16 md:px-10 text-center">
+                    <Quote className="text-mensen-blue/15 absolute top-0 left-1/2 -translate-x-1/2 h-20 w-20" />
+                    
+                    <blockquote className="italic font-lucida text-mensen-black text-xl md:text-2xl leading-relaxed mb-8 relative z-10 max-w-3xl mx-auto">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    <div className="flex flex-col items-center justify-center">
+                      <Avatar className="h-16 w-16 border-2 border-mensen-blue/20 shadow-sm mb-3">
+                        {testimonial.image ? (
+                          <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                        ) : (
+                          <AvatarFallback className="bg-mensen-blue/10 text-mensen-blue text-xl font-brass-mono">
+                            {testimonial.name.charAt(0)}
+                          </AvatarFallback>
+                        )}
+                      </Avatar>
+                      <h3 className="font-brass-mono text-xl text-mensen-blue">{testimonial.name}</h3>
+                      {testimonial.role && (
+                        <p className="text-mensen-gray text-sm mt-1">{testimonial.role}</p>
+                      )}
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="mt-10 flex justify-center items-center gap-6">
-              <CarouselPrevious className="relative inline-flex bg-white border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
-              <div className="flex gap-1.5 items-center">
+            
+            <div className="mt-12 flex justify-center items-center gap-8">
+              <CarouselPrevious className="relative inline-flex bg-transparent border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
+              
+              <div className="flex gap-2 items-center">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                       current === index 
-                        ? "bg-mensen-blue w-4" 
+                        ? "bg-mensen-blue w-6" 
                         : "bg-mensen-beige hover:bg-mensen-blue/50"
                     }`}
                     onClick={() => api?.scrollTo(index)}
@@ -156,7 +153,8 @@ const Testimonials = () => {
                   />
                 ))}
               </div>
-              <CarouselNext className="relative inline-flex bg-white border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
+              
+              <CarouselNext className="relative inline-flex bg-transparent border border-mensen-blue/20 shadow-sm hover:bg-mensen-blue/5 hover:border-mensen-blue/40 transition-all duration-300" />
             </div>
           </Carousel>
         </div>
