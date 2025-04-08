@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
+import emailjs from 'emailjs-com';
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,18 +10,55 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      // Prepare the email template parameters
+      const templateParams = {
+        to_email: 'willemvanleunen@gmail.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      // Send the email using EmailJS
+      // Note: You need to replace these IDs with your actual EmailJS service, template, and user IDs
+      await emailjs.send(
+        'default_service', // Service ID
+        'template_contact', // Template ID
+        templateParams,
+        'your_user_id' // User ID
+      );
+
+      // Show success message
+      toast({
+        title: "Bericht verzonden",
+        description: "Je bericht is succesvol verzonden.",
+      });
+      
+      // Display success state
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Fout bij verzenden",
+        description: "Er ging iets mis bij het verzenden van je bericht. Probeer het later opnieuw.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,9 +97,10 @@ const Contact = () => {
           
           <div>
             {isSubmitted ? (
-              <div className="bg-mensen-blue/10 p-6 rounded-md">
+              <div className="bg-mensen-blue/10 p-8 rounded-md text-center">
+                <h3 className="text-mensen-blue text-xl font-brass-mono mb-3">Bedankt voor je bericht!</h3>
                 <p className="text-mensen-blue text-base font-lucida tracking-wide-50">
-                  Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.
+                  Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op.
                 </p>
               </div>
             ) : (
@@ -104,8 +144,12 @@ const Contact = () => {
                   />
                 </div>
                 
-                <button type="submit" className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
-                  Versturen
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Bezig met verzenden..." : "Versturen"}
                 </button>
               </form>
             )}
