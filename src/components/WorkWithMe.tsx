@@ -1,16 +1,34 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const WorkWithMe = () => {
+  const [offset, setOffset] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset;
+      setOffset(scrollPosition * 0.15);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section 
       className="py-24 md:py-32 relative overflow-hidden"
-      style={{
-        backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
     >
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        style={{
+          backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
+          transform: `translateY(${offset}px)`,
+          backgroundAttachment: 'fixed',
+        }}
+      ></div>
+
       <div className="container text-center mx-auto relative z-10 px-[25%] max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-brass-mono mb-16 text-white">
           Wil jij jouw ontwikkeling weer laten stromen?
