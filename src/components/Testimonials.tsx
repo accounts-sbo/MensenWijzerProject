@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { 
@@ -22,30 +23,39 @@ type TestimonialType = {
 const testimonials: TestimonialType[] = [
   {
     id: 1,
-    name: "Mark Tuitert",
-    role: "Olympisch kampioen & Mental Coach",
-    quote: "Sipke Jan is een absolute topcoach op het gebied van communicatie en presenteren. Scherp, inhoudelijk sterk en gedreven. Hij haalt de beste versie van jezelf naar boven.",
-    image: "/lovable-uploads/94488efa-2f4d-4bac-ab6d-f2f60c17547a.png"
+    name: "Willem Brethouwer",
+    role: "",
+    quote: "Uit eigen ervaring kan ik bevestigen dat Sipke Jan pure professionals zijn. Aanrader als je business for good nastreeft en je maatschappelijk hart sneller wilt laten kloppen!",
   },
   {
     id: 2,
-    name: "Annemarie van Gaal",
-    role: "Ondernemer & Investeerder",
-    quote: "Sipke Jan Bousema behoort tot de top van Nederland als het gaat om presenteren. Zijn kennis en ervaring over hoe jij het beste uit jezelf haalt is ongeëvenaard.",
-    image: "/lovable-uploads/01c1321b-a916-4211-8466-7603b6607da4.png"
+    name: "Stephan Berger",
+    role: "Projectmedewerker Onderwijs bij AFÛK",
+    quote: "De samenwerking verliep erg goed. Sipke Jan is iemand die zelf met goede ideeën komt, altijd voor dat beetje extra wil gaan, en open staat voor onze inbreng. De reacties zijn goed en we hebben het nu zelfs geïmplementeerd in een project voor de eerste klas.",
   },
   {
     id: 3,
-    name: "Natasja Froger",
-    role: "TV presentator",
-    quote: "Ik heb in de loop der jaren met verschillende mediatrainers en coaches gewerkt, maar Sipke Jan onderscheidt zich door zijn oprechte betrokkenheid en altijd eerlijke feedback.",
-    image: "/lovable-uploads/40f15ae1-975c-4b0d-a46d-cadf7319bd83.png"
+    name: "C.E.J. Hoekman",
+    role: "",
+    quote: "Onuitsprekelijk mooi!",
   },
   {
     id: 4,
-    name: "Britt Dekker",
-    role: "TV presentator",
-    quote: "De grootste kracht van Sipke Jan is zijn vermogen om het beste in je naar boven te halen, terwijl je volledig jezelf kunt blijven. Hij weet precies hoe hij je moet coachen zodat jij kunt groeien.",
+    name: "Drs. Sjors Klompmaker",
+    role: "Arts-onderzoeker Amsterdam UMC (afdeling Chirurgie)",
+    quote: "Door de professionele en creatieve aanpak van Sipke Jan is onze boodschap nu vertaald naar 3 prachtige patient-journey video's. Sipke Jan is inmiddels gespecialiseerd in patiënt-video's, wat ontzettend veel helpt in de voorbereiding en uitvoering van de opnames en fijn is voor de patiënten die een rol spelen. Wij zijn blij met het eindresultaat en kijken uit naar verdere samenwerking in de toekomst!",
+  },
+  {
+    id: 5,
+    name: "Dr. Herold J. Metselaar",
+    role: "MDL-arts, Hoogleraar Leverfalen en Levertransplantatie Faculteit Erasmus MC",
+    quote: "Zijn bijzondere aanpak zorgt ervoor dat vaak emotionele onderwerpen op een luchtige manier besproken worden.",
+  },
+  {
+    id: 6,
+    name: "José Willemse",
+    role: "Directeur NLV",
+    quote: "Sipke Jan heeft voor ons de hele campagne verzorgd; ik kon het loslaten met het vertrouwen dat het in orde zou komen. De kern van het verhaal wist Sipke Jan goed te raken. Hij weet waar het om draait en wat voor ons en onze achterban belangrijk is. De samenwerking verliep uitstekend en we weten elkaar nog steeds altijd te vinden voor nieuwe plannen.",
   }
 ];
 
