@@ -104,7 +104,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <button type="submit" className="bg-[#ea384c] text-white px-6 py-3 inline-block hover:bg-[#ea384c]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
+                <button type="submit" className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
                   Versturen
                 </button>
               </form>
