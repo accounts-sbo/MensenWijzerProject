@@ -97,7 +97,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Meetings Section - Now with #b0693d background */}
+      {/* Meetings Section */}
       <section className="bg-[#b0693d] py-16 md:py-24">
         <div className="container">
           <div className="max-w-2xl mb-12">

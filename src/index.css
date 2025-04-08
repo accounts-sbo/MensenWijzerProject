@@ -1,4 +1,5 @@
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,7 +23,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 203 100% 20%;
+    --primary: 213 66% 16%; /* Updated to match #102542 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 26 19% 67%;
@@ -37,9 +38,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 203 100% 20%;
-    --input: 203 100% 20%;
-    --ring: 203 100% 20%;
+    --border: 213 66% 16%; /* Updated to match #102542 */
+    --input: 213 66% 16%; /* Updated to match #102542 */
+    --ring: 213 66% 16%; /* Updated to match #102542 */
 
     --radius: 0.5rem;
   }
@@ -101,3 +102,4 @@
 .arrow-link {
   @apply flex items-center gap-2 text-mensen-blue hover:text-mensen-blue/80 transition-colors;
 }
+
