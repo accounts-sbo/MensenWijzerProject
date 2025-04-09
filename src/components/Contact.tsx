@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,6 +16,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+  const [useDirectEmail, setUseDirectEmail] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,11 +27,21 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // If user has chosen to use direct email
+    if (useDirectEmail) {
+      const subject = encodeURIComponent(`Contact via demensenwijzer.nl van ${formData.name}`);
+      const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\n\nBericht:\n${formData.message}`);
+      window.location.href = `mailto:sipkejan@demensenwijzer.nl?subject=${subject}&body=${body}`;
+      return;
+    }
+    
     setIsSubmitting(true);
     setFormError(null);
 
     try {
-      // Using the correct HTTPS URL
+      console.log("Attempting to send form data to:", 'https://contact.demensenwijzer.nl/mail.php');
+      
       const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
         method: 'POST',
         headers: {
@@ -44,6 +55,7 @@ const Contact = () => {
       if (!response.ok) {
         // If the server responded with an error
         const errorText = await response.text();
+        console.error("Server responded with error:", response.status, errorText);
         throw new Error(`Server responded with ${response.status}: ${errorText}`);
       }
       
@@ -65,9 +77,11 @@ const Contact = () => {
       
       // Check if it's a CORS error (they often don't have specific error messages we can catch)
       if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
-        setFormError("Verbindingsfout: De server is mogelijk niet bereikbaar. Als alternatief kun je direct mailen naar sipkejan@demensenwijzer.nl");
+        setFormError("Verbindingsfout: De server is mogelijk niet bereikbaar. Gebruik de optie hieronder om direct te mailen.");
+        setUseDirectEmail(true);
       } else {
-        setFormError(`Fout: ${errorMessage} Probeer het later nog eens of stuur direct een email.`);
+        setFormError(`Fout: ${errorMessage} Probeer het later nog eens of gebruik de directe email optie hieronder.`);
+        setUseDirectEmail(true);
         
         toast({
           title: "Fout",
@@ -94,7 +108,7 @@ const Contact = () => {
             <h3 className="text-xl font-brass-mono mb-4 text-mensen-blue">Stuur een bericht</h3>
             
             {formError && (
-              <Alert variant="destructive" className="mb-4">
+              <Alert variant="destructive" className="mb-6">
                 <AlertTitle>Probleem met verzenden</AlertTitle>
                 <AlertDescription>{formError}</AlertDescription>
               </Alert>
@@ -146,13 +160,30 @@ const Contact = () => {
                 />
               </div>
               
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 disabled:opacity-50 w-full md:w-auto"
-              >
-                {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
-              </Button>
+              {useDirectEmail ? (
+                <Button
+                  type="submit"
+                  className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 w-full md:w-auto flex items-center justify-center gap-2"
+                >
+                  <Mail className="h-4 w-4" />
+                  Open mail applicatie
+                </Button>
+              ) : (
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 disabled:opacity-50 w-full md:w-auto flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>Verzenden...</>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4" />
+                      Verstuur bericht
+                    </>
+                  )}
+                </Button>
+              )}
             </form>
           </div>
           
