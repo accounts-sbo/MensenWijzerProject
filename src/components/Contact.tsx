@@ -1,13 +1,10 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
-import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
 
-// EmailJS configuratie
-const EMAILJS_SERVICE_ID = "WvL_Gmail_service";
-const EMAILJS_TEMPLATE_ID = "template_7z7v0mf";
-const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc";
+// Formspree formulier URL - deze moet je vervangen met jouw unieke Formspree URL
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/uw-formspree-id";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,40 +26,45 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Prepare the email template parameters to match exactly what the EmailJS template expects
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_name: "Sipke-Jan",
-        reply_to: formData.email,
-      };
-
-      console.log("Verzenden van email begonnen met template parameters:", templateParams);
-      console.log("Huidige domein:", window.location.hostname);
+      console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", {
+        naam: formData.name,
+        email: formData.email,
+        bericht: formData.message
+      });
       
-      // Use the send method explicitly with the public key
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
+      // Stuur het formulier naar Formspree
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: JSON.stringify({
+          naam: formData.name,
+          email: formData.email,
+          bericht: formData.message
+        }),
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        }
+      });
       
-      console.log("Email succesvol verzonden! Response:", response);
+      if (!response.ok) {
+        throw new Error(`Formspree antwoordde met status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log("Formulier succesvol verzonden! Response:", data);
 
-      // Show success message
+      // Toon succesbericht
       toast({
         title: "Bericht verzonden",
         description: "Je bericht is succesvol verzonden.",
       });
       
-      // Reset form and display success state
+      // Reset formulier en toon successtatus
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Error sending email:', error);
-      // Log more detailed information about the error
+      console.error('Error sending form:', error);
+      // Log meer gedetailleerde informatie over de fout
       if (error instanceof Error) {
         console.error('Error details:', error.message);
       }
