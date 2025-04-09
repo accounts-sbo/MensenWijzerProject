@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
-// Formspree formulier URL
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgvareae";
+// URL naar je eigen PHP-script
+const EMAIL_HANDLER_URL = "https://demensenwijzer.nl/mail";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,17 +34,16 @@ const Contact = () => {
     setErrorDetails(null);
     
     try {
-      console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", formData);
+      console.log("Verzenden van formulier naar eigen PHP-script begonnen met gegevens:", formData);
       console.log("Verzenden vanaf domein:", currentDomain);
       
-      // Stuur het formulier naar Formspree
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      // Stuur het formulier naar je eigen PHP-script
+      const response = await fetch(EMAIL_HANDLER_URL, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
           "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Origin": currentDomain
+          "Content-Type": "application/json"
         }
       });
       
@@ -62,11 +60,11 @@ const Contact = () => {
         data = { message: responseText };
       }
       
-      console.log("Formspree response status:", response.status);
-      console.log("Formspree response:", responseText);
+      console.log("PHP-script response status:", response.status);
+      console.log("PHP-script response:", responseText);
       
       if (!response.ok) {
-        throw new Error(`Formspree antwoordde met status: ${response.status} - ${responseText}`);
+        throw new Error(`PHP-script antwoordde met status: ${response.status} - ${responseText}`);
       }
       
       console.log("Formulier succesvol verzonden! Response:", data);
@@ -90,12 +88,12 @@ const Contact = () => {
       
       // Controleer op CORS-gerelateerde fouten
       if (error instanceof TypeError && error.message.includes('NetworkError')) {
-        setErrorDetails(`Mogelijk een CORS-probleem. Controleer of dit domein (${currentDomain}) is toegevoegd aan je Formspree formulierinstellingen.`);
+        setErrorDetails(`Mogelijk een CORS-probleem. Controleer of je PHP-script de juiste CORS-headers heeft.`);
       }
       
       toast({
         title: "Fout bij verzenden",
-        description: "Er ging iets mis bij het verzenden van je bericht. Controleer of je domein is geautoriseerd in Formspree.",
+        description: "Er ging iets mis bij het verzenden van je bericht. Bekijk de console voor meer details.",
         variant: "destructive",
       });
     } finally {
@@ -219,4 +217,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
