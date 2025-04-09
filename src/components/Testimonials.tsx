@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Quote } from 'lucide-react';
 import { 
@@ -127,15 +128,35 @@ const Testimonials = () => {
   const { toast } = useToast();
   const [api, setApi] = useState<any>();
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [autoSlideInterval, setAutoSlideInterval] = useState<NodeJS.Timeout | null>(null);
 
-  // Auto-advance slides every 10 seconds
+  // Function to start the auto-slide interval
+  const startAutoSlide = () => {
+    if (api) {
+      const interval = setInterval(() => {
+        api.scrollNext();
+      }, 10000); // 10 seconds
+      setAutoSlideInterval(interval);
+      return interval;
+    }
+    return null;
+  };
+
+  // Function to clear the auto-slide interval
+  const stopAutoSlide = () => {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      setAutoSlideInterval(null);
+    }
+  };
+
+  // Initialize the carousel and auto-slide behavior
   useEffect(() => {
     if (!api) return;
 
-    // Set up automatic slide transition
-    const autoSlideInterval = setInterval(() => {
-      api.scrollNext();
-    }, 10000); // 10 seconds
+    // Start auto-slide initially
+    const interval = startAutoSlide();
 
     // Track the current slide
     const onSelect = () => {
@@ -146,10 +167,21 @@ const Testimonials = () => {
 
     // Clean up
     return () => {
-      clearInterval(autoSlideInterval);
+      if (interval) clearInterval(interval);
       api?.off("select", onSelect);
     };
   }, [api]);
+
+  // Handle mouse events to pause/resume auto-slide
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+    stopAutoSlide();
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+    startAutoSlide();
+  };
 
   return (
     <section id="testimonials" className="py-16 md:py-20 bg-mensen-blue text-white">
@@ -162,7 +194,11 @@ const Testimonials = () => {
           <div className="w-12 h-1 bg-white/70 mb-6 mx-auto"></div>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div 
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Carousel
             opts={{
               align: "center",
@@ -222,6 +258,12 @@ const Testimonials = () => {
               <CarouselNext className="relative inline-flex bg-transparent border border-white/20 shadow-sm hover:bg-white/5 hover:border-white/40 transition-all duration-300" />
             </div>
           </Carousel>
+          
+          {isPaused && (
+            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-[#b0693d]/90 text-white text-xs py-1 px-3 rounded-full opacity-80">
+              Automatisch schuiven gepauzeerd
+            </div>
+          )}
         </div>
       </div>
     </section>
