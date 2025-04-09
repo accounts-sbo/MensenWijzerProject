@@ -28,7 +28,9 @@ const Contact = () => {
   const sendServerEmail = async () => {
     try {
       setIsSubmitting(true);
-      const response = await fetch('https://demensenwijzer.nl/mail.php', {
+      
+      // Using the new URL provided by the user
+      const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
