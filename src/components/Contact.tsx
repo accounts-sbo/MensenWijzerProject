@@ -39,15 +39,25 @@ const Contact = () => {
           "Content-Type": "application/json"
         }
       });
+
+      // Vang de response text eerst op
+      const responseText = await response.text();
+      console.log("Raw response:", responseText);
       
-      // We gaan hier voorzichtig om met de response body, en lezen het maar één keer
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`PHP-script antwoordde met status: ${response.status} - ${errorText}`);
+      // Probeer de text als JSON te parsen
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Fout bij het parsen van JSON response:", parseError);
+        throw new Error(`Kon response niet als JSON parsen: ${responseText}`);
+      }
+
+      // Check of de response succesvol was
+      if (!response.ok || data.error) {
+        throw new Error(data.error || `PHP-script antwoordde met status: ${response.status}`);
       }
       
-      // Alleen response.json() lezen als we weten dat de response ok is
-      const data = await response.json();
       console.log("Formulier succesvol verzonden! Response:", data);
 
       // Toon succesbericht

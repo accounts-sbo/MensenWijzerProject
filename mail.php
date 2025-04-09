@@ -1,5 +1,8 @@
 
 <?php
+// Zorg ervoor dat een eventuele output buffering wordt uitgeschakeld
+ob_clean();
+
 // CORS headers toevoegen om cross-domain verzoeken toe te staan
 header("Access-Control-Allow-Origin: *"); // Vervang * door je specifieke domein in productie voor betere beveiliging
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -78,4 +81,7 @@ if ($success) {
     http_response_code(500);
     echo json_encode(['error' => 'Er is een fout opgetreden bij het verzenden van het bericht']);
 }
+
+// Zorg ervoor dat er niets meer wordt uitgevoerd of output gegenereerd
+exit();
 ?>
