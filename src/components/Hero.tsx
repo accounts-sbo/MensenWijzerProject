@@ -9,9 +9,9 @@ const Hero = () => {
         <img 
           src="/lovable-uploads/047ec1ae-aebc-461e-892b-8c64cbed9bf6.png" 
           alt="Sipke Jan Bousema" 
-          className="w-full h-full object-cover object-top opacity-80"
+          className="w-full h-full object-cover object-top"
         />
-        <div className="hero-gradient"></div>
+        {/* Removed the hero-gradient div that was creating the overlay */}
       </div>
       
       {/* Logo Overlay - positioned above the background image but below the text */}
