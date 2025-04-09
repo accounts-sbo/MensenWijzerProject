@@ -11,7 +11,14 @@ const Hero = () => {
           alt="Sipke Jan Bousema" 
           className="w-full h-full object-cover object-top"
         />
-        {/* Gradient overlay completely removed */}
+        {/* Custom vignette overlay with radial gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.4) 100%)',
+            pointerEvents: 'none'
+          }}
+        />
       </div>
       
       {/* Logo Overlay - positioned above the background image but below the text */}
