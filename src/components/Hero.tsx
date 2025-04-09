@@ -11,7 +11,8 @@ const Hero = () => {
           alt="Sipke Jan Bousema" 
           className="w-full h-full object-cover object-top"
         />
-        {/* Removed the hero-gradient div that was creating the overlay */}
+        {/* Adding back the hero-gradient div for the overlay */}
+        <div className="hero-gradient"></div>
       </div>
       
       {/* Logo Overlay - positioned above the background image but below the text */}
