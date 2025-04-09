@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -6,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 // EmailJS configuratie
 const EMAILJS_SERVICE_ID = "WvL_Gmail_service";
 const EMAILJS_TEMPLATE_ID = "template_7z7v0mf";
+const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc"; // Re-add this for explicit usage in send method
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,14 +37,15 @@ const Contact = () => {
         to_name: "Sipke-Jan",
       };
 
-      console.log("Verzenden van email begonnen");
+      console.log("Verzenden van email begonnen met service:", EMAILJS_SERVICE_ID, "en template:", EMAILJS_TEMPLATE_ID);
       
-      // Use the standard send method without specifying the user ID/public key
-      // because it's already been initialized in the EmailJSProvider
+      // Use the explicit send method with all parameters - this is the most reliable approach
+      // according to EmailJS documentation for various environments
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams
+        templateParams,
+        EMAILJS_PUBLIC_KEY // Explicitly include the public key here
       );
 
       console.log("Email succesvol verzonden!");

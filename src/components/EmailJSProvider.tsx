@@ -11,7 +11,7 @@ const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc";
 
 const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
   useEffect(() => {
-    // Simple one-time initialization
+    // Initialize EmailJS exactly once with the public key
     emailjs.init(EMAILJS_PUBLIC_KEY);
     console.log("EmailJS geïnitialiseerd met publieke sleutel:", EMAILJS_PUBLIC_KEY);
   }, []);
