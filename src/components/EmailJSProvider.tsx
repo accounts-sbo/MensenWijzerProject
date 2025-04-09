@@ -7,7 +7,7 @@ interface EmailJSProviderProps {
 }
 
 // Deze publieke sleutel is al ingesteld in je code
-const EMAILJS_PUBLIC_KEY = "UGh5dNKG95dWkqDDO";
+const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc";
 
 const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
   useEffect(() => {
