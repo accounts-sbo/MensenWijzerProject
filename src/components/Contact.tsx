@@ -26,20 +26,12 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", {
-        naam: formData.name,
-        email: formData.email,
-        bericht: formData.message
-      });
+      console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", formData);
       
       // Stuur het formulier naar Formspree
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        body: JSON.stringify({
-          naam: formData.name,
-          email: formData.email,
-          bericht: formData.message
-        }),
+        body: JSON.stringify(formData),
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"
