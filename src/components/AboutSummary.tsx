@@ -21,9 +21,9 @@ const AboutSummary = () => {
             Wat mij drijft is beweging: mensen en merken helpen richting te kiezen en zichtbaar 
             te worden op een manier die past.
           </p>
-          <button className="text-white hover:text-white/80 transition-colors font-brass-mono underline">
-            Lees mijn verhaal →
-          </button>
+          <a href="#contact" className="text-white hover:text-white/80 transition-colors font-brass-mono underline">
+            Neem contact op →
+          </a>
         </div>
       </div>
     </section>

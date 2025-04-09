@@ -25,7 +25,7 @@ const WorkWithMe = () => {
             Neem contact op
           </a>
           <a href="#contact" className="bg-white text-[#F97316] px-6 py-3 inline-block hover:bg-white/90 transition-all duration-200 uppercase tracking-wider text-sm border border-[#F97316] rounded-md">
-            Plan een kennismaking
+            Neem contact op
           </a>
         </div>
       </div>
