@@ -124,8 +124,8 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <Mail className="text-mensen-blue" />
-              <a href="mailto:sipkejan@sjbmedia.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
-                sipkejan@sjbmedia.nl
+              <a href="mailto:sipkejan@demensenwijzer.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
+                sipkejan@demensenwijzer.nl
               </a>
             </div>
             
