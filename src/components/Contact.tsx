@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
@@ -18,6 +18,19 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+
+  // Check if EmailJS is initialized
+  useEffect(() => {
+    if (!(window as any).emailJSInitialized) {
+      try {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+        console.log("EmailJS initialized in Contact component with key:", EMAILJS_PUBLIC_KEY);
+        (window as any).emailJSInitialized = true;
+      } catch (error) {
+        console.error("Failed to initialize EmailJS in Contact component:", error);
+      }
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -43,6 +56,13 @@ const Contact = () => {
       console.log("Using service ID:", EMAILJS_SERVICE_ID);
       console.log("Using template ID:", EMAILJS_TEMPLATE_ID);
       console.log("Using public key:", EMAILJS_PUBLIC_KEY);
+
+      // Ensure EmailJS is initialized before sending
+      if (!(window as any).emailJSInitialized) {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+        console.log("Initialized EmailJS right before sending");
+        (window as any).emailJSInitialized = true;
+      }
 
       // Send the email using EmailJS with userId parameter explicitly set
       const response = await emailjs.send(
