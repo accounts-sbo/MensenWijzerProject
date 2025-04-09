@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
@@ -19,19 +18,6 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  // Check if EmailJS is initialized
-  useEffect(() => {
-    if (!(window as any).emailJSInitialized) {
-      try {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-        console.log("EmailJS initialized in Contact component with key:", EMAILJS_PUBLIC_KEY);
-        (window as any).emailJSInitialized = true;
-      } catch (error) {
-        console.error("Failed to initialize EmailJS in Contact component:", error);
-      }
-    }
-  }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -42,8 +28,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Attempting to send email via EmailJS");
-      
       // Prepare the email template parameters
       const templateParams = {
         from_name: formData.name,
@@ -52,27 +36,13 @@ const Contact = () => {
         to_name: "Sipke-Jan",
       };
 
-      console.log("Template params:", templateParams);
-      console.log("Using service ID:", EMAILJS_SERVICE_ID);
-      console.log("Using template ID:", EMAILJS_TEMPLATE_ID);
-      console.log("Using public key:", EMAILJS_PUBLIC_KEY);
-
-      // Ensure EmailJS is initialized before sending
-      if (!(window as any).emailJSInitialized) {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-        console.log("Initialized EmailJS right before sending");
-        (window as any).emailJSInitialized = true;
-      }
-
-      // Send the email using EmailJS with userId parameter explicitly set
+      // Direct send approach using the public key
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
-        EMAILJS_PUBLIC_KEY // Using the constant to ensure consistency
+        EMAILJS_PUBLIC_KEY
       );
-
-      console.log("Email sent successfully:", response);
 
       // Show success message
       toast({
