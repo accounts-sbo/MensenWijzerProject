@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
-// Formspree formulier URL - deze moet je vervangen met jouw unieke Formspree URL
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/uw-formspree-id";
+// Formspree formulier URL
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgvareae";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
