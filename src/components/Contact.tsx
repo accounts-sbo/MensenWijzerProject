@@ -2,6 +2,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -11,24 +15,37 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing again
+    if (formError) setFormError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setFormError(null);
 
     try {
+      // Using the correct HTTPS URL
       const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(formData),
+        mode: 'cors', // Explicitly set CORS mode
       });
+      
+      if (!response.ok) {
+        // If the server responded with an error
+        const errorText = await response.text();
+        throw new Error(`Server responded with ${response.status}: ${errorText}`);
+      }
       
       const data = await response.json();
       
@@ -42,11 +59,22 @@ const Contact = () => {
         throw new Error(data.error || 'Er is iets misgegaan');
       }
     } catch (error) {
-      toast({
-        title: "Fout",
-        description: "Er is iets misgegaan bij het verzenden van je bericht. Probeer het later nog eens.",
-        variant: "destructive",
-      });
+      console.error("Form submission error:", error);
+      
+      let errorMessage = "Er is iets misgegaan bij het verzenden van je bericht.";
+      
+      // Check if it's a CORS error (they often don't have specific error messages we can catch)
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        setFormError("Verbindingsfout: De server is mogelijk niet bereikbaar. Als alternatief kun je direct mailen naar sipkejan@demensenwijzer.nl");
+      } else {
+        setFormError(`Fout: ${errorMessage} Probeer het later nog eens of stuur direct een email.`);
+        
+        toast({
+          title: "Fout",
+          description: errorMessage,
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -64,19 +92,27 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="text-xl font-brass-mono mb-4 text-mensen-blue">Stuur een bericht</h3>
+            
+            {formError && (
+              <Alert variant="destructive" className="mb-4">
+                <AlertTitle>Probleem met verzenden</AlertTitle>
+                <AlertDescription>{formError}</AlertDescription>
+              </Alert>
+            )}
+            
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Naam
                 </label>
-                <input
+                <Input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-mensen-blue"
+                  className="w-full focus:ring-mensen-blue"
                 />
               </div>
               
@@ -84,14 +120,14 @@ const Contact = () => {
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   E-mailadres
                 </label>
-                <input
+                <Input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-mensen-blue"
+                  className="w-full focus:ring-mensen-blue"
                 />
               </div>
               
@@ -99,24 +135,24 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Bericht
                 </label>
-                <textarea
+                <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-mensen-blue"
-                ></textarea>
+                  className="w-full focus:ring-mensen-blue"
+                />
               </div>
               
-              <button
+              <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 disabled:opacity-50"
+                className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 disabled:opacity-50 w-full md:w-auto"
               >
                 {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
-              </button>
+              </Button>
             </form>
           </div>
           
