@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -6,8 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // EmailJS configuratie
 const EMAILJS_SERVICE_ID = "WvL_Gmail_service";
-const EMAILJS_TEMPLATE_ID = "template_7z7v0mf"; 
-const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc";
+const EMAILJS_TEMPLATE_ID = "template_7z7v0mf";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,13 +27,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Ensure EmailJS is initialized before sending
-      if (!(window as any).__emailjs_initialized__) {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-        (window as any).__emailjs_initialized__ = true;
-        console.log("EmailJS geïnitialiseerd vóór verzenden in Contact component");
-      }
-      
       // Prepare the email template parameters
       const templateParams = {
         from_name: formData.name,
@@ -44,14 +35,14 @@ const Contact = () => {
         to_name: "Sipke-Jan",
       };
 
-      console.log("Poging tot verzenden email met parameters:", templateParams);
+      console.log("Verzenden van email begonnen");
       
-      // Use the sendForm method which can be more reliable in production
+      // Use the standard send method without specifying the user ID/public key
+      // because it's already been initialized in the EmailJSProvider
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
+        templateParams
       );
 
       console.log("Email succesvol verzonden!");
