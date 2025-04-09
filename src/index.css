@@ -72,16 +72,7 @@
   @apply px-4 md:px-8 max-w-7xl mx-auto;
 }
 
-.hero-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url("/lovable-uploads/755840f9-609b-4174-97b1-02454e072611.png");
-  background-size: cover;
-  z-index: 10;
-}
+/* Removed the hero-gradient class since we're using an image directly */
 
 .beige-section {
   @apply bg-mensen-beige/30;
