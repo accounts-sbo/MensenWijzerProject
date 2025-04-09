@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -28,6 +29,13 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      // Ensure EmailJS is initialized before sending
+      if (!(window as any).__emailjs_initialized__) {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+        (window as any).__emailjs_initialized__ = true;
+        console.log("EmailJS geïnitialiseerd vóór verzenden in Contact component");
+      }
+      
       // Prepare the email template parameters
       const templateParams = {
         from_name: formData.name,
@@ -36,13 +44,17 @@ const Contact = () => {
         to_name: "Sipke-Jan",
       };
 
-      // Direct send approach using the public key
-      const response = await emailjs.send(
+      console.log("Poging tot verzenden email met parameters:", templateParams);
+      
+      // Use the sendForm method which can be more reliable in production
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
         EMAILJS_PUBLIC_KEY
       );
+
+      console.log("Email succesvol verzonden!");
 
       // Show success message
       toast({
