@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -118,129 +119,161 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
           {/* Contact Form */}
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-brass-mono mb-4 text-mensen-blue">Stuur een bericht</h3>
+          <Card className="border-mensen-blue/10 shadow-md">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xl font-brass-mono text-mensen-blue">Stuur een bericht</CardTitle>
+            </CardHeader>
             
-            {formError && (
-              <Alert variant="destructive" className="mb-4">
-                <AlertTitle>Fout</AlertTitle>
-                <AlertDescription>{formError}</AlertDescription>
-              </Alert>
-            )}
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Naam
-                </label>
-                <Input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full focus:ring-mensen-blue"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  E-mailadres
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full focus:ring-mensen-blue"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Bericht
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full focus:ring-mensen-blue"
-                />
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    "Verzenden..."
-                  ) : useDirectEmail ? (
-                    <>
-                      <Mail className="h-4 w-4" />
-                      Via e-mail
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4" />
-                      Versturen
-                    </>
-                  )}
-                </Button>
-                
-                {!useDirectEmail && (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleSwitchToDirectEmail}
-                    className="border-mensen-blue text-mensen-blue hover:bg-mensen-blue/10"
-                  >
-                    <Mail className="h-4 w-4 mr-2" />
-                    Direct via e-mail
-                  </Button>
-                )}
-              </div>
-              
-              {useDirectEmail && (
-                <div className="text-sm text-gray-500 pt-2">
-                  <p className="flex items-center">
-                    <ExternalLink className="h-4 w-4 mr-2 inline" />
-                    Dit opent je e-mailprogramma om direct te mailen
-                  </p>
-                </div>
+            <CardContent>
+              {formError && (
+                <Alert variant="destructive" className="mb-4">
+                  <AlertTitle>Fout</AlertTitle>
+                  <AlertDescription>{formError}</AlertDescription>
+                </Alert>
               )}
-            </form>
-          </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Naam
+                  </label>
+                  <Input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    E-mailadres
+                  </label>
+                  <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Bericht
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue resize-none"
+                  />
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-mensen-blue hover:bg-mensen-blue/80 text-white transition-all duration-200 flex items-center justify-center gap-2"
+                  >
+                    {isSubmitting ? (
+                      "Verzenden..."
+                    ) : useDirectEmail ? (
+                      <>
+                        <Mail className="h-4 w-4" />
+                        Via e-mail
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4" />
+                        Versturen
+                      </>
+                    )}
+                  </Button>
+                  
+                  {!useDirectEmail && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={handleSwitchToDirectEmail}
+                      className="border-mensen-blue text-mensen-blue hover:bg-mensen-blue/10"
+                    >
+                      <Mail className="h-4 w-4 mr-2" />
+                      Direct via e-mail
+                    </Button>
+                  )}
+                </div>
+                
+                {useDirectEmail && (
+                  <div className="text-sm text-gray-500 pt-2">
+                    <p className="flex items-center">
+                      <ExternalLink className="h-4 w-4 mr-2 inline" />
+                      Dit opent je e-mailprogramma om direct te mailen
+                    </p>
+                  </div>
+                )}
+              </form>
+            </CardContent>
+          </Card>
           
           {/* Contact Information */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <Mail className="text-mensen-blue" />
-              <a href="mailto:sipkejan@demensenwijzer.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
-                sipkejan@demensenwijzer.nl
-              </a>
-            </div>
+          <div className="space-y-8">
+            <Card className="border-mensen-blue/10 shadow-sm">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl font-brass-mono text-mensen-blue">Contactgegevens</CardTitle>
+              </CardHeader>
+              
+              <CardContent className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+                    <Mail className="text-mensen-blue h-5 w-5" />
+                  </div>
+                  <a href="mailto:sipkejan@demensenwijzer.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors">
+                    sipkejan@demensenwijzer.nl
+                  </a>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+                    <Phone className="text-mensen-blue h-5 w-5" />
+                  </div>
+                  <a href="tel:+31635345061" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors">
+                    +31 6 53 54 50 61
+                  </a>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+                    <Linkedin className="text-mensen-blue h-5 w-5" />
+                  </div>
+                  <a 
+                    href="https://www.linkedin.com/in/sipkejanbousema/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors"
+                  >
+                    LinkedIn-profiel
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="flex items-center gap-3">
-              <Phone className="text-mensen-blue" />
-              <a href="tel:+31635345061" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
-                +31 6 53 54 50 61
-              </a>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <Linkedin className="text-mensen-blue" />
-              <a href="https://www.linkedin.com/in/sipkejanbousema/" target="_blank" rel="noopener noreferrer" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue">
-                LinkedIn-profiel
-              </a>
-            </div>
+            <Card className="border-mensen-blue/10 bg-mensen-beige/20 shadow-sm">
+              <CardContent className="p-6">
+                <p className="text-gray-700 italic">
+                  "Door de mensgerichte aanpak van Sipke Jan kreeg ik weer inzicht in mijn talenten en mogelijkheden."
+                </p>
+                <p className="text-right mt-2 text-sm font-medium">— Recente cliënt</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
