@@ -4,6 +4,7 @@
 header("Access-Control-Allow-Origin: *"); // Vervang * door je specifieke domein in productie voor betere beveiliging
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json"); // Zorgen dat alle responses JSON zijn
 
 // Controleer of het een preflight OPTIONS verzoek is (voor CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {

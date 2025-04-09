@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,14 +15,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorDetails, setErrorDetails] = useState<string | null>(null);
-  const [currentDomain, setCurrentDomain] = useState<string>('');
   const { toast } = useToast();
-
-  useEffect(() => {
-    // Detecteer het huidige domein voor debuginformatie
-    setCurrentDomain(window.location.origin);
-    console.log("Huidige domein:", window.location.origin);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -35,7 +29,6 @@ const Contact = () => {
     
     try {
       console.log("Verzenden van formulier naar eigen PHP-script begonnen met gegevens:", formData);
-      console.log("Verzenden vanaf domein:", currentDomain);
       
       // Stuur het formulier naar je eigen PHP-script
       const response = await fetch(EMAIL_HANDLER_URL, {
@@ -47,26 +40,14 @@ const Contact = () => {
         }
       });
       
-      let responseText;
-      let data;
-      
-      try {
-        // Probeer de response te parsen als JSON
-        data = await response.json();
-        responseText = JSON.stringify(data);
-      } catch (parseError) {
-        // Als het geen JSON is, haal dan de tekst op
-        responseText = await response.text();
-        data = { message: responseText };
-      }
-      
-      console.log("PHP-script response status:", response.status);
-      console.log("PHP-script response:", responseText);
-      
+      // We gaan hier voorzichtig om met de response body, en lezen het maar één keer
       if (!response.ok) {
-        throw new Error(`PHP-script antwoordde met status: ${response.status} - ${responseText}`);
+        const errorText = await response.text();
+        throw new Error(`PHP-script antwoordde met status: ${response.status} - ${errorText}`);
       }
       
+      // Alleen response.json() lezen als we weten dat de response ok is
+      const data = await response.json();
       console.log("Formulier succesvol verzonden! Response:", data);
 
       // Toon succesbericht
@@ -86,14 +67,9 @@ const Contact = () => {
         setErrorDetails(error.message);
       }
       
-      // Controleer op CORS-gerelateerde fouten
-      if (error instanceof TypeError && error.message.includes('NetworkError')) {
-        setErrorDetails(`Mogelijk een CORS-probleem. Controleer of je PHP-script de juiste CORS-headers heeft.`);
-      }
-      
       toast({
         title: "Fout bij verzenden",
-        description: "Er ging iets mis bij het verzenden van je bericht. Bekijk de console voor meer details.",
+        description: "Er ging iets mis bij het verzenden van je bericht. Probeer het later opnieuw.",
         variant: "destructive",
       });
     } finally {
@@ -133,15 +109,6 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-            
-            {currentDomain && (
-              <div className="mt-6 p-4 bg-mensen-blue/5 rounded-md">
-                <p className="text-sm text-mensen-blue/80">Huidige website: <code>{currentDomain}</code></p>
-                <p className="text-sm text-mensen-blue/80 mt-2">
-                  Zorg ervoor dat dit domein is geautoriseerd in je Formspree-formulierinstellingen.
-                </p>
-              </div>
-            )}
           </div>
           
           <div>
