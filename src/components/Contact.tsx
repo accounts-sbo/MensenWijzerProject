@@ -115,16 +115,16 @@ const Contact = () => {
         <h2 className="text-3xl font-brass-mono mb-4 text-mensen-blue">
           Heb je een vraag of wil je kennismaken? Ik denk graag mee.
         </h2>
-        <div className="h-1 w-20 bg-mensen-blue/30 mb-6"></div>
+        <div className="h-1 w-20 bg-mensen-beige mb-6"></div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
           {/* Contact Form */}
-          <Card className="border-mensen-blue/10 shadow-md">
-            <CardHeader className="pb-2">
+          <Card className="border-mensen-beige/30 shadow-md">
+            <CardHeader className="pb-2 border-b border-mensen-beige/20">
               <CardTitle className="text-xl font-brass-mono text-mensen-blue">Stuur een bericht</CardTitle>
             </CardHeader>
             
-            <CardContent>
+            <CardContent className="pt-6">
               {formError && (
                 <Alert variant="destructive" className="mb-4">
                   <AlertTitle>Fout</AlertTitle>
@@ -144,7 +144,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue"
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
                   />
                 </div>
                 
@@ -159,7 +159,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue"
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
                   />
                 </div>
                 
@@ -174,7 +174,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full border-mensen-blue/30 focus:border-mensen-blue focus:ring-mensen-blue resize-none"
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue resize-none"
                   />
                 </div>
                 
@@ -204,7 +204,7 @@ const Contact = () => {
                       type="button"
                       variant="outline"
                       onClick={handleSwitchToDirectEmail}
-                      className="border-mensen-blue text-mensen-blue hover:bg-mensen-blue/10"
+                      className="border-mensen-beige bg-mensen-beige/10 text-mensen-blue hover:bg-mensen-beige/20"
                     >
                       <Mail className="h-4 w-4 mr-2" />
                       Direct via e-mail
@@ -226,52 +226,43 @@ const Contact = () => {
           
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="border-mensen-blue/10 shadow-sm">
-              <CardHeader className="pb-2">
+            <Card className="border-mensen-beige/30 shadow-sm bg-gradient-to-br from-white to-mensen-beige/10">
+              <CardHeader className="pb-2 border-b border-mensen-beige/20">
                 <CardTitle className="text-xl font-brass-mono text-mensen-blue">Contactgegevens</CardTitle>
               </CardHeader>
               
-              <CardContent className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+              <CardContent className="space-y-8 pt-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-mensen-beige/20 p-3 rounded-full">
                     <Mail className="text-mensen-blue h-5 w-5" />
                   </div>
-                  <a href="mailto:sipkejan@demensenwijzer.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors">
+                  <a href="mailto:sipkejan@demensenwijzer.nl" className="font-lucida tracking-wide-50 text-base hover:text-mensen-beige transition-colors">
                     sipkejan@demensenwijzer.nl
                   </a>
                 </div>
                 
-                <div className="flex items-center gap-3">
-                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+                <div className="flex items-center gap-4">
+                  <div className="bg-mensen-beige/20 p-3 rounded-full">
                     <Phone className="text-mensen-blue h-5 w-5" />
                   </div>
-                  <a href="tel:+31635345061" className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors">
+                  <a href="tel:+31635345061" className="font-lucida tracking-wide-50 text-base hover:text-mensen-beige transition-colors">
                     +31 6 53 54 50 61
                   </a>
                 </div>
                 
-                <div className="flex items-center gap-3">
-                  <div className="bg-mensen-blue/10 p-2.5 rounded-full">
+                <div className="flex items-center gap-4">
+                  <div className="bg-mensen-beige/20 p-3 rounded-full">
                     <Linkedin className="text-mensen-blue h-5 w-5" />
                   </div>
                   <a 
                     href="https://www.linkedin.com/in/sipkejanbousema/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="font-lucida tracking-wide-50 text-base hover:text-mensen-blue transition-colors"
+                    className="font-lucida tracking-wide-50 text-base hover:text-mensen-beige transition-colors"
                   >
                     LinkedIn-profiel
                   </a>
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-mensen-blue/10 bg-mensen-beige/20 shadow-sm">
-              <CardContent className="p-6">
-                <p className="text-gray-700 italic">
-                  "Door de mensgerichte aanpak van Sipke Jan kreeg ik weer inzicht in mijn talenten en mogelijkheden."
-                </p>
-                <p className="text-right mt-2 text-sm font-medium">— Recente cliënt</p>
               </CardContent>
             </Card>
           </div>
