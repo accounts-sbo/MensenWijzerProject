@@ -11,9 +11,13 @@ const EMAILJS_PUBLIC_KEY = "eoENQhbSQ1hC5QeCc";
 
 const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
   useEffect(() => {
-    // Initialize EmailJS with your user ID
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-    console.log("EmailJS initialized in provider with key:", EMAILJS_PUBLIC_KEY);
+    try {
+      // Initialize EmailJS with your user ID
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      console.log("EmailJS initialized in provider with key:", EMAILJS_PUBLIC_KEY);
+    } catch (error) {
+      console.error("Error initializing EmailJS:", error);
+    }
   }, []);
 
   return <>{children}</>;

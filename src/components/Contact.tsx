@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // EmailJS configuratie
 const EMAILJS_SERVICE_ID = "WvL_Gmail_service";
-const EMAILJS_TEMPLATE_ID = "template_7z7v0mf"; // Updated to the correct template ID
+const EMAILJS_TEMPLATE_ID = "template_7z7v0mf"; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,18 +35,19 @@ const Contact = () => {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-        to_name: "Sipke-Jan", // Je kunt dit aanpassen aan wie het bericht moet ontvangen
+        to_name: "Sipke-Jan",
       };
 
       console.log("Template params:", templateParams);
       console.log("Using service ID:", EMAILJS_SERVICE_ID);
       console.log("Using template ID:", EMAILJS_TEMPLATE_ID);
 
-      // Send the email using EmailJS
+      // Send the email using EmailJS with userId parameter explicitly set
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams
+        templateParams,
+        "eoENQhbSQ1hC5QeCc" // Adding the public key explicitly here
       );
 
       console.log("Email sent successfully:", response);
