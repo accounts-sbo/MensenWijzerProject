@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Quote } from 'lucide-react';
 import { 
@@ -55,8 +54,8 @@ const testimonials: TestimonialType[] = [
     name: "José Willemse",
     role: "Directeur NLV",
     quote: "Sipke Jan heeft voor ons de hele campagne verzorgd; ik kon het loslaten met het vertrouwen dat het in orde zou komen. De kern van het verhaal wist Sipke Jan goed te raken. Hij weet waar het om draait en wat voor ons en onze achterban belangrijk is. De samenwerking verliep uitstekend en we weten elkaar nog steeds altijd te vinden voor nieuwe plannen.",
-  }
-   {
+  },
+  {
     id: 7,
     name: "Halbe-Piter Claus",
     role: "Regisseur / Programmaker",
