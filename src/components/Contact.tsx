@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 // URL naar je eigen PHP-script
-const EMAIL_HANDLER_URL = "https://demensenwijzer.nl/mail";
+const EMAIL_HANDLER_URL = "https://demensenwijzer.nl/mail.php"; // Zorg ervoor dat .php wordt toegevoegd
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ const Contact = () => {
     setErrorDetails(null);
     
     try {
-      console.log("Verzenden van formulier naar eigen PHP-script begonnen met gegevens:", formData);
+      console.log("Verzenden van formulier naar PHP-script begonnen met gegevens:", formData);
       
       // Stuur het formulier naar je eigen PHP-script
       const response = await fetch(EMAIL_HANDLER_URL, {
@@ -44,13 +44,24 @@ const Contact = () => {
       const responseText = await response.text();
       console.log("Raw response:", responseText);
       
+      // Controleer of de respons leeg is of geen JSON
+      if (!responseText || responseText.trim() === '') {
+        throw new Error('De server gaf een lege respons terug');
+      }
+      
       // Probeer de text als JSON te parsen
       let data;
       try {
         data = JSON.parse(responseText);
       } catch (parseError) {
         console.error("Fout bij het parsen van JSON response:", parseError);
-        throw new Error(`Kon response niet als JSON parsen: ${responseText}`);
+        
+        // Controleer of de respons HTML bevat
+        if (responseText.includes('<!DOCTYPE') || responseText.includes('<html')) {
+          throw new Error('De server retourneerde een HTML-pagina in plaats van JSON. Controleer of je mail.php bestand correct is geüpload en of de .php extensie is toegevoegd in de URL.');
+        } else {
+          throw new Error(`Kon response niet als JSON parsen: ${responseText.substring(0, 100)}...`);
+        }
       }
 
       // Check of de response succesvol was

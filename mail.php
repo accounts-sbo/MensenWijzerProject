@@ -1,10 +1,13 @@
 
 <?php
-// Zorg ervoor dat een eventuele output buffering wordt uitgeschakeld
-ob_clean();
+// Zorg ervoor dat niets al is uitgevoerd voordat we beginnen
+ob_end_clean();
+
+// Voorkom dat er HTML of andere output wordt gegenereerd buiten onze controle
+error_reporting(0);
 
 // CORS headers toevoegen om cross-domain verzoeken toe te staan
-header("Access-Control-Allow-Origin: *"); // Vervang * door je specifieke domein in productie voor betere beveiliging
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json"); // Zorgen dat alle responses JSON zijn
@@ -45,7 +48,7 @@ $email = htmlspecialchars($input['email']);
 $message = htmlspecialchars($input['message']);
 
 // E-mailontvangers
-$to = 'sipkejan@sjbmedia.nl'; // Vervang dit door je eigen e-mailadres
+$to = 'sipkejan@sjbmedia.nl';
 
 // E-mailonderwerp en headers
 $subject = "Nieuw contactformulier van " . $name;
