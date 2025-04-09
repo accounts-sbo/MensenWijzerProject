@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, Linkedin, ExternalLink } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,7 +16,8 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
-  const [useDirectEmail, setUseDirectEmail] = useState(false);
+  // Standaard direct email gebruiken vanwege SSL-probleem
+  const [useDirectEmail, setUseDirectEmail] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,70 +29,16 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // If user has chosen to use direct email
-    if (useDirectEmail) {
-      const subject = encodeURIComponent(`Contact via demensenwijzer.nl van ${formData.name}`);
-      const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\n\nBericht:\n${formData.message}`);
-      window.location.href = `mailto:sipkejan@demensenwijzer.nl?subject=${subject}&body=${body}`;
-      return;
-    }
+    // Altijd direct email gebruiken totdat het SSL-probleem is opgelost
+    const subject = encodeURIComponent(`Contact via demensenwijzer.nl van ${formData.name}`);
+    const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\n\nBericht:\n${formData.message}`);
+    window.location.href = `mailto:sipkejan@demensenwijzer.nl?subject=${subject}&body=${body}`;
     
-    setIsSubmitting(true);
-    setFormError(null);
-
-    try {
-      console.log("Attempting to send form data to:", 'https://contact.demensenwijzer.nl/mail.php');
-      
-      const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(formData),
-        mode: 'cors', // Explicitly set CORS mode
-      });
-      
-      if (!response.ok) {
-        // If the server responded with an error
-        const errorText = await response.text();
-        console.error("Server responded with error:", response.status, errorText);
-        throw new Error(`Server responded with ${response.status}: ${errorText}`);
-      }
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        toast({
-          title: "Bericht verzonden",
-          description: "Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op.",
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        throw new Error(data.error || 'Er is iets misgegaan');
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      
-      let errorMessage = "Er is iets misgegaan bij het verzenden van je bericht.";
-      
-      // Check if it's a CORS error (they often don't have specific error messages we can catch)
-      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
-        setFormError("Verbindingsfout: De server is mogelijk niet bereikbaar. Gebruik de optie hieronder om direct te mailen.");
-        setUseDirectEmail(true);
-      } else {
-        setFormError(`Fout: ${errorMessage} Probeer het later nog eens of gebruik de directe email optie hieronder.`);
-        setUseDirectEmail(true);
-        
-        toast({
-          title: "Fout",
-          description: errorMessage,
-          variant: "destructive",
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Reset form
+    toast({
+      title: "E-mailclient geopend",
+      description: "Je e-mailclient is geopend om direct contact op te nemen.",
+    });
   };
 
   return (
@@ -106,13 +53,6 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="text-xl font-brass-mono mb-4 text-mensen-blue">Stuur een bericht</h3>
-            
-            {formError && (
-              <Alert variant="destructive" className="mb-6">
-                <AlertTitle>Probleem met verzenden</AlertTitle>
-                <AlertDescription>{formError}</AlertDescription>
-              </Alert>
-            )}
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -160,30 +100,20 @@ const Contact = () => {
                 />
               </div>
               
-              {useDirectEmail ? (
-                <Button
-                  type="submit"
-                  className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 w-full md:w-auto flex items-center justify-center gap-2"
-                >
-                  <Mail className="h-4 w-4" />
-                  Open mail applicatie
-                </Button>
-              ) : (
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 disabled:opacity-50 w-full md:w-auto flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>Verzenden...</>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4" />
-                      Verstuur bericht
-                    </>
-                  )}
-                </Button>
-              )}
+              <Button
+                type="submit"
+                className="bg-mensen-blue text-white px-6 py-3 rounded-md hover:bg-mensen-blue/80 transition-all duration-200 w-full md:w-auto flex items-center justify-center gap-2"
+              >
+                <Mail className="h-4 w-4" />
+                Verstuur via e-mail
+              </Button>
+              
+              <div className="text-sm text-gray-500 pt-2">
+                <p className="flex items-center">
+                  <ExternalLink className="h-4 w-4 mr-2 inline" />
+                  Dit opent je e-mailprogramma om direct te mailen
+                </p>
+              </div>
             </form>
           </div>
           
