@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/94488efa-2f4d-4bac-ab6d-f2f60c17547a.png" 
+          src="/lovable-uploads/047ec1ae-aebc-461e-892b-8c64cbed9bf6.png" 
           alt="Sipke Jan Bousema" 
           className="w-full h-full object-cover object-top opacity-80"
         />
