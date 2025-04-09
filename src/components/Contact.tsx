@@ -14,6 +14,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorDetails, setErrorDetails] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,6 +25,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorDetails(null);
     
     try {
       console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", formData);
@@ -38,11 +40,14 @@ const Contact = () => {
         }
       });
       
+      const data = await response.json();
+      console.log("Formspree response status:", response.status);
+      console.log("Formspree response:", data);
+      
       if (!response.ok) {
-        throw new Error(`Formspree antwoordde met status: ${response.status}`);
+        throw new Error(`Formspree antwoordde met status: ${response.status} - ${JSON.stringify(data)}`);
       }
       
-      const data = await response.json();
       console.log("Formulier succesvol verzonden! Response:", data);
 
       // Toon succesbericht
@@ -59,6 +64,7 @@ const Contact = () => {
       // Log meer gedetailleerde informatie over de fout
       if (error instanceof Error) {
         console.error('Error details:', error.message);
+        setErrorDetails(error.message);
       }
       
       toast({
@@ -153,6 +159,13 @@ const Contact = () => {
                     className="w-full p-3 border border-mensen-blue/30 focus:outline-none focus:border-mensen-blue font-lucida rounded-md"
                   />
                 </div>
+                
+                {errorDetails && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-700 text-sm">
+                    <p>Technische foutmelding (voor ontwikkelaars):</p>
+                    <code className="block mt-1 whitespace-pre-wrap">{errorDetails}</code>
+                  </div>
+                )}
                 
                 <button 
                   type="submit" 
