@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
 
 // EmailJS configuratie
-const EMAILJS_SERVICE_ID = "service_os9h0z7";
+const EMAILJS_SERVICE_ID = "WvL_Gmail_service";
 const EMAILJS_TEMPLATE_ID = "template_7z7v0mf"; // Updated to the correct template ID
 
 const Contact = () => {
