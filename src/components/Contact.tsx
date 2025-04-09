@@ -22,7 +22,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://contact.demensenwijzer.nl/mail.php', {
+      const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
