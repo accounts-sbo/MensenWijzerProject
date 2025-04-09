@@ -51,7 +51,7 @@ const About = () => {
               </p>
             </div>
             <a href="#contact" className="bg-mensen-blue hover:bg-mensen-blue/80 text-white px-6 py-3 inline-block transition-all duration-200 uppercase tracking-wider text-sm mt-8">
-              Lees meer
+              Neem Contact Op
             </a>
           </div>
         </div>
