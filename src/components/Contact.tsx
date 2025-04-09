@@ -4,6 +4,10 @@ import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
 
+// EmailJS configuratie
+const EMAILJS_SERVICE_ID = "service_os9h0z7";
+const EMAILJS_TEMPLATE_ID = "template_8hy3329";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,15 +35,17 @@ const Contact = () => {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-        // Add any other parameters your EmailJS template expects
+        to_name: "Sipke-Jan", // Je kunt dit aanpassen aan wie het bericht moet ontvangen
       };
 
       console.log("Template params:", templateParams);
+      console.log("Using service ID:", EMAILJS_SERVICE_ID);
+      console.log("Using template ID:", EMAILJS_TEMPLATE_ID);
 
       // Send the email using EmailJS
       const response = await emailjs.send(
-        "service_os9h0z7", // Service ID
-        "template_8hy3329", // Template ID
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
