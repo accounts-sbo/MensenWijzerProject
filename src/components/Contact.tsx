@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -38,6 +39,7 @@ const Contact = () => {
       };
 
       console.log("Verzenden van email begonnen met template parameters:", templateParams);
+      console.log("Huidige domein:", window.location.hostname);
       
       // Use the send method explicitly with the public key
       const response = await emailjs.send(
@@ -60,6 +62,11 @@ const Contact = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error sending email:', error);
+      // Log more detailed information about the error
+      if (error instanceof Error) {
+        console.error('Error details:', error.message);
+      }
+      
       toast({
         title: "Fout bij verzenden",
         description: "Er ging iets mis bij het verzenden van je bericht. Probeer het later opnieuw.",

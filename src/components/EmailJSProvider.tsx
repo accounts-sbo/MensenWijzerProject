@@ -14,6 +14,7 @@ const EmailJSProvider: React.FC<EmailJSProviderProps> = ({ children }) => {
     // Initialize EmailJS exactly once with the public key
     emailjs.init(EMAILJS_PUBLIC_KEY);
     console.log("EmailJS geïnitialiseerd met publieke sleutel:", EMAILJS_PUBLIC_KEY);
+    console.log("Applicatie draait op domein:", window.location.hostname);
   }, []);
 
   return <>{children}</>;
