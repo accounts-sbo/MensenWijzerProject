@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,7 +15,14 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorDetails, setErrorDetails] = useState<string | null>(null);
+  const [currentDomain, setCurrentDomain] = useState<string>('');
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Detecteer het huidige domein voor debuginformatie
+    setCurrentDomain(window.location.origin);
+    console.log("Huidige domein:", window.location.origin);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,6 +36,7 @@ const Contact = () => {
     
     try {
       console.log("Verzenden van formulier naar Formspree begonnen met gegevens:", formData);
+      console.log("Verzenden vanaf domein:", currentDomain);
       
       // Stuur het formulier naar Formspree
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -36,16 +44,29 @@ const Contact = () => {
         body: JSON.stringify(formData),
         headers: {
           "Accept": "application/json",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Origin": currentDomain
         }
       });
       
-      const data = await response.json();
+      let responseText;
+      let data;
+      
+      try {
+        // Probeer de response te parsen als JSON
+        data = await response.json();
+        responseText = JSON.stringify(data);
+      } catch (parseError) {
+        // Als het geen JSON is, haal dan de tekst op
+        responseText = await response.text();
+        data = { message: responseText };
+      }
+      
       console.log("Formspree response status:", response.status);
-      console.log("Formspree response:", data);
+      console.log("Formspree response:", responseText);
       
       if (!response.ok) {
-        throw new Error(`Formspree antwoordde met status: ${response.status} - ${JSON.stringify(data)}`);
+        throw new Error(`Formspree antwoordde met status: ${response.status} - ${responseText}`);
       }
       
       console.log("Formulier succesvol verzonden! Response:", data);
@@ -67,9 +88,14 @@ const Contact = () => {
         setErrorDetails(error.message);
       }
       
+      // Controleer op CORS-gerelateerde fouten
+      if (error instanceof TypeError && error.message.includes('NetworkError')) {
+        setErrorDetails(`Mogelijk een CORS-probleem. Controleer of dit domein (${currentDomain}) is toegevoegd aan je Formspree formulierinstellingen.`);
+      }
+      
       toast({
         title: "Fout bij verzenden",
-        description: "Er ging iets mis bij het verzenden van je bericht. Probeer het later opnieuw.",
+        description: "Er ging iets mis bij het verzenden van je bericht. Controleer of je domein is geautoriseerd in Formspree.",
         variant: "destructive",
       });
     } finally {
@@ -109,6 +135,15 @@ const Contact = () => {
                 </a>
               </div>
             </div>
+            
+            {currentDomain && (
+              <div className="mt-6 p-4 bg-mensen-blue/5 rounded-md">
+                <p className="text-sm text-mensen-blue/80">Huidige website: <code>{currentDomain}</code></p>
+                <p className="text-sm text-mensen-blue/80 mt-2">
+                  Zorg ervoor dat dit domein is geautoriseerd in je Formspree-formulierinstellingen.
+                </p>
+              </div>
+            )}
           </div>
           
           <div>
@@ -184,3 +219,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
