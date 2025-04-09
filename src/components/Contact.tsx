@@ -28,17 +28,29 @@ const Contact = () => {
   const sendServerEmail = async () => {
     try {
       setIsSubmitting(true);
+      console.log('Sending email with data:', formData);
       
       // Using the new URL provided by the user
       const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      console.log('Server response status:', response.status);
+      
+      // Try to parse the JSON response
+      let data;
+      try {
+        data = await response.json();
+        console.log('Server response data:', data);
+      } catch (parseError) {
+        console.error('Failed to parse response:', parseError);
+        throw new Error('Kon het serverantwoord niet verwerken');
+      }
       
       if (!response.ok) {
         throw new Error(data.error || 'Er is een probleem opgetreden bij het verzenden.');

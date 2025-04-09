@@ -1,90 +1,103 @@
 
 <?php
-// Zorg ervoor dat niets al is uitgevoerd voordat we beginnen
-ob_end_clean();
+// Prevent buffering issues and ensure clean output
+ob_clean();
 
-// Voorkom dat er HTML of andere output wordt gegenereerd buiten onze controle
-error_reporting(0);
-
-// CORS headers toevoegen om cross-domain verzoeken toe te staan
+// Set proper headers for CORS and JSON response
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json"); // Zorgen dat alle responses JSON zijn
+header("Content-Type: application/json"); 
 
-// Controleer of het een preflight OPTIONS verzoek is (voor CORS)
+// Handle preflight OPTIONS request for CORS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
 
-// Controleer of het een POST verzoek is
+// Only process POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['error' => 'Alleen POST-verzoeken zijn toegestaan']);
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(['error' => 'Only POST requests are allowed']);
     exit();
 }
 
-// Ontvang de JSON-gegevens van het verzoek
+// Get JSON data from request
 $input = json_decode(file_get_contents('php://input'), true);
 
-// Valideer benodigde velden
+// Validate required fields
 if (!isset($input['name']) || !isset($input['email']) || !isset($input['message'])) {
-    http_response_code(400);
+    http_response_code(400); // Bad Request
     echo json_encode(['error' => 'Naam, e-mail en bericht zijn verplichte velden']);
     exit();
 }
 
-// Eenvoudige e-mailvalidatie
+// Simple email validation
 if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['error' => 'Ongeldig e-mailadres']);
     exit();
 }
 
-// Gegevens ophalen
+// Sanitize input data
 $name = htmlspecialchars($input['name']);
 $email = htmlspecialchars($input['email']);
 $message = htmlspecialchars($input['message']);
 
-// E-mailontvangers
-$to = 'sipkejan@sjbmedia.nl';
+// Set email recipient
+$to = 'sipkejan@demensenwijzer.nl';
 
-// E-mailonderwerp en headers
+// Create email subject and headers
 $subject = "Nieuw contactformulier van " . $name;
-$headers = "From: " . $email . "\r\n";
+$headers = "From: noreply@demensenwijzer.nl\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-// E-mailinhoud samenstellen
+// Compose email content
 $email_content = "
 <html>
 <head>
     <title>Nieuw contactformulier</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        h2 { color: #005A9C; }
+        .footer { margin-top: 30px; font-size: 12px; color: #666; }
+    </style>
 </head>
 <body>
-    <h2>Je hebt een nieuw bericht ontvangen via het contactformulier</h2>
-    <p><strong>Naam:</strong> $name</p>
-    <p><strong>E-mail:</strong> $email</p>
-    <p><strong>Bericht:</strong></p>
-    <p>" . nl2br($message) . "</p>
-    <hr>
-    <p><small>Dit bericht is verzonden via het contactformulier op demensenwijzer.nl</small></p>
+    <div class='container'>
+        <h2>Nieuw bericht via het contactformulier</h2>
+        <p><strong>Naam:</strong> $name</p>
+        <p><strong>E-mail:</strong> $email</p>
+        <p><strong>Bericht:</strong></p>
+        <p>" . nl2br($message) . "</p>
+        <div class='footer'>
+            <hr>
+            <p>Dit bericht is verzonden via het contactformulier op demensenwijzer.nl</p>
+        </div>
+    </div>
 </body>
 </html>
 ";
 
-// E-mail versturen
+// Send email
 $success = mail($to, $subject, $email_content, $headers);
 
-// Resultaat teruggeven
+// Return appropriate response
 if ($success) {
-    echo json_encode(['success' => true, 'message' => 'Bericht succesvol verzonden']);
+    echo json_encode([
+        'success' => true, 
+        'message' => 'Bericht succesvol verzonden'
+    ]);
 } else {
-    http_response_code(500);
-    echo json_encode(['error' => 'Er is een fout opgetreden bij het verzenden van het bericht']);
+    http_response_code(500); // Internal Server Error
+    echo json_encode([
+        'error' => 'Er is een probleem opgetreden bij het verzenden van het bericht'
+    ]);
 }
 
-// Zorg ervoor dat er niets meer wordt uitgevoerd of output gegenereerd
+// Ensure script execution stops here
 exit();
 ?>
