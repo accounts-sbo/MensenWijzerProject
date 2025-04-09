@@ -32,12 +32,6 @@ const testimonials: TestimonialType[] = [
     quote: "De samenwerking verliep erg goed. Sipke Jan is iemand die zelf met goede ideeën komt, altijd voor dat beetje extra wil gaan, en open staat voor onze inbreng. De reacties zijn goed en we hebben het nu zelfs geïmplementeerd in een project voor de eerste klas.",
   },
   {
-    id: 3,
-    name: "C.E.J. Hoekman",
-    role: "",
-    quote: "Onuitsprekelijk mooi!",
-  },
-  {
     id: 4,
     name: "Drs. Sjors Klompmaker",
     role: "Arts-onderzoeker Amsterdam UMC (afdeling Chirurgie)",
