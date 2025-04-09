@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // EmailJS configuratie
 const EMAILJS_SERVICE_ID = "service_os9h0z7";
-const EMAILJS_TEMPLATE_ID = "template_8hy3329";
+const EMAILJS_TEMPLATE_ID = "template_7z7v0mf"; // Updated to the correct template ID
 
 const Contact = () => {
   const [formData, setFormData] = useState({
