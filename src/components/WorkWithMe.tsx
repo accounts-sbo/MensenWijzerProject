@@ -1,16 +1,10 @@
-
 import React from 'react';
-
 const WorkWithMe = () => {
-  return (
-    <section 
-      className="py-24 md:py-32 relative overflow-hidden"
-      style={{
-        backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
+  return <section className="py-24 md:py-32 relative overflow-hidden" style={{
+    backgroundImage: 'url("/lovable-uploads/136336cb-9a01-4434-9e0d-b44c9a9805bc.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}>
       <div className="container text-center mx-auto relative z-10 px-[25%] max-w-5xl">
         <h2 className="text-3xl font-brass-mono mb-4 text-white">
           Wil jij jouw ontwikkeling weer laten stromen?
@@ -21,16 +15,12 @@ const WorkWithMe = () => {
           communicatie of presentatie – ik help je naar een verhaal dat klopt, zichtbaar maakt en impact heeft.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#contact" className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">
-            Neem contact op
-          </a>
+          <a href="#contact" className="bg-[#F97316] text-white px-6 py-3 inline-block hover:bg-[#F97316]/80 transition-all duration-200 uppercase tracking-wider text-sm rounded-md">PLAN EEN KENNISMAKING</a>
           <a href="#contact" className="bg-white text-[#F97316] px-6 py-3 inline-block hover:bg-white/90 transition-all duration-200 uppercase tracking-wider text-sm border border-[#F97316] rounded-md">
             Neem contact op
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WorkWithMe;
