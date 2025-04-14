@@ -1,14 +1,11 @@
+
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+
 const Hero = () => {
   return <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
         <img src="/lovable-uploads/047ec1ae-aebc-461e-892b-8c64cbed9bf6.png" alt="Sipke Jan Bousema" className="w-full h-full object-cover object-top" />
-        {/* Custom vignette overlay with radial gradient */}
-        <div className="absolute inset-0" style={{
-        background: 'radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.4) 100%)',
-        pointerEvents: 'none'
-      }} />
       </div>
       
       {/* Logo Overlay - positioned above the background image but below the text */}
@@ -41,4 +38,6 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
+
