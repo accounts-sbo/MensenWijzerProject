@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
-
 const ServiceCard = ({
   title,
   intro,
@@ -27,7 +26,6 @@ const ServiceCard = ({
       <p className="text-sm italic text-white/80 mt-4">{elevator}</p>
     </div>;
 };
-
 const MeetingCard = ({
   title,
   description
@@ -40,7 +38,6 @@ const MeetingCard = ({
       <p className="text-base font-lucida tracking-wide-50 text-white/90">{description}</p>
     </div>;
 };
-
 const Services = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -69,7 +66,7 @@ const Services = () => {
 
             <ServiceCard title="Communicatie- & Mediastrategie" intro="Van strategie tot zichtbaarheid." bullets={["Communicatiestrategieën en kernboodschappen", "Mediaplanning en zichtbaarheid", "Contentformats en campagnes"]} elevator="Ik ontwikkel strategieën die inhoud verbinden met impact. Van merkverhaal tot media-aanpak en campagnes die informeren, inspireren én activeren – altijd met oog voor maatschappelijke relevantie en effect." />
 
-            <ServiceCard title="Presentatie & Profilering" intro="Laat zien wie je bent – met rust, overtuiging en authenticiteit." bullets={["Presentatietraining", "Interview- en gesprekstraining", "Storytelling en profilering"]} elevator="Ik help mensen om met meer kracht en vertrouwen hun verhaal te vertellen. Vanuit authenticiteit en verbinding werken we aan uitstraling, spreekvaardigheid en échte impact." />
+            <ServiceCard title="Presentatie & Profilering" intro="Laat zien wie je bent – met rust, overtuiging en authenticiteit." bullets={["Presentatietraining", "Storytelling en profilering", "Coaching voor leiders en teams"]} elevator="Ik help mensen om met meer kracht en vertrouwen hun verhaal te vertellen. Vanuit authenticiteit en verbinding werken we aan uitstraling, spreekvaardigheid en échte impact." />
           </div>
         </div>
       </section>
@@ -97,5 +94,4 @@ const Services = () => {
       </section>
     </>;
 };
-
 export default Services;
