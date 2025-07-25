@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
-
 const Hero = () => {
   return <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
@@ -18,11 +16,7 @@ const Hero = () => {
           <h1 className="text-4xl font-brass-mono mb-6">
             Van identiteit tot impact. Van inzicht tot uitvoering.
           </h1>
-          <p className="text-base mb-8 font-lucida tracking-wide-50">
-            Ik ben Sipke Jan Bousema – begeleider van ontwikkeling, positionering en presentatie. 
-            Ik help mensen en organisaties hun verhaal te vinden, te verwoorden en zichtbaar te maken. 
-            Zodat zij krachtiger communiceren, zichtbaarder worden en groeien in wie ze zijn en wat ze betekenen.
-          </p>
+          <p className="text-base mb-8 font-lucida tracking-wide-50">Ik ben Sipke Jan Bousema – begeleider van ontwikkeling, positionering en presentatie. Ik help mensen en organisaties hun verhaal te vinden, te verwoorden en zichtbaar te maken, zodat zij krachtiger communiceren, zichtbaarder worden en groeien in wie ze zijn, in wat ze doen en in hoe ze zich laten zien.</p>
           <a href="#contact" className="bg-[#f58e4f] text-white px-6 inline-block hover:bg-[#f58e4f]/80 transition-all duration-200 uppercase tracking-wider text-sm py-[9px]">PLAN EEN KENNISMAKING</a>
         </div>
       </div>
@@ -38,6 +32,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
-
