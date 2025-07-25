@@ -70,7 +70,7 @@ const Services = () => {
 
             <ServiceCard title="Communicatie- & Mediastrategie" intro="Van strategie tot zichtbaarheid." bullets={["Communicatiestrategieën en kernboodschappen", "Mediaplanning en zichtbaarheid", "Contentformats en campagnes"]} elevator="Ik ontwikkel strategieën die inhoud verbinden met impact. Van merkverhaal tot media-aanpak en campagnes die informeren, inspireren én activeren – altijd met oog voor maatschappelijke relevantie en effect." />
 
-            <ServiceCard title="Presentatie & Profilering" intro="Laat zien wie je bent – met rust, overtuiging en authenticiteit." bullets={["Presentatie-, interview- en gesprekstraining", "Storytelling en profilering", "Coaching voor leiders en teams"]} elevator="Ik help mensen om met meer kracht en vertrouwen hun verhaal te vertellen. Vanuit authenticiteit en verbinding werken we aan uitstraling, spreekvaardigheid en échte impact." />
+            <ServiceCard title="Presentatie & Profilering" intro="Laat zien wie je bent – met rust, overtuiging en authenticiteit." bullets={["Presentatie-, interview- en gesprekstraining", "Storytelling en profilering", "Coaching voor leiders en teams"]} elevator="Ik help mensen om met meer kracht en vertrouwen hun verhaal te vertellen. Vanuit autenticiteit en verbinding werken aan uitstraling, spreekvaardigheid en écht impact maken." />
           </div>
         </div>
       </section>
