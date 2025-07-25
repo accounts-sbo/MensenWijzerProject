@@ -36,8 +36,8 @@ const About = () => {
                 communicatie en profilering. Vanuit rust, scherpte en betrokkenheid.
               </p>
               <p className="text-base">
-                Ik help mensen en organisaties om optimaal tot uiting te komen. In wie ze zijn. 
-                In wat ze doen. En in hoe ze zich laten zien.
+                Ik help mensen en organisaties om optimaal tot uiting te komen. In wie ze zijn, 
+                in wat ze doen en in hoe ze zich laten zien.
               </p>
               <p className="text-base">
                 Die missie is geworteld in mijn persoonlijke verhaal: van een jeugd vol fascinatie voor media 
@@ -84,8 +84,8 @@ const About = () => {
                 communicatie en profilering. Vanuit rust, scherpte en betrokkenheid.
               </p>
               <p className="text-base">
-                Ik help mensen en organisaties om optimaal tot uiting te komen. In wie ze zijn. 
-                In wat ze doen. En in hoe ze zich laten zien.
+                Ik help mensen en organisaties om optimaal tot uiting te komen. In wie ze zijn, 
+                in wat ze doen en in hoe ze zich laten zien.
               </p>
               <p className="text-base">
                 Die missie is geworteld in mijn persoonlijke verhaal: van een jeugd vol fascinatie voor media 

@@ -24,7 +24,7 @@ const testimonials: TestimonialType[] = [
     id: 1,
     name: "Willem Brethouwer",
     role: "",
-    quote: "Uit eigen ervaring kan ik bevestigen dat Sipke Jan pure professionals zijn. Aanrader als je business for good nastreeft en je maatschappelijk hart sneller wilt laten kloppen!",
+    quote: "Uit eigen ervaring kan ik bevestigen dat Sipke Jan een pure professional is. Aanrader als je business for good nastreeft en je maatschappelijk hart sneller wilt laten kloppen!",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const testimonials: TestimonialType[] = [
     id: 4,
     name: "Drs. Sjors Klompmaker",
     role: "Arts-onderzoeker Amsterdam UMC (afdeling Chirurgie)",
-    quote: "Door de professionele en creatieve aanpak van Sipke Jan is onze boodschap nu vertaald naar 3 prachtige patient-journey video's. Sipke Jan is inmiddels gespecialiseerd in patiënt-video's, wat ontzettend veel helpt in de voorbereiding en uitvoering van de opnames en fijn is voor de patiënten die een rol spelen. Wij zijn blij met het eindresultaat en kijken uit naar verdere samenwerking in de toekomst!",
+    quote: "Door de professionele en creatieve aanpak van Sipke Jan is onze boodschap nu vertaald naar 3 prachtige patiëntreis-video's. Sipke Jan is inmiddels gespecialiseerd in patiënt-video's, wat ontzettend veel helpt in de voorbereiding en uitvoering van de opnames en fijn is voor de patiënten die een rol spelen. Wij zijn blij met het eindresultaat en kijken uit naar verdere samenwerking in de toekomst!",
   },
   {
     id: 5,
