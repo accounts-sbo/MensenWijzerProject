@@ -66,7 +66,7 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ServiceCard title="Identiteit & Merkontwikkeling" intro="Sterke communicatie begint met een helder verhaal." bullets={["Merkpositionering en kernverhaal", "Merkarchitectuur en identiteitstrajecten", "Creatieve formats en merkactivatie"]} elevator="Ik help organisaties en initiatieven om te ontdekken wie ze zijn, waar ze voor staan en hoe ze dat krachtig uitdragen. Met een merkverhaal dat klopt, onderscheidt en richting geeft – van binnenuit en naar buiten toe." />
+            <ServiceCard title="Identiteit & Merkontwikkeling" intro="Sterke communicatie begint met een helder verhaal." bullets={["Merkpositionering en kernverhaal", "Merkarchitectuur en identiteitstrajecten", "Creatieve formats en merkactivatie"]} elevator="Ik help mensen, organisaties en initiatieven om te ontdekken wie ze zijn, waar ze voor staan en hoe ze dat krachtig uitdragen. Met een merkverhaal dat klopt, onderscheidt en richting geeft – van binnenuit en naar buiten toe." />
 
             <ServiceCard title="Communicatie- & Mediastrategie" intro="Van strategie tot zichtbaarheid." bullets={["Communicatiestrategieën en kernboodschappen", "Mediaplanning en zichtbaarheid", "Contentformats en campagnes"]} elevator="Ik ontwikkel strategieën die inhoud verbinden met impact. Van merkverhaal tot media-aanpak en campagnes die informeren, inspireren én activeren – altijd met oog voor maatschappelijke relevantie en effect." />
 
