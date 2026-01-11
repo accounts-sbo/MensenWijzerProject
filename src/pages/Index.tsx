@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AboutSummary from '@/components/AboutSummary';
@@ -13,10 +14,14 @@ import Footer from '@/components/Footer';
 import TrainingPopup from '@/components/TrainingPopup';
 
 const Index = () => {
-  // Scroll to top when page loads
+  const location = useLocation();
+
+  // Scroll to top when navigating to homepage, unless there's a hash (anchor link)
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-mensen-white">
