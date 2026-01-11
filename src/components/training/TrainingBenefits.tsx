@@ -60,6 +60,24 @@ const TrainingBenefits = () => {
             </ul>
           </div>
 
+          <div className="mt-12 bg-mensen-blue text-white p-8 rounded-lg">
+            <h3 className="text-2xl font-brass-mono mb-4">
+              Wat kun je verwachten van deze opleiding?
+            </h3>
+            <p className="text-base leading-relaxed">
+              In deze opleiding nemen we jou in samenwerking met Sipke Jan Bousema mee in de communicatie & psychologie van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken. Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden en technieken.
+            </p>
+          </div>
+
+          <div className="mt-12 bg-white p-8 rounded-lg shadow-sm">
+            <h3 className="text-2xl font-brass-mono mb-4 text-mensen-blue">
+              Hoe kun jij met een invloedrijke communicatie en psychologie volledig en ontspannen jezelf zijn op het podium en impact maken?
+            </h3>
+            <p className="text-base leading-relaxed text-gray-700">
+              Technieken zijn hier dan een ondersteunende in plaats van een leidende factor. Je leert hierdoor optimaal anticiperen en je kunt dan ook makkelijk afstemmen op je doelgroep.
+            </p>
+          </div>
+
           <div className="mt-12 text-center">
             <blockquote className="text-2xl md:text-3xl font-brass-mono text-mensen-blue italic">
               "Zonder zichtbaarheid blijf je onopgemerkt – pas als je opvalt én iets te zeggen hebt, blijf je écht bij."
