@@ -10,6 +10,7 @@ import WorkWithMe from '@/components/WorkWithMe';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import TrainingPopup from '@/components/TrainingPopup';
 
 const Index = () => {
   // Scroll to top when page loads
@@ -21,6 +22,7 @@ const Index = () => {
     <div className="min-h-screen bg-mensen-white">
       <Header />
       <Hero />
+      <TrainingPopup />
       <div id="about">
         <AboutSummary />
         <About />

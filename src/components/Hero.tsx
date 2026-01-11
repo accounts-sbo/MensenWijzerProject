@@ -1,6 +1,9 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 const Hero = () => {
+  const navigate = useNavigate();
+
   return <section className="relative h-screen w-full bg-mensen-beige overflow-hidden">
       <div className="absolute inset-0">
         <img src="/lovable-uploads/047ec1ae-aebc-461e-892b-8c64cbed9bf6.png" alt="Sipke Jan Bousema" className="w-full h-full object-cover object-top" />
@@ -17,7 +20,15 @@ const Hero = () => {
             Van identiteit tot impact. Van inzicht tot uitvoering.
           </h1>
           <p className="text-base mb-8 font-lucida tracking-wide-50">Ik ben Sipke Jan Bousema – begeleider van ontwikkeling, positionering en presentatie. Ik help mensen en organisaties hun verhaal te vinden, te verwoorden en zichtbaar te maken, zodat zij krachtiger communiceren, zichtbaarder worden en groeien in wie ze zijn, in wat ze doen en in hoe ze zich laten zien.</p>
-          <a href="#contact" className="bg-[#f58e4f] text-white px-6 inline-block hover:bg-[#f58e4f]/80 transition-all duration-200 uppercase tracking-wider text-sm py-[9px]">PLAN EEN KENNISMAKING</a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" className="bg-[#f58e4f] text-white px-6 inline-block hover:bg-[#f58e4f]/80 transition-all duration-200 uppercase tracking-wider text-sm py-[9px] text-center">PLAN EEN KENNISMAKING</a>
+            <button
+              onClick={() => navigate('/training')}
+              className="bg-mensen-blue text-white px-6 inline-block hover:bg-mensen-blue/80 transition-all duration-200 uppercase tracking-wider text-sm py-[9px]"
+            >
+              TRAINING INVLOEDRIJKE SPREKER
+            </button>
+          </div>
         </div>
       </div>
 
