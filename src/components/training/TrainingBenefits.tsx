@@ -65,7 +65,7 @@ const TrainingBenefits = () => {
               Wat kun je verwachten van deze opleiding?
             </h3>
             <p className="text-base leading-relaxed">
-              In deze opleiding nemen we jou in samenwerking met Sipke Jan Bousema mee in de communicatie & psychologie van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken. Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden en technieken.
+              In deze opleiding nemen we jou mee in de communicatie & psychologie van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken. Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden en technieken.
             </p>
           </div>
 
