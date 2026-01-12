@@ -10,13 +10,13 @@ const TrainingPopup = () => {
   useEffect(() => {
     // Check if popup was already shown in this session
     const popupShown = sessionStorage.getItem('trainingPopupShown');
-    
+
     if (!popupShown) {
-      // Show popup after 10 seconds
+      // Show popup after 2 seconds
       const timer = setTimeout(() => {
         setIsVisible(true);
         sessionStorage.setItem('trainingPopupShown', 'true');
-      }, 10000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
