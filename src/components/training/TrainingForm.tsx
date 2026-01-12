@@ -7,6 +7,7 @@ import { useToast } from '@/components/ui/use-toast';
 
 const TrainingForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,25 +16,52 @@ const TrainingForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Hier kun je later de form data naar een backend sturen
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Aanmelding ontvangen!",
-      description: "We nemen zo snel mogelijk contact met je op.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: ''
-    });
+    try {
+      // Submit to n8n webhook
+      const response = await fetch('https://n8n.srv890194.hstgr.cloud/webhook/sjbmedia-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'training_registration',
+          ...formData
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: "Aanmelding ontvangen!",
+          description: "We nemen zo snel mogelijk contact met je op. Je ontvangt ook een bevestigingsmail.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.error || 'Er is iets misgegaan');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Fout bij verzenden",
+        description: "Er is een fout opgetreden. Probeer het later opnieuw of neem direct contact met ons op.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -137,11 +165,12 @@ const TrainingForm = () => {
               />
             </div>
 
-            <Button 
+            <Button
               type="submit"
-              className="w-full bg-[#f58e4f] text-white hover:bg-[#f58e4f]/80 py-6 text-lg uppercase tracking-wider font-brass-mono"
+              disabled={isSubmitting}
+              className="w-full bg-[#f58e4f] text-white hover:bg-[#f58e4f]/80 py-6 text-lg uppercase tracking-wider font-brass-mono disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Verstuur aanmelding
+              {isSubmitting ? 'Bezig met verzenden...' : 'Verstuur aanmelding'}
             </Button>
           </form>
         </div>

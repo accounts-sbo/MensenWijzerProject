@@ -30,19 +30,22 @@ const Contact = () => {
     try {
       setIsSubmitting(true);
       console.log('Sending email with data:', formData);
-      
-      // Using the new URL provided by the user
-      const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
+
+      // Submit to n8n webhook
+      const response = await fetch('https://n8n.srv890194.hstgr.cloud/webhook/sjbmedia-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          formType: 'contact',
+          ...formData
+        })
       });
 
       console.log('Server response status:', response.status);
-      
+
       // Try to parse the JSON response
       let data;
       try {
@@ -52,16 +55,16 @@ const Contact = () => {
         console.error('Failed to parse response:', parseError);
         throw new Error('Kon het serverantwoord niet verwerken');
       }
-      
-      if (!response.ok) {
+
+      if (!response.ok || !data.success) {
         throw new Error(data.error || 'Er is een probleem opgetreden bij het verzenden.');
       }
-      
+
       toast({
         title: "Bericht verzonden",
-        description: "Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op.",
+        description: "Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op. Je ontvangt ook een bevestigingsmail.",
       });
-      
+
       // Reset form after successful submission
       setFormData({ name: '', email: '', message: '' });
       return true;
