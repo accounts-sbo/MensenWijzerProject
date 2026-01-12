@@ -15,7 +15,7 @@ const TrainingHero = () => {
         <img
           src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg"
           alt="Training Invloedrijke Spreker"
-          className="w-full h-full object-cover object-center opacity-30"
+          className="w-full h-full object-cover object-top opacity-30"
         />
       </div>
       

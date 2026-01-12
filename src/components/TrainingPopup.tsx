@@ -60,10 +60,10 @@ const TrainingPopup = () => {
           <div className="relative">
             {/* Image */}
             <div className="relative h-64 overflow-hidden rounded-t-lg">
-              <img 
+              <img
                 src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg"
                 alt="Training Invloedrijke Spreker"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
