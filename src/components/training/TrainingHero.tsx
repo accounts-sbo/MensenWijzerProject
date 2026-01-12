@@ -12,10 +12,10 @@ const TrainingHero = () => {
   return (
     <section className="relative min-h-[70vh] w-full bg-mensen-blue overflow-hidden">
       <div className="absolute inset-0">
-        <img 
-          src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg" 
-          alt="Training Invloedrijke Spreker" 
-          className="w-full h-full object-cover opacity-30"
+        <img
+          src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg"
+          alt="Training Invloedrijke Spreker"
+          className="w-full h-full object-cover object-center opacity-30"
         />
       </div>
       

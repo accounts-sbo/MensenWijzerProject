@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, Coffee } from 'lucide-react';
+import { Calendar, Clock, Coffee, MapPin } from 'lucide-react';
 
 const TrainingInvestment = () => {
   return (
@@ -11,6 +11,40 @@ const TrainingInvestment = () => {
               Investering & Praktische informatie
             </h2>
             <div className="h-1 w-20 bg-white/30 mb-8"></div>
+          </div>
+
+          {/* Data en Locatie */}
+          <div className="mb-12 bg-white/10 p-8 rounded-lg border border-white/20">
+            <h3 className="text-2xl font-brass-mono mb-6">Data & Locatie</h3>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <div className="flex items-start gap-3 mb-4">
+                  <Calendar className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-brass-mono mb-3">Trainingsdagen 2025</h4>
+                    <ul className="space-y-2 text-base">
+                      <li>• Vrijdag 6 februari 2025</li>
+                      <li>• Vrijdag 13 maart 2025</li>
+                      <li>• Vrijdag 17 april 2025</li>
+                      <li>• Vrijdag 22 mei 2025</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-brass-mono mb-3">Locatie</h4>
+                    <p className="text-base mb-2">Naarden-Vesting</p>
+                    <p className="text-base opacity-90">Kloosterstraat 20</p>
+                    <p className="text-base opacity-90">1411 RT Naarden-Vesting</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -45,12 +79,12 @@ const TrainingInvestment = () => {
           <div className="mt-12 bg-white/5 p-8 rounded-lg">
             <h3 className="text-2xl font-brass-mono mb-4">Wat kun je verwachten?</h3>
             <p className="text-base leading-relaxed mb-6">
-              In deze opleiding nemen we jou in samenwerking met Sipke Jan Bousema mee in de communicatie & psychologie 
+              In deze opleiding nemen we jou mee in de communicatie & psychologie
               van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken.
             </p>
             <p className="text-base leading-relaxed">
-              Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit 
-              en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden 
+              Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit
+              en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden
               en technieken.
             </p>
           </div>
