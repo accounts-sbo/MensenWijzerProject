@@ -22,12 +22,12 @@ const TrainingInvestment = () => {
                 <div className="flex items-start gap-3 mb-4">
                   <Calendar className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-lg font-brass-mono mb-3">Trainingsdagen 2025</h4>
+                    <h4 className="text-lg font-brass-mono mb-3">Trainingsdagen 2026</h4>
                     <ul className="space-y-2 text-base">
-                      <li>• Vrijdag 6 februari 2025</li>
-                      <li>• Vrijdag 13 maart 2025</li>
-                      <li>• Vrijdag 17 april 2025</li>
-                      <li>• Vrijdag 22 mei 2025</li>
+                      <li>• Vrijdag 6 februari 2026</li>
+                      <li>• Vrijdag 13 maart 2026</li>
+                      <li>• Vrijdag 17 april 2026</li>
+                      <li>• Vrijdag 22 mei 2026</li>
                     </ul>
                   </div>
                 </div>
@@ -38,9 +38,7 @@ const TrainingInvestment = () => {
                   <MapPin className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="text-lg font-brass-mono mb-3">Locatie</h4>
-                    <p className="text-base mb-2">Naarden-Vesting</p>
-                    <p className="text-base opacity-90">Kloosterstraat 20</p>
-                    <p className="text-base opacity-90">1411 RT Naarden-Vesting</p>
+                    <p className="text-base">Naarden-Vesting</p>
                   </div>
                 </div>
               </div>
@@ -72,7 +70,8 @@ const TrainingInvestment = () => {
             <div className="text-center mb-6">
               <p className="text-lg mb-2">Investering</p>
               <p className="text-5xl font-brass-mono text-[#f58e4f]">€ 4.500,-</p>
-              <p className="text-sm opacity-80 mt-2">Inclusief alle faciliteiten</p>
+              <p className="text-sm opacity-80 mt-2">Inclusief 21% BTW</p>
+              <p className="text-xs opacity-60 mt-1">€ 3.719,- excl. btw</p>
             </div>
           </div>
 
