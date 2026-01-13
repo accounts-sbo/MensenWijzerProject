@@ -13,7 +13,7 @@ const TrainingHero = () => {
     <section className="relative min-h-[70vh] w-full bg-mensen-blue overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg"
+          src="/lovable-uploads/hero-training.png"
           alt="Training Invloedrijke Spreker"
           className="w-full h-full object-cover opacity-30"
           style={{ objectPosition: 'center -50%' }}
