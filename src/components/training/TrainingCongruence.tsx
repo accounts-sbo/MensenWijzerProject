@@ -1,4 +1,5 @@
 import React from 'react';
+import { Shield, Eye, Zap, Users, Brain, TrendingUp, MessageSquare, Lightbulb, Quote, AlertCircle, Activity, Heart as HeartIcon, Target as TargetIcon, FileText, Presentation, BookOpen, Mic } from 'lucide-react';
 
 const TrainingCongruence = () => {
   return (
@@ -11,37 +12,43 @@ const TrainingCongruence = () => {
           <div className="h-1 w-20 bg-mensen-blue/30 mb-8"></div>
 
           <div className="space-y-6 text-base leading-relaxed text-gray-700">
-            <p className="text-lg italic text-mensen-blue/90 border-l-4 border-mensen-blue/30 pl-6 py-2">
-              "Impact ontstaat wanneer woorden, houding en intentie elkaar versterken. Dat is de essentie van congruentie: je bent geloofwaardig omdat je volledig klopt met jezelf."
-            </p>
+            <div className="relative bg-white/60 p-6 rounded-lg border-l-2 border-mensen-blue/40">
+              <Quote className="absolute top-3 right-3 h-8 w-8 text-mensen-blue/10" />
+              <p className="text-base italic text-gray-700 relative z-10">
+                "Impact ontstaat wanneer woorden, houding en intentie elkaar versterken. Dat is de essentie van congruentie: je bent geloofwaardig omdat je volledig klopt met jezelf."
+              </p>
+            </div>
 
             <div className="my-12 bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-brass-mono mb-6 text-mensen-blue">
                 De kracht van congruentie
               </h3>
               <div className="space-y-4">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Je boodschap durven claimen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Je expertise niet verstoppen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Je emoties functioneel inzetten</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Je lichaamstaal laten aansluiten bij je verhaal</span>
-                  </li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-4 my-6">
+                  <div className="flex items-start gap-4 bg-mensen-beige/10 p-5 rounded-lg">
+                    <Shield className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Je boodschap durven claimen</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-mensen-beige/10 p-5 rounded-lg">
+                    <Eye className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Je expertise niet verstoppen</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-mensen-beige/10 p-5 rounded-lg">
+                    <Zap className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Je emoties functioneel inzetten</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-mensen-beige/10 p-5 rounded-lg">
+                    <Users className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Je lichaamstaal laten aansluiten bij je verhaal</span>
+                  </div>
+                </div>
 
-                <p className="text-lg italic text-mensen-blue/90 border-l-4 border-mensen-blue/30 pl-6 py-2 mt-6">
-                  "Mensen voelen onmiddellijk wanneer je staat voor wat je zegt. Dat maakt je memorabel, zelfs als je boodschap complex of uitdagend is."
-                </p>
+                <div className="relative bg-mensen-beige/20 p-5 rounded-lg border-l-2 border-mensen-blue/40 mt-6">
+                  <Quote className="absolute top-2 right-2 h-6 w-6 text-mensen-blue/10" />
+                  <p className="text-base italic text-gray-700 relative z-10">
+                    "Mensen voelen onmiddellijk wanneer je staat voor wat je zegt. Dat maakt je memorabel, zelfs als je boodschap complex of uitdagend is."
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -50,32 +57,38 @@ const TrainingCongruence = () => {
                 Spreken vanuit identiteit, niet vanuit techniek
               </h3>
               <div className="space-y-4">
-                <p className="text-lg italic text-mensen-blue/90 border-l-4 border-mensen-blue/30 pl-6 py-2 mb-4">
-                  "Techniek ondersteunt, maar identiteit leidt. Een spreker met een sterke identiteit:
-                </p>
+                <div className="relative bg-white/60 p-5 rounded-lg border-l-2 border-mensen-blue/40 mb-4">
+                  <Quote className="absolute top-2 right-2 h-6 w-6 text-mensen-blue/10" />
+                  <p className="text-base italic text-gray-700 relative z-10">
+                    "Techniek ondersteunt, maar identiteit leidt. Een spreker met een sterke identiteit:
+                  </p>
+                </div>
 
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Spreekt vanuit visie, niet vanuit angst</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Durft pauzes te laten vallen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Maakt contact in plaats van indruk</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-mensen-blue mr-3 mt-1">•</span>
-                    <span>Gebruikt voorbeelden die passen bij het eigen verhaal</span>
-                  </li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-4 my-6">
+                  <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm">
+                    <Brain className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Spreekt vanuit visie, niet vanuit angst</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm">
+                    <TrendingUp className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Durft pauzes te laten vallen</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm">
+                    <MessageSquare className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Maakt contact in plaats van indruk</span>
+                  </div>
+                  <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm">
+                    <Lightbulb className="h-7 w-7 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">Gebruikt voorbeelden die passen bij het eigen verhaal</span>
+                  </div>
+                </div>
 
-                <p className="text-lg italic text-mensen-blue/90 border-l-4 border-mensen-blue/30 pl-6 py-2 mt-6">
-                  Wanneer je vanuit identiteit spreekt, ontstaat er vanzelf ontspanning. Je hoeft niet te presteren, je hoeft alleen aanwezig te zijn. Dat maakt je boodschap krachtiger dan welke presentatie-techniek ook."
-                </p>
+                <div className="relative bg-white/60 p-5 rounded-lg border-l-2 border-mensen-blue/40 mt-6">
+                  <Quote className="absolute top-2 right-2 h-6 w-6 text-mensen-blue/10" />
+                  <p className="text-base italic text-gray-700 relative z-10">
+                    Wanneer je vanuit identiteit spreekt, ontstaat er vanzelf ontspanning. Je hoeft niet te presteren, je hoeft alleen aanwezig te zijn. Dat maakt je boodschap krachtiger dan welke presentatie-techniek ook."
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -95,27 +108,27 @@ const TrainingCongruence = () => {
               <p className="mb-4">
                 Spreekspanning kan variëren van lichte onrust tot paniek. En het kost vaak meer energie dan mensen doorhebben: verhoogde alertheid, fysieke spanning, piekeren, vermoeidheid. Daardoor gaan veel professionals situaties vermijden—met gevolgen voor zichtbaarheid, loopbaan en invloed.
               </p>
-              <p className="mb-4">
+              <p className="mb-6">
                 In deze opleiding besteden we daarom veel aandacht aan:
               </p>
-              <ul className="space-y-2 ml-6 mb-4">
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>stress herkennen (vaak begint het al bij het plannen van de datum)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>spanning reguleren vóór en tijdens het spreken</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>emoties functioneel inzetten in plaats van wegdrukken</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>je energieniveau zó afstemmen dat je contact wint in plaats van verliest</span>
-                </li>
-              </ul>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                  <AlertCircle className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">stress herkennen (vaak begint het al bij het plannen van de datum)</span>
+                </div>
+                <div className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                  <Activity className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">spanning reguleren vóór en tijdens het spreken</span>
+                </div>
+                <div className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                  <HeartIcon className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">emoties functioneel inzetten in plaats van wegdrukken</span>
+                </div>
+                <div className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                  <Zap className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">je energieniveau zó afstemmen dat je contact wint in plaats van verliest</span>
+                </div>
+              </div>
               <p>
                 Een goed energieniveau wekt vertrouwen, vergroot draagvlak en verbetert je communicatie — verbaal én non-verbaal.
               </p>
@@ -125,27 +138,27 @@ const TrainingCongruence = () => {
               <h3 className="text-2xl font-brass-mono mb-4 text-mensen-blue">
                 Voorbereiding die ruimte geeft
               </h3>
-              <p className="mb-4">
+              <p className="mb-6">
                 Goede voorbereiding is geen extra werk; het is wat je later rust en vrijheid oplevert. Je leert:
               </p>
-              <ul className="space-y-2 ml-6">
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>snel tot een kernboodschap te komen</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>een opening te bouwen die direct aandacht creëert</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>inhoud om te zetten in een helder, boeiend verhaal</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-mensen-blue mr-3 mt-1">•</span>
-                  <span>flexibel te blijven wanneer de groep, sfeer of vragen veranderen</span>
-                </li>
-              </ul>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3 bg-mensen-beige/10 p-4 rounded-lg">
+                  <TargetIcon className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">snel tot een kernboodschap te komen</span>
+                </div>
+                <div className="flex items-start gap-3 bg-mensen-beige/10 p-4 rounded-lg">
+                  <Presentation className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">een opening te bouwen die direct aandacht creëert</span>
+                </div>
+                <div className="flex items-start gap-3 bg-mensen-beige/10 p-4 rounded-lg">
+                  <BookOpen className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">inhoud om te zetten in een helder, boeiend verhaal</span>
+                </div>
+                <div className="flex items-start gap-3 bg-mensen-beige/10 p-4 rounded-lg">
+                  <Mic className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                  <span className="text-sm text-gray-700">flexibel te blijven wanneer de groep, sfeer of vragen veranderen</span>
+                </div>
+              </div>
             </div>
 
             <div className="my-12 bg-mensen-blue/5 p-8 rounded-lg">
