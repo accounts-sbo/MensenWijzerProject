@@ -26,11 +26,10 @@ const TrainingHero = () => {
             Training Invloedrijke Spreker ©
           </h1>
           <p className="text-2xl md:text-3xl mb-8 font-lucida tracking-wide-50 italic">
-            Zichtbaarheid is de sleutel tot herkenning,<br />
-            wie impact wil maken, moet beide laten zien.
+            Zichtbaar zijn én iets te zeggen hebben
           </p>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Zodra je jezelf kunt identificeren – dat wil zeggen: weet wie je bent, waar je voor staat en welke waarde je kunt toevoegen – <strong>bén</strong> je het verschil dat het grote verschil maakt.
+          <p className="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            Wie echt verschil wil maken, moet niet alleen inhoud hebben, maar ook zichtbaar en herkenbaar zijn. Pas wanneer mensen je opmerken én voelen waar je voor staat, blijft je boodschap hangen — en komt er beweging.
           </p>
           <Button
             onClick={scrollToForm}

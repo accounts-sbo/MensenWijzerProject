@@ -74,19 +74,6 @@ const TrainingInvestment = () => {
               <p className="text-xs opacity-60 mt-1">€ 3.719,- excl. btw</p>
             </div>
           </div>
-
-          <div className="mt-12 bg-white/5 p-8 rounded-lg">
-            <h3 className="text-2xl font-brass-mono mb-4">Wat kun je verwachten?</h3>
-            <p className="text-base leading-relaxed mb-6">
-              In deze opleiding nemen we jou mee in de communicatie & psychologie
-              van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken.
-            </p>
-            <p className="text-base leading-relaxed">
-              Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit
-              en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden
-              en technieken.
-            </p>
-          </div>
         </div>
       </div>
     </section>
