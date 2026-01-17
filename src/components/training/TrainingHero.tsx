@@ -12,26 +12,26 @@ const TrainingHero = () => {
   return (
     <section className="relative min-h-[70vh] w-full bg-mensen-blue overflow-hidden">
       <div className="absolute inset-0">
-        <img 
-          src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg" 
-          alt="Training Invloedrijke Spreker" 
+        <img
+          src="/lovable-uploads/hero-training.png"
+          alt="Training Invloedrijke Spreker"
           className="w-full h-full object-cover opacity-30"
+          style={{ objectPosition: 'center -50%' }}
         />
       </div>
-      
-      <div className="relative z-20 container h-full flex flex-col justify-center py-24">
-        <div className="max-w-3xl text-white">
+
+      <div className="relative z-20 container min-h-[70vh] flex items-center justify-center py-24">
+        <div className="max-w-3xl text-white text-center">
           <h1 className="text-5xl md:text-6xl font-brass-mono mb-6">
             Training Invloedrijke Spreker ©
           </h1>
           <p className="text-2xl md:text-3xl mb-8 font-lucida tracking-wide-50 italic">
-            Zichtbaarheid is de sleutel tot herkenning,<br />
-            wie impact wil maken, moet beide laten zien.
+            Zichtbaar zijn én iets te zeggen hebben
           </p>
-          <p className="text-lg mb-8 max-w-2xl">
-            Zodra je jezelf kunt identificeren – dat wil zeggen: weet wie je bent, waar je voor staat en welke waarde je kunt toevoegen – <strong>bén</strong> je het verschil dat het grote verschil maakt.
+          <p className="text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            Wie echt verschil wil maken, moet niet alleen inhoud hebben, maar ook zichtbaar en herkenbaar zijn. Pas wanneer mensen je opmerken én voelen waar je voor staat, blijft je boodschap hangen — en komt er beweging.
           </p>
-          <Button 
+          <Button
             onClick={scrollToForm}
             className="bg-[#f58e4f] text-white px-8 py-6 text-lg hover:bg-[#f58e4f]/80 transition-all duration-200 uppercase tracking-wider font-brass-mono"
           >

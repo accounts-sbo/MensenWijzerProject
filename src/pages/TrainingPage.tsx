@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TrainingHero from '@/components/training/TrainingHero';
-import TrainingContent from '@/components/training/TrainingContent';
-import TrainingEnergyLevel from '@/components/training/TrainingEnergyLevel';
-import TrainingIdentity from '@/components/training/TrainingIdentity';
+import TrainingIdentityFoundation from '@/components/training/TrainingIdentityFoundation';
+import TrainingCongruence from '@/components/training/TrainingCongruence';
+import TrainingSignature from '@/components/training/TrainingSignature';
 import TrainingBenefits from '@/components/training/TrainingBenefits';
 import TrainingInvestment from '@/components/training/TrainingInvestment';
 import TrainingForm from '@/components/training/TrainingForm';
@@ -19,9 +19,9 @@ const TrainingPage = () => {
     <div className="min-h-screen bg-mensen-white">
       <Header />
       <TrainingHero />
-      <TrainingContent />
-      <TrainingEnergyLevel />
-      <TrainingIdentity />
+      <TrainingIdentityFoundation />
+      <TrainingCongruence />
+      <TrainingSignature />
       <TrainingBenefits />
       <TrainingInvestment />
       <TrainingForm />

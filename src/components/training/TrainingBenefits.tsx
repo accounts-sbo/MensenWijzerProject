@@ -3,27 +3,23 @@ import { Check } from 'lucide-react';
 
 const TrainingBenefits = () => {
   const benefits = [
-    "Je creëert een krachtige authentieke en onderscheidende presentatie identiteit.",
-    "Je hebt de aandacht van de groep door de krachtige verbinding die je maakt.",
-    "Je weet van de kennis die je overdraagt een interessant en inspirerend verhaal te maken.",
-    "Je beheerst de kracht van taal en kunt hiermee positieve invloed uitoefenen.",
-    "Je weet energie, stemgebruik en non-verbale ondersteuning doeltreffend in te zetten.",
-    "Je kunt spreken uit de losse pols en bent expert in het anticiperen."
+    "een sterke, authentieke en herkenbare sprekersidentiteit neerzetten",
+    "sneller verbinding en aandacht creëren in groepen",
+    "inhoud ombouwen tot een inspirerend verhaal dat blijft plakken",
+    "taal, stem, energie en non-verbaal gedrag bewuster inzetten",
+    "soepeler omgaan met vragen, kritiek en weerstand",
+    "met minder voorbereiding toch krachtig improviseren en anticiperen"
   ];
 
   const questions = [
-    "Hoe bereid ik me goed voor op een presentatie?",
-    "Hoe bepaal ik mijn kernboodschap?",
-    "Hoe zorg ik voor een goede opening?",
-    "Hoeveel tijd moet ik besteden aan de voorbereiding?",
-    "Hoe houd ik mijn publiek betrokken?",
-    "Hoe ga ik om met presentatieangst?",
-    "Hoe creëer ik een unieke en krachtige identiteit?",
-    "Hoe gebruik ik mijn lichaamstaal effectief?",
-    "Hoe ga ik om met vragen uit het publiek?",
-    "Hoe ga ik om met weerstand?",
-    "Hoe maak ik een goede visuele presentatie?",
-    "Hoe zorg ik ervoor dat mijn presentatie boeiend blijft en maak in een onvergetelijke impact?"
+    "Hoe bereid ik me efficiënt en scherp voor?",
+    "Hoe formuleer ik een kernboodschap die blijft hangen?",
+    "Hoe open ik sterk en houd ik aandacht vast?",
+    "Hoe ga ik om met presentatieangst en stress?",
+    "Hoe ontwikkel ik een krachtige, unieke identiteit als spreker?",
+    "Hoe zet ik lichaamstaal en stemgebruik ondersteunend in?",
+    "Hoe reageer ik op vragen, weerstand en kritiek?",
+    "Hoe maak ik visueel en inhoudelijk een presentatie die boeit?"
   ];
 
   return (
@@ -35,6 +31,9 @@ const TrainingBenefits = () => {
               Wat levert het op?
             </h2>
             <div className="h-1 w-20 bg-mensen-blue/30 mb-8"></div>
+            <p className="text-lg text-gray-700 mb-8">
+              Na deze opleiding kun je onder andere:
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-16">
@@ -46,10 +45,20 @@ const TrainingBenefits = () => {
             ))}
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <h3 className="text-3xl font-brass-mono mb-6 text-mensen-blue">
-              Je krijgt antwoord op deze vragen:
+          <div className="bg-white p-8 rounded-lg shadow-sm mb-12">
+            <h3 className="text-2xl font-brass-mono mb-4 text-mensen-blue">
+              Wat kun je verwachten?
             </h3>
+            <p className="text-base leading-relaxed text-gray-700">
+              Een intensieve, praktische opleiding waarin je presentatieskills, psychologie van groepsdynamiek en jouw professionele identiteit samenbrengt. Je leert impact maken vanuit vertrouwen en echtheid, en je ontdekt hoe je verschillen in teams kunt benutten in plaats van glad te strijken.
+            </p>
+          </div>
+
+          <div className="bg-mensen-blue/5 p-8 rounded-lg shadow-sm">
+            <h3 className="text-2xl font-brass-mono mb-6 text-mensen-blue">
+              Wat is de meerwaarde — welke vragen worden beantwoord?
+            </h3>
+            <p className="text-base text-gray-700 mb-4">Onder andere:</p>
             <ul className="space-y-3">
               {questions.map((question, index) => (
                 <li key={index} className="flex items-start">
@@ -58,30 +67,6 @@ const TrainingBenefits = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="mt-12 bg-mensen-blue text-white p-8 rounded-lg">
-            <h3 className="text-2xl font-brass-mono mb-4">
-              Wat kun je verwachten van deze opleiding?
-            </h3>
-            <p className="text-base leading-relaxed">
-              In deze opleiding nemen we jou in samenwerking met Sipke Jan Bousema mee in de communicatie & psychologie van zowel individuele als groepsprocessen, zodat de spreker vanuit vertrouwen en authenticiteit impact kan maken. Hierdoor kun je ook optimaal gebruik maken van de verschillen binnen een team die juist de groepsidentiteit en branding helder en krachtig op de kaart zetten. Daar is meer voor nodig dan de standaard presentatievaardigheden en technieken.
-            </p>
-          </div>
-
-          <div className="mt-12 bg-white p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-brass-mono mb-4 text-mensen-blue">
-              Hoe kun jij met een invloedrijke communicatie en psychologie volledig en ontspannen jezelf zijn op het podium en impact maken?
-            </h3>
-            <p className="text-base leading-relaxed text-gray-700">
-              Technieken zijn hier dan een ondersteunende in plaats van een leidende factor. Je leert hierdoor optimaal anticiperen en je kunt dan ook makkelijk afstemmen op je doelgroep.
-            </p>
-          </div>
-
-          <div className="mt-12 text-center">
-            <blockquote className="text-2xl md:text-3xl font-brass-mono text-mensen-blue italic">
-              "Zonder zichtbaarheid blijf je onopgemerkt – pas als je opvalt én iets te zeggen hebt, blijf je écht bij."
-            </blockquote>
           </div>
         </div>
       </div>

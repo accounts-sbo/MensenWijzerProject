@@ -13,6 +13,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,19 +32,22 @@ const Contact = () => {
     try {
       setIsSubmitting(true);
       console.log('Sending email with data:', formData);
-      
-      // Using the new URL provided by the user
-      const response = await fetch('https://contact.demensenwijzer.nl/mail.php', {
+
+      // Submit to n8n webhook
+      const response = await fetch('https://n8n.srv890194.hstgr.cloud/webhook/sjbmedia-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          formType: 'contact',
+          ...formData
+        })
       });
 
       console.log('Server response status:', response.status);
-      
+
       // Try to parse the JSON response
       let data;
       try {
@@ -52,18 +57,20 @@ const Contact = () => {
         console.error('Failed to parse response:', parseError);
         throw new Error('Kon het serverantwoord niet verwerken');
       }
-      
-      if (!response.ok) {
+
+      // n8n workflow returns {success: true, message: '...'} on success
+      // or {success: false, error: '...'} on failure
+      if (!data.success) {
         throw new Error(data.error || 'Er is een probleem opgetreden bij het verzenden.');
       }
-      
+
       toast({
         title: "Bericht verzonden",
-        description: "Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op.",
+        description: "Je bericht is succesvol verzonden. Ik neem zo snel mogelijk contact met je op. Je ontvangt ook een bevestigingsmail.",
       });
-      
+
       // Reset form after successful submission
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       return true;
     } catch (error) {
       console.error("Error sending email:", error);
@@ -77,9 +84,9 @@ const Contact = () => {
 
   const openEmailClient = () => {
     const subject = encodeURIComponent(`Contact via demensenwijzer.nl van ${formData.name}`);
-    const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\n\nBericht:\n${formData.message}`);
+    const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\nTelefoon: ${formData.phone}\nBedrijf: ${formData.company}\n\nBericht:\n${formData.message}`);
     window.location.href = `mailto:sipkejan@demensenwijzer.nl?subject=${subject}&body=${body}`;
-    
+
     toast({
       title: "E-mailclient geopend",
       description: "Je e-mailclient is geopend om direct contact op te nemen.",
@@ -162,7 +169,35 @@ const Contact = () => {
                     className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
                   />
                 </div>
-                
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Telefoonnummer
+                  </label>
+                  <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    Bedrijf (optioneel)
+                  </label>
+                  <Input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Bericht

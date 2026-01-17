@@ -10,13 +10,13 @@ const TrainingPopup = () => {
   useEffect(() => {
     // Check if popup was already shown in this session
     const popupShown = sessionStorage.getItem('trainingPopupShown');
-    
+
     if (!popupShown) {
-      // Show popup after 10 seconds
+      // Show popup after 2 seconds
       const timer = setTimeout(() => {
         setIsVisible(true);
         sessionStorage.setItem('trainingPopupShown', 'true');
-      }, 10000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -60,10 +60,10 @@ const TrainingPopup = () => {
           <div className="relative">
             {/* Image */}
             <div className="relative h-64 overflow-hidden rounded-t-lg">
-              <img 
+              <img
                 src="/lovable-uploads/WhatsApp Image 2026-01-08 at 08.49.04.jpeg"
                 alt="Training Invloedrijke Spreker"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
@@ -79,7 +79,7 @@ const TrainingPopup = () => {
             {/* Text content */}
             <div className="p-8">
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Leer impactvol presenteren en maak een blijvende indruk. In deze 4-daagse training ontwikkel je 
+                Leer invloedrijk spreken en maak een blijvende indruk. In deze 4-daagse training ontwikkel je
                 een krachtige, authentieke presentatie-identiteit en leer je spreken met vertrouwen en overtuiging.
               </p>
 

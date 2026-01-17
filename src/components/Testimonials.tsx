@@ -22,6 +22,12 @@ type TestimonialType = {
 const testimonials: TestimonialType[] = [
   {
     id: 1,
+    name: "Evert Jan van Nijen",
+    role: "Directeur VCF",
+    quote: "Sipke Jan was een grote aanwinst voor onze mediastrategie. Zijn kennis, ervaring én netwerk op landelijk toneel heeft ervoor gezorgd dat Fryslân veel media-aandacht heeft gekregen als Europese circulaire koploper. Jouw rol als media-adviseur en strateeg was heel waardevol en verdienstelijk!",
+  },
+  {
+    id: 2,
     name: "Willem Brethouwer",
     role: "",
     quote: "Uit eigen ervaring kan ik bevestigen dat Sipke Jan een pure professional is. Aanrader als je business for good nastreeft en je maatschappelijk hart sneller wilt laten kloppen!",
