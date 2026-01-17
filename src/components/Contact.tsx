@@ -58,7 +58,9 @@ const Contact = () => {
         throw new Error('Kon het serverantwoord niet verwerken');
       }
 
-      if (!response.ok || !data.success) {
+      // n8n workflow returns {success: true, message: '...'} on success
+      // or {success: false, error: '...'} on failure
+      if (!data.success) {
         throw new Error(data.error || 'Er is een probleem opgetreden bij het verzenden.');
       }
 
