@@ -33,25 +33,35 @@ const TrainingForm = () => {
         })
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        toast({
-          title: "Aanmelding ontvangen!",
-          description: "We nemen zo snel mogelijk contact met je op. Je ontvangt ook een bevestigingsmail.",
-        });
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          message: ''
-        });
-      } else {
-        throw new Error(result.error || 'Er is iets misgegaan');
+      // Try to parse the JSON response
+      let result;
+      try {
+        result = await response.json();
+        console.log('Server response data:', result);
+      } catch (parseError) {
+        console.error('Failed to parse response:', parseError);
+        throw new Error('Kon het serverantwoord niet verwerken');
       }
+
+      // n8n workflow returns {success: true, message: '...'} on success
+      // or {success: false, error: '...'} on failure
+      if (!result.success) {
+        throw new Error(result.error || 'Er is een probleem opgetreden bij het verzenden.');
+      }
+
+      toast({
+        title: "Aanmelding ontvangen!",
+        description: "We nemen zo snel mogelijk contact met je op. Je ontvangt ook een bevestigingsmail.",
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      });
     } catch (error) {
       console.error('Form submission error:', error);
       toast({
