@@ -13,6 +13,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,7 +68,7 @@ const Contact = () => {
       });
 
       // Reset form after successful submission
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       return true;
     } catch (error) {
       console.error("Error sending email:", error);
@@ -80,9 +82,9 @@ const Contact = () => {
 
   const openEmailClient = () => {
     const subject = encodeURIComponent(`Contact via demensenwijzer.nl van ${formData.name}`);
-    const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\n\nBericht:\n${formData.message}`);
+    const body = encodeURIComponent(`Naam: ${formData.name}\nE-mail: ${formData.email}\nTelefoon: ${formData.phone}\nBedrijf: ${formData.company}\n\nBericht:\n${formData.message}`);
     window.location.href = `mailto:sipkejan@demensenwijzer.nl?subject=${subject}&body=${body}`;
-    
+
     toast({
       title: "E-mailclient geopend",
       description: "Je e-mailclient is geopend om direct contact op te nemen.",
@@ -165,7 +167,35 @@ const Contact = () => {
                     className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
                   />
                 </div>
-                
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Telefoonnummer
+                  </label>
+                  <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    Bedrijf (optioneel)
+                  </label>
+                  <Input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full border-mensen-beige/40 focus:border-mensen-blue focus:ring-mensen-blue"
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Bericht
