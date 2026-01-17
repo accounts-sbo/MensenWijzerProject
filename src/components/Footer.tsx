@@ -49,10 +49,10 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-brass-mono text-lg mb-4 text-mensen-beige">Locatie Fryslân / Leeuwarden</h3>
+            <h3 className="font-brass-mono text-lg mb-4 text-mensen-beige">Locatie Naarden-Vesting</h3>
             <p className="font-lucida text-sm text-white/90">
-              Wyns 39<br />
-              9091 BE Wyns<br />
+              Kloosterstraat 20<br />
+              1411 RT Naarden-Vesting<br />
               <a href="tel:+31635345061" className="hover:text-mensen-beige transition-colors">T: +31 6 53 54 50 61</a>
             </p>
           </div>
