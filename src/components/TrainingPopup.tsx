@@ -79,7 +79,7 @@ const TrainingPopup = () => {
             {/* Text content */}
             <div className="p-8">
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Leer impactvol presenteren en maak een blijvende indruk. In deze 4-daagse training ontwikkel je 
+                Leer invloedrijk spreken en maak een blijvende indruk. In deze 4-daagse training ontwikkel je
                 een krachtige, authentieke presentatie-identiteit en leer je spreken met vertrouwen en overtuiging.
               </p>
 

@@ -66,10 +66,10 @@ const TrainingIdentityFoundation = () => {
 
             <div className="my-12 bg-mensen-blue/5 p-8 rounded-lg">
               <h3 className="text-2xl font-brass-mono mb-4 text-mensen-blue">
-                Wat is impactvol presenteren in deze opleiding?
+                Wat is invloedrijk spreken in deze opleiding?
               </h3>
               <p className="mb-4">
-                Impactvol presenteren is méér dan "een verhaal vertellen". Het is inhoud + identiteit + verbinding, verpakt in een verhaal dat helder is, raakt en blijft hangen. Je leert je publiek beter lezen: welke (soms onuitgesproken) behoeften, vragen en beslisroutes spelen er, en hoe sluit jouw boodschap daar op aan?
+                Invloedrijk spreken is méér dan "een verhaal vertellen". Het is inhoud + identiteit + verbinding, verpakt in een verhaal dat helder is, raakt en blijft hangen. Je leert je publiek beter lezen: welke (soms onuitgesproken) behoeften, vragen en beslisroutes spelen er, en hoe sluit jouw boodschap daar op aan?
               </p>
               <p>
                 Je wordt bovendien actief getraind: veel oefenen, directe feedback én feedforward, zodat je snel stappen maakt. Het doel: van spanning die blokkeert naar spanning die je energie geeft—met meer plezier en controle voor een groep.

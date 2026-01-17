@@ -39,6 +39,7 @@ const TrainingInvestment = () => {
                   <div>
                     <h4 className="text-lg font-brass-mono mb-3">Locatie</h4>
                     <p className="text-base">Naarden-Vesting</p>
+                    <p className="text-sm opacity-90 mt-1">Kloosterstraat 20, 1411 RT Naarden-Vesting</p>
                   </div>
                 </div>
               </div>
