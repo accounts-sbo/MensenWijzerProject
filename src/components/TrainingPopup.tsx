@@ -90,7 +90,9 @@ const TrainingPopup = () => {
                 </div>
                 <div className="bg-mensen-beige/30 p-4 rounded">
                   <p className="font-brass-mono text-mensen-blue mb-1">Investering</p>
-                  <p className="text-gray-700">€ 4.500,-</p>
+                  <p className="text-gray-700 font-semibold">€ 3.719,-</p>
+                  <p className="text-xs text-gray-600 mt-0.5">excl. BTW</p>
+                  <p className="text-xs text-gray-500 mt-0.5">€ 4.500,- incl. btw</p>
                 </div>
               </div>
 

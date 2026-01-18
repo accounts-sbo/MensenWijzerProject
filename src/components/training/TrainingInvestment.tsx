@@ -69,9 +69,9 @@ const TrainingInvestment = () => {
           <div className="bg-white/10 p-8 rounded-lg border border-white/20">
             <div className="text-center mb-6">
               <p className="text-lg mb-2">Investering</p>
-              <p className="text-5xl font-brass-mono text-[#f58e4f]">€ 4.500,-</p>
-              <p className="text-sm opacity-80 mt-2">Inclusief 21% BTW</p>
-              <p className="text-xs opacity-60 mt-1">€ 3.719,- excl. btw</p>
+              <p className="text-5xl font-brass-mono text-[#f58e4f]">€ 3.719,-</p>
+              <p className="text-sm opacity-80 mt-2">Exclusief BTW</p>
+              <p className="text-xs opacity-60 mt-1">€ 4.500,- incl. btw</p>
             </div>
           </div>
         </div>
