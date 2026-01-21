@@ -17,28 +17,66 @@ const TrainingInvestment = () => {
           <div className="mb-12 bg-white/10 p-8 rounded-lg border border-white/20">
             <h3 className="text-2xl font-brass-mono mb-6">Data & Locatie</h3>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <div className="flex items-start gap-3 mb-4">
-                  <Calendar className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="text-lg font-brass-mono mb-3">Trainingsdagen 2026</h4>
-                    <ul className="space-y-2 text-base">
-                      <li>• Vrijdag 6 februari 2026</li>
-                      <li>• Vrijdag 13 maart 2026</li>
-                      <li>• Vrijdag 17 april 2026</li>
-                      <li>• Vrijdag 22 mei 2026</li>
-                    </ul>
+            {/* Training Voorjaar */}
+            <div className="mb-8">
+              <h4 className="text-xl font-brass-mono mb-4 text-[#f58e4f]">Training voorjaar</h4>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-start gap-3 mb-4">
+                    <Calendar className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <div>
+                      <h5 className="text-base font-brass-mono mb-3">Trainingsdagen 2026</h5>
+                      <ul className="space-y-2 text-base">
+                        <li>• Vrijdag 6 februari 2026</li>
+                        <li>• Vrijdag 13 maart 2026</li>
+                        <li>• Vrijdag 17 april 2026</li>
+                        <li>• Vrijdag 22 mei 2026</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <div>
+                      <h5 className="text-base font-brass-mono mb-3">Locatie</h5>
+                      <p className="text-base">Naarden-Vesting</p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="text-lg font-brass-mono mb-3">Locatie</h4>
-                    <p className="text-base">Naarden-Vesting</p>
+            {/* Divider */}
+            <div className="h-px bg-white/20 mb-8"></div>
+
+            {/* Training Najaar */}
+            <div>
+              <h4 className="text-xl font-brass-mono mb-4 text-[#f58e4f]">Training najaar</h4>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-start gap-3 mb-4">
+                    <Calendar className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <div>
+                      <h5 className="text-base font-brass-mono mb-3">Trainingsdagen 2026</h5>
+                      <ul className="space-y-2 text-base">
+                        <li>• Vrijdag 11 september 2026</li>
+                        <li>• Vrijdag 16 oktober 2026</li>
+                        <li>• Vrijdag 13 november 2026</li>
+                        <li>• Vrijdag 11 december 2026</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-6 w-6 text-[#f58e4f] flex-shrink-0 mt-1" />
+                    <div>
+                      <h5 className="text-base font-brass-mono mb-3">Locatie</h5>
+                      <p className="text-base">Naarden-Vesting</p>
+                    </div>
                   </div>
                 </div>
               </div>
