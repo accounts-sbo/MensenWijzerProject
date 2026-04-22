@@ -1,12 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
@@ -59,6 +58,16 @@ const Header = () => {
     }
   };
 
+  const goToAboutPage = () => {
+    setIsMenuOpen(false);
+
+    if (location.pathname !== '/over-mij') {
+      navigate('/over-mij');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-mensen-white shadow-md py-3' : 'bg-transparent py-5'
@@ -92,7 +101,7 @@ const Header = () => {
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
                 <a
-                  onClick={() => scrollToSection('about')}
+                  onClick={goToAboutPage}
                   className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
                 >
                   Over mij
@@ -150,7 +159,7 @@ const Header = () => {
         <div className="md:hidden bg-mensen-white w-full py-4 shadow-md">
           <div className="container flex flex-col space-y-4">
             <a
-              onClick={() => scrollToSection('about')}
+              onClick={goToAboutPage}
               className="text-mensen-black hover:text-mensen-blue transition-colors font-lucida cursor-pointer"
             >
               Over mij

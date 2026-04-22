@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TrainingPage from "./pages/TrainingPage";
 import NotFound from "./pages/NotFound";
+import OverMijPage from "./pages/OverMijPage";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/over-mij" element={<Index />} />
+          <Route path="/over-mij" element={<OverMijPage />} />
           <Route path="/identiteit-merkontwikkeling" element={<Index />} />
           <Route path="/communicatie-mediastrategie" element={<Index />} />
           <Route path="/presentatie-profilering" element={<Index />} />

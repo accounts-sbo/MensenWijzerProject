@@ -1,14 +1,13 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Linkedin } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,6 +62,9 @@ const Footer = () => {
               © {currentYear} - Alle rechten voorbehouden
             </p>
             <div className="mt-2 font-lucida text-xs space-x-4">
+              <Link to="/over-mij" className="hover:text-mensen-beige transition-colors">
+                Over mij
+              </Link>
               <button 
                 onClick={() => setTermsOpen(true)}
                 className="hover:text-mensen-beige transition-colors underline-offset-4 hover:underline"
