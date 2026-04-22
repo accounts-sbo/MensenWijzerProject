@@ -124,130 +124,184 @@ const OverMijPage = () => {
           </div>
         </section>
 
+        <section className="bg-[#f7f4f1] py-10 md:py-12">
+          <div className="container">
+            <div className="mx-auto max-w-3xl border-y border-mensen-blue/10 py-6">
+              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                Een persoonlijk verhaal
+              </p>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-mensen-black/80">
+                Niet als profieltekst, maar als een doorlopend verhaal over werk, richting, identiteit
+                en wat er gebeurt wanneer de buitenkant niet meer genoeg is.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-white py-16 md:py-24">
-          <div className="container grid gap-8 lg:grid-cols-2">
-            {storySections.map((section, index) => (
-              <article
-                key={section.label}
-                className={`rounded-md border p-8 md:p-10 ${
-                  index === 0
-                    ? 'border-mensen-beige/30 bg-[#f4eee9]'
-                    : 'border-mensen-blue/10 bg-white'
-                }`}
-              >
-                <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
-                  {section.label}
-                </p>
-                <h2 className="mt-4 max-w-md text-3xl leading-tight text-mensen-black">
-                  {index === 0
-                    ? 'Het moment waarop de buitenkant niet meer genoeg was.'
-                    : 'De fase waarin alles samenvalt en op zijn plek komt.'}
-                </h2>
-                <div className="mt-6 h-px w-20 bg-mensen-beige/40" />
-                <div className="mt-8 space-y-6 text-base leading-7 text-mensen-black/90">
-                  {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+          <div className="container">
+            <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[200px_minmax(0,760px)]">
+              <aside className="hidden lg:block">
+                <div className="sticky top-28 space-y-6">
+                  <p className="font-brass-mono text-xs uppercase tracking-[0.24em] text-mensen-blue/45">
+                    In deze pagina
+                  </p>
+                  <nav className="space-y-3 text-sm text-mensen-black/55">
+                    <a href="#hoe-het-eerst-was" className="block transition-colors hover:text-[#f58e4f]">
+                      Hoe het eerst was
+                    </a>
+                    <a href="#hoe-het-nu-is" className="block transition-colors hover:text-[#f58e4f]">
+                      Hoe het nu is
+                    </a>
+                    <a href="#mijn-expertise" className="block transition-colors hover:text-[#f58e4f]">
+                      Mijn expertise
+                    </a>
+                    <a href="#mijn-visie" className="block transition-colors hover:text-[#f58e4f]">
+                      Mijn visie
+                    </a>
+                    <a href="#als-je-me-zou-kennen" className="block transition-colors hover:text-[#f58e4f]">
+                      Als je me zou kennen
+                    </a>
+                    <a href="#belofte" className="block transition-colors hover:text-[#f58e4f]">
+                      Belofte
+                    </a>
+                  </nav>
+                </div>
+              </aside>
+
+              <article className="min-w-0">
+                <div className="space-y-16 md:space-y-20">
+                  <section id="hoe-het-eerst-was">
+                    <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                      {storySections[0].label}
+                    </p>
+                    <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                      Het moment waarop de buitenkant niet meer genoeg was.
+                    </h2>
+                    <div className="mt-8 space-y-6 text-lg leading-8 text-mensen-black/88">
+                      {storySections[0].paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </section>
+
+                  <blockquote className="border-l-2 border-[#f58e4f] pl-6 text-2xl leading-10 text-mensen-blue md:pl-8 md:text-3xl md:leading-[1.45]">
+                    Als het alleen nog goed oogt aan de buitenkant en niet meer leeft vanbinnen,
+                    dan is het tijd voor een stap.
+                  </blockquote>
+
+                  <section id="hoe-het-nu-is">
+                    <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+                      <div>
+                        <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                          {storySections[1].label}
+                        </p>
+                        <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                          De fase waarin alles samenvalt en op zijn plek komt.
+                        </h2>
+                        <div className="mt-8 space-y-6 text-lg leading-8 text-mensen-black/88">
+                          {storySections[1].paragraphs.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="border-t border-mensen-blue/10 pt-5 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+                        <p className="font-brass-mono text-xs uppercase tracking-[0.24em] text-mensen-blue/45">
+                          Wat er ontstaat
+                        </p>
+                        <p className="mt-4 text-base leading-7 text-mensen-black/70">
+                          Rust. Richting. Eigenheid. Leven. Niet als grote woorden, maar als iets wat
+                          in houding, keuzes en uitstraling weer voelbaar wordt.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <div className="overflow-hidden">
+                    <img
+                      src="/lovable-uploads/bdfac387-5ddd-4dd1-8d53-f573fa83f5b9.png"
+                      alt="Sipke Jan Bousema"
+                      className="aspect-[16/10] w-full object-cover object-top"
+                    />
+                  </div>
+
+                  {focusBlocks.map((block) => (
+                    <section
+                      key={block.label}
+                      id={block.label === 'Mijn expertise' ? 'mijn-expertise' : 'mijn-visie'}
+                      className="border-t border-mensen-blue/10 pt-12"
+                    >
+                      <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                        {block.label}
+                      </p>
+                      <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                        {block.title}
+                      </h2>
+                      <div className="mt-8 max-w-3xl space-y-6 text-lg leading-8 text-mensen-black/88">
+                        <p>{block.text}</p>
+                      </div>
+                    </section>
                   ))}
+
+                  <section id="als-je-me-zou-kennen" className="border-t border-mensen-blue/10 pt-12">
+                    <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                      Als je me zou kennen
+                    </p>
+                    <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                      Serieus in mijn vak, licht in de energie, scherp op wat echt gezien wil worden.
+                    </h2>
+                    <ul className="mt-10 space-y-6 text-lg leading-8 text-mensen-black/88">
+                      {personalNotes.map((note) => (
+                        <li key={note} className="flex gap-4">
+                          <span className="mt-3 h-2 w-2 flex-shrink-0 rounded-full bg-[#f58e4f]" />
+                          <span>{note}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section id="belofte" className="border-t border-mensen-blue/10 pt-12">
+                    <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                      En misschien nog wel het belangrijkste
+                    </p>
+                    <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                      Met de juiste begeleiding ga je dingen zien die je nog niet eerder zag, horen wat
+                      je misschien nog niet wilde horen, en weer voelen welke weg werkelijk bij jou past.
+                    </h2>
+                    <p className="mt-8 max-w-3xl text-lg leading-8 text-mensen-black/88">
+                      Dat is mijn belofte aan jou.
+                    </p>
+                    <div className="mt-10 border-l-2 border-mensen-blue pl-6">
+                      <p className="font-brass-mono text-lg text-mensen-black">
+                        Sipke Jan Bousema
+                        <br />
+                        <span className="text-[#b0693d]">De Mensen Wijzer</span>
+                      </p>
+                      <p className="mt-4 max-w-2xl text-base leading-7 text-mensen-black/70">
+                        Voor mensen die ergens klaar mee zijn - en klaar voor zijn.
+                      </p>
+                    </div>
+
+                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                      <Button
+                        onClick={goToContact}
+                        className="bg-[#f58e4f] px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-white hover:bg-[#d8773c]"
+                      >
+                        Neem contact op
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button
+                        onClick={() => navigate('/training')}
+                        variant="outline"
+                        className="border-mensen-blue/20 px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-mensen-blue hover:border-[#f58e4f] hover:bg-[#f58e4f] hover:text-white"
+                      >
+                        Bekijk de training
+                      </Button>
+                    </div>
+                  </section>
                 </div>
               </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-[#b0693d] py-16 text-white md:py-24">
-          <div className="container">
-            <div className="max-w-2xl">
-              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-white/70">
-                Waar ik op werk
-              </p>
-              <h2 className="mt-4 text-3xl leading-tight md:text-4xl">
-                Ik help mensen herkennen wat klopt, en van daaruit keuzes maken die weer van henzelf zijn.
-              </h2>
-            </div>
-
-            <div className="mt-10 grid gap-8 lg:grid-cols-2">
-              {focusBlocks.map((block) => (
-                <article
-                  key={block.label}
-                  className="flex h-full flex-col rounded-md border border-white/20 bg-white/10 p-8 md:p-10"
-                >
-                  <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-mensen-beige">
-                    {block.label}
-                  </p>
-                  <h3 className="mt-4 max-w-md text-2xl leading-tight text-white">{block.title}</h3>
-                  <div className="mt-6 h-px w-20 bg-white/30" />
-                  <p className="mt-8 text-base leading-7 text-white/90">{block.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#f7f4f1] py-16 md:py-24">
-          <div className="container">
-            <div className="max-w-2xl">
-              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
-                Als je me zou kennen
-              </p>
-              <h2 className="mt-4 text-3xl leading-tight text-mensen-black md:text-4xl">
-                Serieus in mijn vak, licht in de energie, scherp op wat echt gezien wil worden.
-              </h2>
-              <div className="mt-6 h-px w-20 bg-mensen-beige/50" />
-            </div>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {personalNotes.map((note) => (
-                <article
-                  key={note}
-                  className="flex min-h-[180px] flex-col justify-between rounded-md border border-mensen-blue/10 bg-white p-6 shadow-sm"
-                >
-                  <span className="font-brass-mono text-xs uppercase tracking-[0.22em] text-mensen-blue/60">
-                    Persoonlijk
-                  </span>
-                  <p className="mt-6 text-base leading-7 text-mensen-black/90">{note}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-mensen-blue py-16 text-white md:py-24">
-          <div className="container grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-            <div className="max-w-2xl">
-              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-mensen-beige">
-                En misschien nog wel het belangrijkste
-              </p>
-              <h2 className="mt-4 text-3xl leading-tight md:text-4xl">
-                Met de juiste begeleiding ga je zien, horen en voelen welke weg werkelijk bij jou past.
-              </h2>
-              <p className="mt-8 text-base leading-7 text-white/85">
-                Dat is mijn belofte aan jou.
-              </p>
-              <p className="mt-6 font-brass-mono text-lg text-white">
-                Sipke Jan Bousema
-                <br />
-                <span className="text-mensen-beige">De Mensen Wijzer</span>
-              </p>
-              <p className="mt-4 max-w-lg text-base leading-7 text-white/80">
-                Voor mensen die ergens klaar mee zijn - en klaar voor zijn.
-              </p>
-            </div>
-
-            <div className="rounded-md border border-white/20 bg-white/10 p-8 md:p-10">
-              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-mensen-beige">
-                Kennismaken
-              </p>
-              <p className="mt-6 text-base leading-7 text-white/90">
-                Als je voelt dat er iets mag verschuiven, maar nog niet precies weet hoe, dan is dat vaak
-                al genoeg om het gesprek aan te gaan.
-              </p>
-              <Button
-                onClick={goToContact}
-                className="mt-8 bg-white px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-mensen-blue hover:bg-[#f58e4f] hover:text-white"
-              >
-                Neem contact op
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         </section>
