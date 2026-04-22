@@ -27,7 +27,7 @@ const Index = () => {
     <div className="min-h-screen bg-mensen-white">
       <Header />
       <Hero />
-      <TrainingPopup />
+      <TrainingPopup enabled={false} />
       <div id="about">
         <AboutSummary />
         <About />

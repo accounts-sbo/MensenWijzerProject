@@ -3,11 +3,20 @@ import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
-const TrainingPopup = () => {
+type TrainingPopupProps = {
+  enabled?: boolean;
+};
+
+const TrainingPopup = ({ enabled = true }: TrainingPopupProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!enabled) {
+      setIsVisible(false);
+      return;
+    }
+
     // Check if popup was already shown in this session
     const popupShown = sessionStorage.getItem('trainingPopupShown');
 
@@ -20,7 +29,7 @@ const TrainingPopup = () => {
 
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [enabled]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -31,7 +40,7 @@ const TrainingPopup = () => {
     navigate('/training');
   };
 
-  if (!isVisible) return null;
+  if (!enabled || !isVisible) return null;
 
   return (
     <>

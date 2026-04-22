@@ -68,6 +68,9 @@ const Header = () => {
     }
   };
 
+  const darkHeroHoverClass =
+    location.pathname === '/over-mij' ? 'hover:text-[#f58e4f]' : 'hover:text-mensen-blue';
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-mensen-white shadow-md py-3' : 'bg-transparent py-5'
@@ -102,7 +105,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <a
                   onClick={goToAboutPage}
-                  className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+                  className={`${isScrolled ? 'text-mensen-black hover:text-mensen-blue' : `text-white ${darkHeroHoverClass}`} transition-colors font-lucida cursor-pointer`}
                 >
                   Over mij
                 </a>
@@ -110,7 +113,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <a
                   onClick={() => scrollToSection('services')}
-                  className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+                  className={`${isScrolled ? 'text-mensen-black hover:text-mensen-blue' : `text-white ${darkHeroHoverClass}`} transition-colors font-lucida cursor-pointer`}
                 >
                   Diensten
                 </a>
@@ -118,7 +121,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <a
                   onClick={() => scrollToSection('demensen')}
-                  className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+                  className={`${isScrolled ? 'text-mensen-black hover:text-mensen-blue' : `text-white ${darkHeroHoverClass}`} transition-colors font-lucida cursor-pointer`}
                 >
                   De Mensen Wijzer
                 </a>
@@ -126,7 +129,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <a
                   onClick={() => scrollToSection('contact')}
-                  className={`${isScrolled ? 'text-mensen-black' : 'text-white'} hover:text-mensen-blue transition-colors font-lucida cursor-pointer`}
+                  className={`${isScrolled ? 'text-mensen-black hover:text-mensen-blue' : `text-white ${darkHeroHoverClass}`} transition-colors font-lucida cursor-pointer`}
                 >
                   Contact
                 </a>
