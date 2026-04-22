@@ -124,20 +124,6 @@ const OverMijPage = () => {
           </div>
         </section>
 
-        <section className="bg-[#f7f4f1] py-10 md:py-12">
-          <div className="container">
-            <div className="mx-auto max-w-3xl border-y border-mensen-blue/10 py-6">
-              <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
-                Een persoonlijk verhaal
-              </p>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-mensen-black/80">
-                Niet als profieltekst, maar als een doorlopend verhaal over werk, richting, identiteit
-                en wat er gebeurt wanneer de buitenkant niet meer genoeg is.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className="bg-white py-16 md:py-24">
           <div className="container">
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[200px_minmax(0,760px)]">
