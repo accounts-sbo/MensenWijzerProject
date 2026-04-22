@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutSummary = () => {
   return (
@@ -21,9 +22,20 @@ const AboutSummary = () => {
             Wat mij drijft is beweging: mensen en merken helpen richting te kiezen en zichtbaar 
             te worden op een manier die past.
           </p>
-          <a href="#contact" className="text-white hover:text-white/80 transition-colors font-brass-mono underline">
-            Neem contact op →
-          </a>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center bg-white px-6 py-3 text-sm uppercase tracking-wider text-[#b0693d] transition-colors hover:bg-white/90 font-brass-mono"
+            >
+              Neem contact op
+            </a>
+            <Link
+              to="/over-mij"
+              className="inline-flex items-center justify-center border border-white/40 px-6 py-3 text-sm uppercase tracking-wider text-white transition-colors hover:bg-white/10 font-brass-mono"
+            >
+              Ga naar de over mij pagina
+            </Link>
+          </div>
         </div>
       </div>
     </section>
