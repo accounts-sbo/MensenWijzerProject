@@ -156,7 +156,7 @@ const OverMijPage = () => {
               </aside>
 
               <article className="min-w-0">
-                <div className="space-y-16 md:space-y-20">
+                <div className="space-y-12 md:space-y-14">
                   <section id="hoe-het-eerst-was">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                       {storySections[0].label}
@@ -164,7 +164,7 @@ const OverMijPage = () => {
                     <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
                       Het moment waarop de buitenkant niet meer genoeg was.
                     </h2>
-                    <div className="mt-8 space-y-6 text-lg leading-8 text-mensen-black/88">
+                    <div className="mt-6 space-y-5 text-lg leading-8 text-mensen-black/88">
                       {storySections[0].paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -177,30 +177,25 @@ const OverMijPage = () => {
                   </blockquote>
 
                   <section id="hoe-het-nu-is">
-                    <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
-                      <div>
-                        <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
-                          {storySections[1].label}
-                        </p>
-                        <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
-                          De fase waarin alles samenvalt en op zijn plek komt.
-                        </h2>
-                        <div className="mt-8 space-y-6 text-lg leading-8 text-mensen-black/88">
-                          {storySections[1].paragraphs.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="border-t border-mensen-blue/10 pt-5 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
-                        <p className="font-brass-mono text-xs uppercase tracking-[0.24em] text-mensen-blue/45">
-                          Wat er ontstaat
-                        </p>
-                        <p className="mt-4 text-base leading-7 text-mensen-black/70">
-                          Rust. Richting. Eigenheid. Leven. Niet als grote woorden, maar als iets wat
-                          in houding, keuzes en uitstraling weer voelbaar wordt.
-                        </p>
-                      </div>
+                    <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
+                      {storySections[1].label}
+                    </p>
+                    <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
+                      De fase waarin alles samenvalt en op zijn plek komt.
+                    </h2>
+                    <div className="mt-6 space-y-5 text-lg leading-8 text-mensen-black/88">
+                      {storySections[1].paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    <div className="mt-8 border-l-2 border-[#f58e4f] pl-6 md:pl-8">
+                      <p className="font-brass-mono text-xs uppercase tracking-[0.24em] text-mensen-blue/45">
+                        Wat er ontstaat
+                      </p>
+                      <p className="mt-3 text-lg leading-8 text-mensen-black/78">
+                        Rust. Richting. Eigenheid. Leven. Niet als grote woorden, maar als iets wat in
+                        houding, keuzes en uitstraling weer voelbaar wordt.
+                      </p>
                     </div>
                   </section>
 
@@ -224,7 +219,7 @@ const OverMijPage = () => {
                       <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
                         {block.title}
                       </h2>
-                      <div className="mt-8 max-w-3xl space-y-6 text-lg leading-8 text-mensen-black/88">
+                      <div className="mt-6 max-w-3xl space-y-5 text-lg leading-8 text-mensen-black/88">
                         <p>{block.text}</p>
                       </div>
                     </section>
@@ -237,8 +232,12 @@ const OverMijPage = () => {
                     <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
                       Serieus in mijn vak, licht in de energie, scherp op wat echt gezien wil worden.
                     </h2>
-                    <ul className="mt-10 space-y-6 text-lg leading-8 text-mensen-black/88">
-                      {personalNotes.map((note) => (
+                    <p className="mt-4 max-w-3xl text-lg leading-8 text-mensen-black/78">
+                      ik een professional en autoriteit ben, maar ook een dondersteen; scherp, met humor
+                      en soms een beetje op het randje, maar altijd met warmte en betrokkenheid.
+                    </p>
+                    <ul className="mt-8 space-y-5 text-lg leading-8 text-mensen-black/88">
+                      {personalNotes.slice(1).map((note) => (
                         <li key={note} className="flex gap-4">
                           <span className="mt-3 h-2 w-2 flex-shrink-0 rounded-full bg-[#f58e4f]" />
                           <span>{note}</span>
@@ -255,10 +254,10 @@ const OverMijPage = () => {
                       Met de juiste begeleiding ga je dingen zien die je nog niet eerder zag, horen wat
                       je misschien nog niet wilde horen, en weer voelen welke weg werkelijk bij jou past.
                     </h2>
-                    <p className="mt-8 max-w-3xl text-lg leading-8 text-mensen-black/88">
+                    <p className="mt-6 max-w-3xl text-lg leading-8 text-mensen-black/88">
                       Dat is mijn belofte aan jou.
                     </p>
-                    <div className="mt-10 border-l-2 border-mensen-blue pl-6">
+                    <div className="mt-8 border-l-2 border-mensen-blue pl-6">
                       <p className="font-brass-mono text-lg text-mensen-black">
                         Sipke Jan Bousema
                         <br />
@@ -269,7 +268,7 @@ const OverMijPage = () => {
                       </p>
                     </div>
 
-                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                    <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                       <Button
                         onClick={goToContact}
                         className="bg-[#f58e4f] px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-white hover:bg-[#d8773c]"
