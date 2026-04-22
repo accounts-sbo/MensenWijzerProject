@@ -106,7 +106,7 @@ const OverMijPage = () => {
                 <Button
                   onClick={() => navigate('/training')}
                   variant="outline"
-                  className="border-white/30 bg-transparent px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-white hover:bg-white hover:text-mensen-blue"
+                  className="border-white/30 bg-transparent px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-white hover:border-[#f58e4f] hover:bg-[#f58e4f] hover:text-white"
                 >
                   Bekijk de training
                 </Button>
@@ -243,7 +243,7 @@ const OverMijPage = () => {
               </p>
               <Button
                 onClick={goToContact}
-                className="mt-8 bg-white px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-mensen-blue hover:bg-white/90"
+                className="mt-8 bg-white px-6 py-3 font-brass-mono text-sm uppercase tracking-wider text-mensen-blue hover:bg-[#f58e4f] hover:text-white"
               >
                 Neem contact op
                 <ArrowRight className="ml-2 h-4 w-4" />
