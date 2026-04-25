@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import RadioInterview from '@/components/RadioInterview';
 import AboutSummary from '@/components/AboutSummary';
 import Services from '@/components/Services';
 import About from '@/components/About';
@@ -28,6 +29,7 @@ const Index = () => {
       <Header />
       <Hero />
       <TrainingPopup enabled={false} />
+      <RadioInterview />
       <div id="about">
         <AboutSummary />
         <About />
