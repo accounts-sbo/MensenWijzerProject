@@ -146,7 +146,7 @@ const OverMijPage = () => {
                       Mijn visie
                     </a>
                     <a href="#als-je-me-zou-kennen" className="block transition-colors hover:text-[#f58e4f]">
-                      Als je me zou kennen
+                      Als je me zou kennen, zou je weten dat:
                     </a>
                     <a href="#belofte" className="block transition-colors hover:text-[#f58e4f]">
                       Belofte
@@ -227,7 +227,7 @@ const OverMijPage = () => {
 
                   <section id="als-je-me-zou-kennen" className="border-t border-mensen-blue/10 pt-12">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
-                      Als je me zou kennen
+                      Als je me zou kennen, zou je weten dat:
                     </p>
                     <h2 className="mt-5 max-w-2xl text-3xl leading-tight text-mensen-black md:text-4xl">
                       Serieus in mijn vak, licht in de energie, scherp op wat echt gezien wil worden.
