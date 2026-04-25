@@ -14,7 +14,7 @@ const RadioInterview = () => {
             </h2>
             <div className="h-1 w-20 bg-[#b0693d]/40 mb-6"></div>
             <p className="text-base text-mensen-gray leading-relaxed mb-6">
-              In dit gesprek vertelt Sipke Jan over De Mensenwijzer, zijn weg ernaartoe
+              In dit gesprek vertelt Sipke Jan over De Mensen Wijzer, zijn weg ernaartoe
               en de keuze om zijn televisiewerk achter zich te laten. Een persoonlijk
               verhaal over richting, vertrouwen en zichtbaar worden vanuit wie je bent.
             </p>
@@ -32,7 +32,7 @@ const RadioInterview = () => {
               <iframe
                 className="aspect-video w-full"
                 src="https://www.youtube.com/embed/RUbDosqphYE"
-                title="Radio-interview over De Mensenwijzer"
+                title="Radio-interview over De Mensen Wijzer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
