@@ -157,7 +157,7 @@ const OverMijPage = () => {
 
               <article className="min-w-0">
                 <div className="space-y-12 md:space-y-14">
-                  <section id="hoe-het-eerst-was">
+                  <section id="hoe-het-eerst-was" className="scroll-mt-32 md:scroll-mt-36">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                       {storySections[0].label}
                     </p>
@@ -176,7 +176,7 @@ const OverMijPage = () => {
                     dan is het tijd voor een stap.
                   </blockquote>
 
-                  <section id="hoe-het-nu-is">
+                  <section id="hoe-het-nu-is" className="scroll-mt-32 md:scroll-mt-36">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                       {storySections[1].label}
                     </p>
@@ -211,7 +211,7 @@ const OverMijPage = () => {
                     <section
                       key={block.label}
                       id={block.label === 'Mijn expertise' ? 'mijn-expertise' : 'mijn-visie'}
-                      className="border-t border-mensen-blue/10 pt-12"
+                      className="scroll-mt-32 border-t border-mensen-blue/10 pt-12 md:scroll-mt-36"
                     >
                       <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                         {block.label}
@@ -225,7 +225,7 @@ const OverMijPage = () => {
                     </section>
                   ))}
 
-                  <section id="als-je-me-zou-kennen" className="border-t border-mensen-blue/10 pt-12">
+                  <section id="als-je-me-zou-kennen" className="scroll-mt-32 border-t border-mensen-blue/10 pt-12 md:scroll-mt-36">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                       Als je me zou kennen, zou je weten dat:
                     </p>
@@ -246,7 +246,7 @@ const OverMijPage = () => {
                     </ul>
                   </section>
 
-                  <section id="belofte" className="border-t border-mensen-blue/10 pt-12">
+                  <section id="belofte" className="scroll-mt-32 border-t border-mensen-blue/10 pt-12 md:scroll-mt-36">
                     <p className="font-brass-mono text-sm uppercase tracking-[0.22em] text-[#b0693d]">
                       En misschien nog wel het belangrijkste
                     </p>
