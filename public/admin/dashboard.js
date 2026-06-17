@@ -14,10 +14,9 @@ function logout() {
 
 // API Configuration
 const API_CONFIG = {
-    // In production, this should point to your backend API
-    // For now, we'll use mock data
-    baseUrl: 'https://your-api-endpoint.com/api',
-    useMockData: true // Set to false when backend is ready
+    // Same-origin API on the deployed site
+    baseUrl: '/api',
+    useMockData: false
 };
 
 // Mock data for development

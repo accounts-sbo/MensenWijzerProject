@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Allow real files/directories, including /api and /admin assets.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Keep API endpoints on PHP files under /api.
+  RewriteRule ^api/ - [L]
+
+  # React router fallback.
+  RewriteRule . /index.html [L]
+</IfModule>

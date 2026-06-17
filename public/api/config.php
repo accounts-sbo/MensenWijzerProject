@@ -7,15 +7,16 @@
 
 // Database credentials
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'your_database_name');
-define('DB_USER', 'your_database_user');
-define('DB_PASS', 'your_database_password');
+define('DB_NAME', 'sjbmedia_sjbmedia_mensenwijzer');
+define('DB_USER', 'sjbmedia_sjbmedia_mensenwijzer');
+define('DB_PASS', 'dQ7tYb2wL9pN4sR8vX1kH6mZ5');
 define('DB_CHARSET', 'utf8mb4');
 
 // CORS settings
 define('ALLOWED_ORIGINS', [
     'https://demensenwijzer.nl',
     'https://www.demensenwijzer.nl',
+    'https://demensenwijzer.somethingbreaksout.com',
     'http://localhost:5173', // For local development
     'http://localhost:3000'
 ]);
