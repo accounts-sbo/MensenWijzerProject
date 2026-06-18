@@ -11,7 +11,7 @@ const TermsConditions = () => {
       </section>
       <section className="space-y-3">
         <h3 className="text-base md:text-lg font-semibold text-mensen-blue">Artikel 1 – Definities</h3>
-        <p>1.1 Opdrachtnemer: SJB Media B.V., gevestigd te Wyns, ingeschreven bij de Kamer van Koophandel onder nummer 84953179, handelend onder de namen SJB Media en De Mensen Wijzer.</p>
+        <p>1.1 Opdrachtnemer: SJB Media B.V., gevestigd te Naarden, ingeschreven bij de Kamer van Koophandel onder nummer 84953179, handelend onder de namen SJB Media en De Mensen Wijzer.</p>
         <p>1.2 SJB Media: de handelsnaam waaronder SJB Media B.V. werkzaamheden verricht op het gebied van conceptontwikkeling, merkontwikkeling, merkstrategie, merkpositionering, mediastrategie, communicatie, campagnes, content, videoproducties, televisie- en mediaproducties, events, presentaties, free publicity, public relations, creatieve strategie, projectregie en aanverwante werkzaamheden.</p>
         <p>1.3 De Mensen Wijzer: de handelsnaam waaronder SJB Media B.V. werkzaamheden verricht op het gebied van coaching, training, mentorschap, begeleiding, identiteitsontwikkeling, communicatieontwikkeling, leiderschap, invloedrijk spreken, presentatie, persoonlijke profilering en organisatieontwikkeling.</p>
         <p>1.4 Opdrachtgever: iedere natuurlijke persoon, rechtspersoon, organisatie of instelling die met Opdrachtnemer een overeenkomst sluit of aan wie Opdrachtnemer een offerte uitbrengt.</p>
